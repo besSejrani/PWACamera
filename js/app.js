@@ -9,7 +9,6 @@ if ("serviceWorker" in navigator) {
 
 const button = document.getElementById("fab");
 button.style.display = "none";
-
 let defferedPrompt;
 
 window.addEventListener("beforeinstallprompt", (event) => {
@@ -28,6 +27,7 @@ button.addEventListener("click", () => {
 
       if (choiceResult.outcome === "dismissed") {
         console.log("user cancelled installation");
+        button.style.display = "none";
       } else {
         console.log("user added to homescreen");
         button.style.display = "none";
@@ -42,7 +42,4 @@ button.addEventListener("click", () => {
 window.onappinstalled = (event) => {
   console.log("app uninstalled");
   button.style.display = "none";
-  button.style.position = "absolute";
-  button.style.top = "0";
-  button.style.left = "0";
 };
