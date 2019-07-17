@@ -9,7 +9,6 @@ if ("serviceWorker" in navigator) {
 
 const button = document.getElementById("fab");
 button.style.display = "none";
-button.style.visibility = "hidden";
 
 let defferedPrompt;
 
@@ -32,7 +31,9 @@ button.addEventListener("click", () => {
       } else {
         console.log("user added to homescreen");
         button.style.display = "none";
-        button.style.visibility = "hidden";
+        button.style.position = "absolute";
+        button.style.top = "0";
+        button.style.left = "0";
       }
     });
   }
@@ -41,5 +42,7 @@ button.addEventListener("click", () => {
 window.onappinstalled = (event) => {
   console.log("app uninstalled");
   button.style.display = "none";
-  button.style.visibility = "hidden";
+  button.style.position = "absolute";
+  button.style.top = "0";
+  button.style.left = "0";
 };
