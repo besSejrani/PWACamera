@@ -9,6 +9,8 @@ if ("serviceWorker" in navigator) {
 
 const button = document.getElementById("fab");
 button.style.display = "none";
+button.style.visibility = "hidden";
+
 let defferedPrompt;
 
 window.addEventListener("beforeinstallprompt", (event) => {
