@@ -19,6 +19,7 @@ window.addEventListener("beforeinstallprompt", (event) => {
 });
 
 button.addEventListener("click", () => {
+  button.style.display = "none";
   if (defferedPrompt) {
     defferedPrompt.prompt();
 
@@ -27,10 +28,8 @@ button.addEventListener("click", () => {
 
       if (choiceResult.outcome === "dismissed") {
         console.log("user cancelled installation");
-        button.style.display = "none";
       } else {
         console.log("user added to homescreen");
-        button.style.display = "none";
       }
     });
   }
