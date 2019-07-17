@@ -15,7 +15,7 @@ window.addEventListener("load", () => {
   window.addEventListener("beforeinstallprompt", (event) => {
     event.preventDefault();
     defferedPrompt = event;
-    button.style.display = "block";
+    button.classList.remove("hide");
     return false;
   });
 
