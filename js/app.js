@@ -20,7 +20,7 @@ window.addEventListener("load", () => {
   });
 
   button.addEventListener("click", () => {
-    button.style.display = "none";
+    button.classList.add("hide");
     if (defferedPrompt) {
       defferedPrompt.prompt();
 
@@ -39,6 +39,6 @@ window.addEventListener("load", () => {
 
   window.onappinstalled = (event) => {
     console.log("app uninstalled");
-    button.style.display = "none";
+    button.classList.add("hide");
   };
 });
