@@ -1,5 +1,5 @@
-const static = "static_v4";
-const dynamic = "dynamic_v4";
+const static = "static_v7";
+const dynamic = "dynamic_v7";
 const assets = [
   "/index.html",
   "/404.html",
