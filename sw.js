@@ -1,8 +1,9 @@
-const static = "static_v8";
-const dynamic = "dynamic_v8";
+const static = "static_v9";
+const dynamic = "dynamic_v9";
 const assets = [
   "/index.html",
   "/404.html",
+  "/css/styles.css",
   "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css",
   "https://fonts.googleapis.com/icon?family=Material+Icons",
   "/js/app.js",

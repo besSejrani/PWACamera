@@ -8,7 +8,7 @@ if ("serviceWorker" in navigator) {
 }
 
 const button = document.getElementById("fab");
-button.style.display = "none";
+button.classList.add("hide");
 let defferedPrompt;
 
 window.addEventListener("load", () => {
