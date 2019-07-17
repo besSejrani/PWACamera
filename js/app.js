@@ -31,9 +31,6 @@ button.addEventListener("click", () => {
       } else {
         console.log("user added to homescreen");
         button.style.display = "none";
-        button.style.position = "absolute";
-        button.style.top = "0";
-        button.style.left = "0";
       }
     });
   }
