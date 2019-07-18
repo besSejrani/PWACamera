@@ -3,3 +3,13 @@
   top: -9999px !important;
   left: -9999px !important;
 }
+
+nav i.material-icons {
+  font-size: 30px;
+}
+
+nav .brand-logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}

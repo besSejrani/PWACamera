@@ -8,7 +8,12 @@ if ("serviceWorker" in navigator) {
 }
 
 const button = document.getElementById("fab");
-/* button.classList.add("hide"); */
+/**
+|--------------------------------------------------
+| Added class hide to the button, instead of using display:'none',
+| we used position:'absolute' with some outside values, for SEO reasons
+|--------------------------------------------------
+*/
 let defferedPrompt;
 
 window.addEventListener("beforeinstallprompt", (event) => {
@@ -35,8 +40,3 @@ button.addEventListener("click", () => {
     });
   }
 });
-
-/* window.onappinstalled = (event) => {
-  console.log("app uninstalled");
-  button.classList.add("hide");
-}; */

@@ -1,5 +1,10 @@
-const static = "static_v10";
-const dynamic = "dynamic_v10";
+/**
+|--------------------------------------------------
+| Setting assets, static cache & dynamic cache
+|--------------------------------------------------
+*/
+const static = "static_v13";
+const dynamic = "dynamic_v13";
 const assets = [
   "/index.html",
   "/404.html",
@@ -11,7 +16,11 @@ const assets = [
   "/images/logo.svg"
 ];
 
-//install
+/**
+|--------------------------------------------------
+| install
+|--------------------------------------------------
+*/
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(static).then((cache) => {
@@ -20,7 +29,11 @@ self.addEventListener("install", (event) => {
   );
 });
 
-//activate
+/**
+|--------------------------------------------------
+| activate
+|--------------------------------------------------
+*/
 self.addEventListener("activate", (event) => {
   event.respondWith(
     caches.keys().then((keys) => {
@@ -37,7 +50,11 @@ self.addEventListener("activate", (event) => {
   return self.clients.claim();
 });
 
-//fetch
+/**
+|--------------------------------------------------
+| fetch
+|--------------------------------------------------
+*/
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches
