@@ -1,6 +1,6 @@
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
+  window.addEventListener("load", async () => {
+    await navigator.serviceWorker
       .register("/sw.js")
       .then(() => console.log("Service worker installed"))
       .catch(() => console.log("Service worker couldn't be installed"));

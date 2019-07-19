@@ -1,14 +1,19 @@
 /**
 |--------------------------------------------------
+| importScripts() If we want to import some scripts
+|--------------------------------------------------
+*/
+
+/**
+|--------------------------------------------------
 | Setting assets, static cache & dynamic cache
 |--------------------------------------------------
 */
-const static = "static_v13";
-const dynamic = "dynamic_v13";
+const static = "static_v14";
+const dynamic = "dynamic_v14";
 const assets = [
   "/index.html",
   "/404.html",
-  "/css/styles.css",
   "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css",
   "https://fonts.googleapis.com/icon?family=Material+Icons",
   "/js/app.js",
@@ -18,7 +23,7 @@ const assets = [
 
 /**
 |--------------------------------------------------
-| install
+| Install
 |--------------------------------------------------
 */
 self.addEventListener("install", (event) => {
@@ -31,7 +36,7 @@ self.addEventListener("install", (event) => {
 
 /**
 |--------------------------------------------------
-| activate
+| Activate
 |--------------------------------------------------
 */
 self.addEventListener("activate", (event) => {
@@ -52,9 +57,24 @@ self.addEventListener("activate", (event) => {
 
 /**
 |--------------------------------------------------
-| fetch
+| Fetch,
+| We can use here indexedDB
 |--------------------------------------------------
 */
+
+/**
+|--------------------------------------------------
+| Create a seperate file for indexedDB,
+| called idb and import it with the importScrypt to the service worker
+|
+| const dbPromise = idb.open("posts-store", 1, (db) => {
+|  if (!db.objectStoreNames.contains("posts")) {
+|    db.createObjectStore("posts", { keyPath: "id" });
+|  }
+| });
+|--------------------------------------------------
+*/
+
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches
@@ -74,4 +94,24 @@ self.addEventListener("fetch", (event) => {
         return caches.match("/404.html");
       })
   );
+});
+
+/**
+|--------------------------------------------------
+| Sync Manager
+| first check sync browser and store data to indexedDB
+|--------------------------------------------------
+*/
+self.addEventListener("sync", (event) => {
+  console.log("background syncing", event);
+  if (event.tag === "sync-new-contact") {
+    console.log("Syncinf new contact");
+    event
+      .waitUntil
+      //0. readAlldata(sync-contact) from indexedDB
+      //1. then send the data like in new contact.js
+      //2. loop all data pieces, maybe the user tried to add multiple data wit for of or foreach, whatever
+      //3. remove all data in the indexedDB
+      ();
+  }
 });
