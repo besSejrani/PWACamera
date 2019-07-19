@@ -40,3 +40,26 @@ button.addEventListener("click", () => {
     });
   }
 });
+
+/**
+|--------------------------------------------------
+| Push notification
+| Request permission
+|--------------------------------------------------
+*/
+const permission = document.getElementById("permission");
+
+notificationPermission = () => {
+  Notification.requestPermission(() => {
+    console.log("user choice", result);
+    if (result !== "granted") {
+      console.log("no notification permission granted");
+    } else {
+    }
+  });
+};
+
+if ("Notification" in window) {
+  permission.style.display = "block";
+  permission.addEventListener("click", notificationPermission);
+}

@@ -21,3 +21,8 @@ nav i.material-icons {
 .btn i {
   font-size: 24px;
 }
+
+/* hide button in css, if available in the the browser, the js activates it */
+#permission {
+  display: none;
+}
