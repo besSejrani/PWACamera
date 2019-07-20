@@ -105,7 +105,7 @@ self.addEventListener("fetch", (event) => {
 self.addEventListener("sync", (event) => {
   console.log("background syncing", event);
   if (event.tag === "sync-new-contact") {
-    console.log("Syncinf new contact");
+    console.log("Syncing new contact");
     event
       .waitUntil
       //0. readAlldata(sync-contact) from indexedDB
@@ -114,4 +114,27 @@ self.addEventListener("sync", (event) => {
       //3. remove all data in the indexedDB
       ();
   }
+});
+
+/**
+|--------------------------------------------------
+| Push Notification click
+|--------------------------------------------------
+*/
+
+self.addEventListener("notificationclick", (event) => {
+  const notification = event.notification;
+  const action = event.action;
+  console.log(notification);
+
+  if (action === "confirm") {
+    console.log("Confirm was chosen");
+    notification.close();
+  } else {
+    console.log(action);
+  }
+});
+
+self.addEventListener("notificationclose", (event) => {
+  console.log("notification was closed");
 });

@@ -54,6 +54,7 @@ window.addEventListener("appinstalled", () => {
 |--------------------------------------------------
 | Push notification
 | Request permission
+| Action click
 |--------------------------------------------------
 */
 const permission = document.getElementById("permission");

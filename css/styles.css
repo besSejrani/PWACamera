@@ -22,6 +22,14 @@ nav i.material-icons {
   font-size: 24px;
 }
 
+.switch label input[type="checkbox"]:checked + .lever {
+  background-color: #2195f39d;
+}
+
+.switch label input[type="checkbox"]:checked + .lever:after {
+  background-color: #2196f3;
+}
+
 /* hide button in css, if available in the the browser, the js activates it */
 #permission {
   display: none;
