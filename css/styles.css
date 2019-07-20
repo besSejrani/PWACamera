@@ -35,6 +35,6 @@ nav i.material-icons {
   display: none;
 }
 
-.sidenav li:last-child > a:hover {
+li:last-child a:hover {
   background-color: rgba(0, 0, 0, 0);
 }
