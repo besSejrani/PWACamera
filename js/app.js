@@ -43,6 +43,15 @@ button.addEventListener("click", () => {
 
 /**
 |--------------------------------------------------
+| If app already installed
+|--------------------------------------------------
+*/
+window.addEventListener("appinstalled", () => {
+  button.classList.add("hide");
+});
+
+/**
+|--------------------------------------------------
 | Push notification
 | Request permission
 |--------------------------------------------------
