@@ -1,0 +1,10 @@
+{
+  "name": "pwacamera",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:besSejrani/PWA-Camera.git",
+  "author": "Bes <sejrani.besjan@gmail.com>",
+  "license": "MIT",
+  "scripts": {},
+  "dependencies": {}
+}
