@@ -88,6 +88,48 @@ displayNotification = () => {
 };
 
 //Push Manager
+configurePushSub = () => {
+  let reg;
+  navigator.serviceWorker.ready
+    .then((swreg) => {
+      reg = swreg;
+      return swreg.pushManager.getSubscription();
+    })
+    .then((sub) => {
+      if (sub === null) {
+        //Create new subscription
+
+        const vapidPublicKey =
+          "BJ9o0wFz-VU961c6i1vUf6dtiXFIrZaNFONGImvG19E8lqvdkepDdSqUmJ2_yfPY5P-wTYyXzwM20x1hsdVr2Hk";
+
+        const convertedVapidKey = urlBase64ToUint8Array(vapidPublicKey);
+        return reg.pushManager.subscribe({
+          userVisibleOnly: true,
+          applicationServerKey: convertedVapidKey
+        });
+      } else {
+        //We have a subscription
+      }
+    })
+    .then((newSub) => {
+      return fetch("https://cambes-911a0.firebaseio.com/subscriptions.json", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify(newSub)
+      });
+    })
+    .then((res) => {
+      if (res.ok) {
+        displayNotification();
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
 
 notificationPermission = () => {
   Notification.requestPermission((result) => {
@@ -95,14 +137,15 @@ notificationPermission = () => {
     if (result !== "granted") {
       console.log("no notification permission granted");
     } else {
-      displayNotification();
+      /* displayNotification(); */
+      configurePushSub();
       permission.classList.remove("blue");
       permission.classList.add("grey");
     }
   });
 };
 
-if ("Notification" in window) {
+if ("Notification" in window && "serviceWorker" in navigator) {
   permission.style.display = "block";
   permission.addEventListener("click", notificationPermission);
 }
