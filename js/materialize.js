@@ -1,7 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   M.AutoInit();
-  M.Carousel.init({
+  const elems = document.querySelectorAll(".carousel");
+  M.Carousel.init(elems, {
     fullWidth: true,
-    dist: 0
+    duration: 150,
+    shift: 0,
+    indicators: true,
+    noWrap: false
   });
 });

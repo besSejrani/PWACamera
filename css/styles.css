@@ -38,3 +38,11 @@ nav i.material-icons {
 li:last-child a:hover {
   background-color: rgba(0, 0, 0, 0);
 }
+
+.carousel.carousel-slider {
+  height: 600px;
+}
+
+.carousel .carousel-item > img {
+  height: 600px;
+}
