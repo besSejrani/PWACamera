@@ -52,7 +52,8 @@ const permission = document.getElementById("permission");
 displayNotification = () => {
   if ("serviceWorker" in navigator) {
     const options = {
-      body: "Welcome to my service"
+      body: "Welcome to my service",
+      icon: "/images/icons/icon-128x128.png"
     };
     navigator.serviceWorker.ready.then((reg) => {
       reg.showNotification("Successfully subscribed", options);
