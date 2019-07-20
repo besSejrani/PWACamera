@@ -24,7 +24,6 @@ window.addEventListener("beforeinstallprompt", (event) => {
 });
 
 button.addEventListener("click", () => {
-  /* button.classList.add("hide"); */
   if (defferedPrompt) {
     defferedPrompt.prompt();
 
@@ -87,6 +86,8 @@ displayNotification = () => {
     });
   }
 };
+
+//Push Manager
 
 notificationPermission = () => {
   Notification.requestPermission((result) => {
