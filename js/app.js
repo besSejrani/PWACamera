@@ -62,7 +62,10 @@ displayNotification = () => {
   if ("serviceWorker" in navigator) {
     const options = {
       body: "Welcome to my service",
-      icon: "/images/icons/icon-128x128.png"
+      icon: "/images/icons/icon-128x128.png",
+      image: "/images/icons/icon-512x512.png",
+      vibrate: [100, 50, 200, 50, 100],
+      badge: "/images/icons/icon-96x96.png"
     };
     navigator.serviceWorker.ready.then((reg) => {
       reg.showNotification("Successfully subscribed", options);
