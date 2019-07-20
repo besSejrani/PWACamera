@@ -65,7 +65,21 @@ displayNotification = () => {
       icon: "/images/icons/icon-128x128.png",
       image: "/images/icons/icon-512x512.png",
       vibrate: [100, 50, 200, 50, 100],
-      badge: "/images/icons/icon-96x96.png"
+      badge: "/images/icons/icon-96x96.png",
+      tag: "confirm-notification",
+      renotify: true,
+      actions: [
+        {
+          action: "confirm",
+          title: "Ok",
+          icon: "/images/icons/icon-96x96.png"
+        },
+        {
+          action: "cancel",
+          title: "Cancel",
+          icon: "/images/icons/icon-96x96.png"
+        }
+      ]
     };
     navigator.serviceWorker.ready.then((reg) => {
       reg.showNotification("Successfully subscribed", options);
