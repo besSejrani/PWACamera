@@ -99,69 +99,71 @@
   </head>
 
   <body class="grey lighten-4">
-    <nav class=" blue">
-      <div class="nav-wrapper container">
-        <a href="#" class="brand-logo"
-          ><img src="/images/logo.svg" alt="Genie Logo" height="55" width="55"
-        /></a>
-        <span class="right white-text text-darken-1">
-          <i
-            class=" large material-icons sidenav-trigger"
-            data-target="side-menu"
-            >menu</i
+    <main>
+      <nav class=" blue">
+        <div class="nav-wrapper container">
+          <a href="#" class="brand-logo"
+            ><img src="/images/logo.svg" alt="Genie Logo" height="55" width="55"
+          /></a>
+          <span class="right white-text text-darken-1">
+            <i
+              class=" large material-icons sidenav-trigger"
+              data-target="side-menu"
+              >menu</i
+            >
+          </span>
+        </div>
+      </nav>
+
+      <ul id="side-menu" class="sidenav side-menu">
+        <li>
+          <a href="/index.html" class="waves-effect"
+            ><i class="material-icons">home</i>Home</a
           >
-        </span>
+        </li>
+        <li>
+          <a href="./pages/add.html" class="waves-effect"
+            ><i class="material-icons">add</i>Add</a
+          >
+        </li>
+        <li></li>
+        <li>
+          <a href="/pages/contact.html" class="waves-effect">
+            <i class="material-icons">mail_outline</i>Contact</a
+          >
+        </li>
+        <div class="divider"></div>
+        <li>
+          <a class="waves-effect waves-light btn blue" id="permission">
+            <i class="material-icons left white-text">notifications</i
+            >Notifications</a
+          >
+        </li>
+        <li>
+          <a>
+            <i class="material-icons ">notifications</i>
+            <div class="switch">
+              <label>
+                Off
+                <input type="checkbox" />
+                <span class="lever "></span>
+                On
+              </label>
+            </div>
+          </a>
+        </li>
+      </ul>
+
+      <div class="fixed-action-btn">
+        <a
+          href="#"
+          id="fab"
+          class="btn-floating btn-large waves-effect waves-light blue hide"
+          ><i class="material-icons">add</i></a
+        >
       </div>
-    </nav>
-
-    <ul id="side-menu" class="sidenav side-menu">
-      <li>
-        <a href="/index.html" class="waves-effect"
-          ><i class="material-icons">home</i>Home</a
-        >
-      </li>
-      <li>
-        <a href="./pages/add.html" class="waves-effect"
-          ><i class="material-icons">add</i>Add</a
-        >
-      </li>
-      <li></li>
-      <li>
-        <a href="/pages/contact.html" class="waves-effect">
-          <i class="material-icons">mail_outline</i>Contact</a
-        >
-      </li>
-      <div class="divider"></div>
-      <li>
-        <a class="waves-effect waves-light btn blue" id="permission">
-          <i class="material-icons left white-text">notifications</i
-          >Notifications</a
-        >
-      </li>
-      <li>
-        <a>
-          <i class="material-icons ">notifications</i>
-          <div class="switch">
-            <label>
-              Off
-              <input type="checkbox" />
-              <span class="lever "></span>
-              On
-            </label>
-          </div>
-        </a>
-      </li>
-    </ul>
-
-    <div class="fixed-action-btn">
-      <a
-        href="#"
-        id="fab"
-        class="btn-floating btn-large waves-effect waves-light blue hide"
-        ><i class="material-icons">add</i></a
-      >
-    </div>
-    swswsw
+      swswsw
+    </main>
 
     <script src="/js/utility.js"></script>
     <script src="/js/app.js"></script>
