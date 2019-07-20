@@ -24,7 +24,7 @@ window.addEventListener("beforeinstallprompt", (event) => {
 });
 
 button.addEventListener("click", () => {
-  button.classList.add("hide");
+  /* button.classList.add("hide"); */
   if (defferedPrompt) {
     defferedPrompt.prompt();
 
