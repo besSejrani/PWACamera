@@ -49,12 +49,26 @@ button.addEventListener("click", () => {
 */
 const permission = document.getElementById("permission");
 
+displayNotification = () => {
+  if ("serviceWorker" in navigator) {
+    const options = {
+      body: "Welcome to my service"
+    };
+    navigator.serviceWorker.ready.then((reg) => {
+      reg.showNotification("Successfully subscribed", options);
+    });
+  }
+};
+
 notificationPermission = () => {
-  Notification.requestPermission(() => {
+  Notification.requestPermission((result) => {
     console.log("user choice", result);
     if (result !== "granted") {
       console.log("no notification permission granted");
     } else {
+      displayNotification();
+      permission.classList.remove("blue");
+      permission.classList.add("grey");
     }
   });
 };
