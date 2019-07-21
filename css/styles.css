@@ -43,10 +43,11 @@ li:last-child a:hover {
   height: 600px;
 }
 
-.carousel .carousel-item > img {
+picture img {
   height: 600px;
 }
 
 img {
   width: 100%;
+  filter: brightness(0.7);
 }
