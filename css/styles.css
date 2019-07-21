@@ -51,3 +51,15 @@ img {
   width: 100%;
   filter: brightness(0.7);
 }
+
+@media (max-width: 520px) {
+  #img-one {
+    background-image: url("/images/camera/camera-1-520x300.webp");
+  }
+  #img-two {
+    background-image: url("/images/camera/camera-2-520x300.webp");
+  }
+  #img-three {
+    background-image: url("/images/camera/camera-3-520x300.webp");
+  }
+}
