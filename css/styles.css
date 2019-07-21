@@ -63,9 +63,9 @@ img {
     background-image: url("/images/camera/camera-3-520x300.webp");
   }
   .carousel.carousel-slider {
-    height: 400px;
+    height: 300px;
   }
   picture img {
-    height: 400px;
+    height: 300px;
   }
 }
