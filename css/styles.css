@@ -46,3 +46,7 @@ li:last-child a:hover {
 .carousel .carousel-item > img {
   height: 600px;
 }
+
+img {
+  width: 100%;
+}
