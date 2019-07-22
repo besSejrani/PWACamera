@@ -122,13 +122,16 @@ picture img {
 
 .partners img {
   margin: 20px;
-  align-self: center;
   justify-self: center;
   filter: grayscale(1);
+  transition: 0.4s;
+  height: 85px;
+  width: 85px;
 }
 
 .partners img:hover {
   filter: grayscale(0);
+  transition: 0.4s;
 }
 
 @media screen and (max-width: 520px) {
