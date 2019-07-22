@@ -39,10 +39,6 @@ li:last-child a:hover {
   background-color: rgba(0, 0, 0, 0);
 }
 
-.carousel.carousel-slider {
-  height: 600px;
-}
-
 picture img {
   height: 600px;
   background: center/cover;
@@ -51,6 +47,51 @@ picture img {
 picture img {
   width: 100%;
   filter: brightness(0.7);
+}
+
+#slider {
+  overflow: hidden;
+}
+
+#slider figure {
+  position: relative;
+  width: 400%;
+  margin: 0;
+  left: 0;
+  animation: 16s slider infinite;
+}
+
+#slider figure source,
+#slider figure img {
+  width: 25%;
+  float: left;
+}
+
+@keyframes slider {
+  0% {
+    left: 0;
+  }
+  25% {
+    left: 0;
+  }
+  30% {
+    left: -100%;
+  }
+  60% {
+    left: -100%;
+  }
+  65% {
+    left: -200%;
+  }
+  90% {
+    left: -200%;
+  }
+  95% {
+    left: -300%;
+  }
+  100% {
+    left: -300%;
+  }
 }
 
 @media (max-width: 520px) {
@@ -66,11 +107,11 @@ picture img {
     background-image: url("/images/camera/camera-3-520x300.webp");
   }
 
-  .carousel.carousel-slider {
+  #slider {
     height: 300px;
   }
 
-  picture img {
+  figure img {
     height: 300px;
   }
 }

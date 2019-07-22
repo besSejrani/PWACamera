@@ -6,5 +6,7 @@
   "author": "Bes <sejrani.besjan@gmail.com>",
   "license": "MIT",
   "scripts": {},
-  "dependencies": {}
+  "dependencies": {
+    "slick-carousel": "^1.8.1"
+  }
 }
