@@ -42,9 +42,6 @@ li:last-child a:hover {
 picture img {
   height: 600px;
   background: center/cover;
-}
-
-picture img {
   width: 100%;
   filter: brightness(0.7);
 }
@@ -95,7 +92,8 @@ picture img {
 }
 
 @media (max-width: 520px) {
-  #img-one {
+  #img-one,
+  #img-four {
     background-image: url("/images/camera/camera-1-520x300.webp");
   }
 
