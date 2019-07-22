@@ -45,9 +45,10 @@ li:last-child a:hover {
 
 picture img {
   height: 600px;
+  background: center/cover;
 }
 
-img {
+picture img {
   width: 100%;
   filter: brightness(0.7);
 }
@@ -56,15 +57,19 @@ img {
   #img-one {
     background-image: url("/images/camera/camera-1-520x300.webp");
   }
+
   #img-two {
     background-image: url("/images/camera/camera-2-520x300.webp");
   }
+
   #img-three {
     background-image: url("/images/camera/camera-3-520x300.webp");
   }
+
   .carousel.carousel-slider {
     height: 300px;
   }
+
   picture img {
     height: 300px;
   }

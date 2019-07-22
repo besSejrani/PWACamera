@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  M.AutoInit();
+  /*   M.AutoInit(); */
   const elems = document.querySelectorAll(".carousel");
   M.Carousel.init(elems, {
     fullWidth: true,
@@ -8,4 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     indicators: true,
     noWrap: false
   });
+
+  setInterval(() => {
+    $(".carousel").carousel("next");
+  }, 3500);
 });
