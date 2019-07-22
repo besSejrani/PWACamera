@@ -155,7 +155,10 @@
       </ul>
 
       <div id="slider">
-        <figure>
+        <input type="radio" name="r" id="r1" />
+        <input type="radio" name="r" id="r2" />
+        <input type="radio" name="r" id="r3" />
+        <figure id="figure">
           <picture>
             <source
               srcset="/images/camera/camera-2-1920x600.webp"
@@ -222,6 +225,12 @@
             />
           </picture>
         </figure>
+
+        <div class="navigation">
+          <label for="r1" class="bar" id="bar1"> </label>
+          <label for="r2" class="bar" id="bar2"> </label>
+          <label for="r3" class="bar" id="bar3"> </label>
+        </div>
       </div>
 
       <div class="fixed-action-btn">
@@ -232,12 +241,11 @@
           ><i class="material-icons">add</i></a
         >
       </div>
-      swswsw
     </main>
+    swswsw
 
     <script src="/js/utility.js"></script>
     <script src="/js/app.js"></script>
-
     <script src="/js/materialize.js"></script>
     <script src="/js/materialize.min.js" defer></script>
   </body>

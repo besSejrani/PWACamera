@@ -9,8 +9,8 @@
 | Setting assets, static cache & dynamic cache
 |--------------------------------------------------
 */
-const static = "static_v3";
-const dynamic = "dynamic_v3";
+const static = "static_v2";
+const dynamic = "dynamic_v2";
 const assets = [
   "/index.html",
   "/404.html",
