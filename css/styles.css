@@ -121,7 +121,7 @@ picture img {
 }
 
 .partners img {
-  margin: 20px;
+  margin: 20px 0px;
   justify-self: center;
   filter: grayscale(1);
   transition: 0.4s;
@@ -132,10 +132,4 @@ picture img {
 .partners img:hover {
   filter: grayscale(0);
   transition: 0.4s;
-}
-
-@media screen and (max-width: 520px) {
-  .partners img {
-    margin: 20px;
-  }
 }
