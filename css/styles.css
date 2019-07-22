@@ -114,3 +114,25 @@ picture img {
     height: 300px;
   }
 }
+
+.partners {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.partners img {
+  margin: 20px;
+  align-self: center;
+  justify-self: center;
+  filter: grayscale(1);
+}
+
+.partners img:hover {
+  filter: grayscale(0);
+}
+
+@media screen and (max-width: 520px) {
+  .partners img {
+    margin: 20px;
+  }
+}
