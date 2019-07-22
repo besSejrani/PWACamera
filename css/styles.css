@@ -92,45 +92,6 @@ picture img {
   }
 }
 
-.navigation {
-  position: absolute;
-  bottom: 20px;
-  left: 52%;
-  transform: translate(-50%);
-  display: flex;
-  transition: 0.4s;
-}
-
-.bar:hover {
-  background: white;
-}
-
-.bar {
-  width: 10px;
-  height: 10px;
-  border-radius: 99px;
-  border: 1px solid white;
-  margin: 8px;
-  cursor: pointer;
-  transition: 0.4s;
-}
-
-/* #r1:checked ~ figure {
-  position: absolute;
-  left: 0;
-}
-
-#r2:checked ~ figure {
-  position: absolute;
-  left: -100%;
-}
-
-#r3:checked ~ figure {
-  position: absolute;
-  left: -200%;
-}
-   */
-
 @media (max-width: 520px) {
   #img-one,
   #img-four {
