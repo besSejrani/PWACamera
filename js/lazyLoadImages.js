@@ -8,7 +8,6 @@ const lazyLoad = (target) => {
 
       if (entry.isIntersecting) {
         const img = entry.target;
-        console.log(img);
         const src = img.getAttribute("data-lazy");
 
         img.setAttribute("src", src);
