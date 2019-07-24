@@ -9,11 +9,11 @@ if ("serviceWorker" in navigator) {
 
 const button = document.getElementById("fab");
 /**
-|--------------------------------------------------
-| Added class hide to the button, instead of using display:'none',
-| we used position:'absolute' with some outside values, for SEO reasons
-|--------------------------------------------------
-*/
+   |--------------------------------------------------
+   | Added class hide to the button, instead of using display:'none',
+   | we used position:'absolute' with some outside values, for SEO reasons
+   |--------------------------------------------------
+   */
 let defferedPrompt;
 
 window.addEventListener("beforeinstallprompt", (event) => {
@@ -41,21 +41,21 @@ button.addEventListener("click", () => {
 });
 
 /**
-|--------------------------------------------------
-| If app already installed
-|--------------------------------------------------
-*/
+ |--------------------------------------------------
+ | If app already installed
+ |--------------------------------------------------
+ */
 window.addEventListener("appinstalled", () => {
   button.classList.add("hide");
 });
 
 /**
-|--------------------------------------------------
-| Push notification
-| Request permission
-| Action click
-|--------------------------------------------------
-*/
+ |--------------------------------------------------
+ | Push notification
+ | Request permission
+ | Action click
+ |--------------------------------------------------
+ */
 const permission = document.getElementById("permission");
 
 displayNotification = () => {
@@ -72,12 +72,12 @@ displayNotification = () => {
         {
           action: "confirm",
           title: "Ok",
-          icon: "/images/icons/icon-96x96.png"
+          icon: "/src/images/icons/icon-96x96.png"
         },
         {
           action: "cancel",
           title: "Cancel",
-          icon: "/images/icons/icon-96x96.png"
+          icon: "/src/images/icons/icon-96x96.png"
         }
       ]
     };
