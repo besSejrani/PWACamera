@@ -38,7 +38,11 @@ module.exports = {
 
       {
         test: /\.(svg|png|jpe?g|webp)$/,
-        use: ["file-loader"]
+        use: ["file-loader"],
+        options: {
+          name: "[name].[hash].[ext]",
+          outputPath: "img"
+        }
       }
     ]
   },
