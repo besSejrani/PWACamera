@@ -186,3 +186,7 @@ picture img {
 .price {
   font-weight: 500;
 }
+
+.lazy {
+  display: none;
+}
