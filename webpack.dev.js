@@ -16,12 +16,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.html$/,
+        test: /\.webp$/,
         use: {
-          loader: "html-loader"
-          /*  options: {
-            attrs: ["data-lazy"]
-          } */
+          loader: "html-loader",
+          options: {
+            attrs: [":data-lazy"]
+          }
         }
       },
       {
