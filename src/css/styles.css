@@ -141,6 +141,12 @@ picture img {
 
 .card .card-image img {
   padding: 30px;
+  transition: 0.4s;
+}
+
+.card .card-image img:hover {
+  transform: scaleX(1.1);
+  transition: 0.4s;
 }
 
 .TabGroup {
