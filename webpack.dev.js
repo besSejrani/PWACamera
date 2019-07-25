@@ -15,6 +15,15 @@ module.exports = {
   },
   module: {
     rules: [
+      /* {
+        test: /\.html$/,
+        use: {
+          loader: "html-loader",
+          options: {
+            attrs: ["data-lazy"]
+          }
+        }
+      }, */
       {
         test: /\.css$/,
         use: [miniCssExtractPlugin.loader, "css-loader"]

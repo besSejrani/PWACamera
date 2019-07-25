@@ -20,10 +20,15 @@ module.exports = {
   },
   module: {
     rules: [
-      {
+      /* {
         test: /\.html$/,
-        use: ["html-loader"]
-      },
+        use: {
+          loader: "html-loader",
+          options: {
+            attrs: ["data-lazy"]
+          }
+        }
+      }, */
       {
         test: /\.css$/,
         use: [miniCssExtractPlugin.loader, "css-loader"]
