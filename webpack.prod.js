@@ -25,7 +25,8 @@ module.exports = {
         use: {
           loader: "html-loader",
           options: {
-            attrs: [":data-lazy"]
+            attrs: [":data-lazy"],
+            attrs: [":src"]
           }
         }
       },
