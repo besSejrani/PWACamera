@@ -20,8 +20,7 @@ module.exports = {
         use: {
           loader: "html-loader",
           options: {
-            attrs: [":data-lazy"],
-            attrs: [":src"]
+            attrs: [":data-lazy", ":src"]
           }
         }
       },
