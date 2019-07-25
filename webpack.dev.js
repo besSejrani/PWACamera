@@ -16,7 +16,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.webp$/,
+        test: /\.(html)$/,
         use: {
           loader: "html-loader",
           options: {
