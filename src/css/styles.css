@@ -188,5 +188,5 @@ picture img {
 }
 
 .lazy {
-  visibility: hidden;
+  display: none;
 }
