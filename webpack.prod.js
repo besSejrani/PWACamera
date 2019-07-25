@@ -93,9 +93,10 @@ module.exports = {
         collapseWhitespace: true,
         removeComments: true
       }
-    }),
-    new PurgecssPlugin({
-      paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true })
     })
   ]
 };
+
+//new PurgecssPlugin({
+//  paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true })
+//})
