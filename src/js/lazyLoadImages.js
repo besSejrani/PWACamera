@@ -1,4 +1,4 @@
-const targets = document.querySelectorAll(".lazy");
+const targets = document.querySelectorAll("[data-lazy]");
 
 const lazyLoad = (target) => {
   const io = new IntersectionObserver((entries, observer) => {
