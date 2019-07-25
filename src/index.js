@@ -1,4 +1,4 @@
-/* import "./js/lazyLoadImages"; */
+import "./js/lazyLoadImages";
 import "materialize-css/dist/js/materialize.min.js";
 import "./js/materialize";
 import "./js/app";
