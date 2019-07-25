@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const optimizeCss = require("optimize-css-assets-webpack-plugin");
 const terser = require("terser-webpack-plugin");
+const PurifyCSSPlugin = require("purifycss-webpack");
 
 module.exports = {
   mode: "production",
@@ -71,6 +72,10 @@ module.exports = {
         collapseWhitespace: true,
         removeComments: true
       }
+    }),
+    new PurifyCSSPlugin({
+      paths: glob.sync(path.join(__dirname, "src/*.html")),
+      purifyOptions: { info: false, minify: true }
     })
   ]
 };
