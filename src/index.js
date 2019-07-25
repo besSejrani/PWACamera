@@ -5,4 +5,5 @@ import "./js/app";
 import "./js/utility";
 
 import "materialize-css/dist/css/materialize.min.css";
+import "./css/materialize-icons.css";
 import "./css/styles.css";

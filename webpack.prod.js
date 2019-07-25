@@ -52,6 +52,22 @@ module.exports = {
       },
 
       {
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "fonts"
+            }
+          }
+        ]
+      },
+
+      /*  { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url-loader?limit=10000&mimetype=application/font-woff' },
+      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file-loader' }, */
+
+      {
         test: /\.(svg|png|jpeg|jpg|gif|webp)$/,
         use: {
           loader: "file-loader",
