@@ -1,0 +1,41 @@
+
+.hide {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+nav .brand-logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+nav i.material-icons {
+  font-size: 30px;
+}
+
+.sidenav li > a.btn {
+  margin: 20px;
+}
+
+.btn i {
+  font-size: 24px;
+}
+
+.switch label input[type="checkbox"]:checked + .lever {
+  background-color: #2195f39d;
+}
+
+.switch label input[type="checkbox"]:checked + .lever:after {
+  background-color: #2196f3;
+}
+
+/* hide button in css, if available in the the browser, the js activates it */
+#permission {
+  display: none;
+}
+
+li:last-child a:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
