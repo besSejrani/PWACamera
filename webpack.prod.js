@@ -31,7 +31,7 @@ module.exports = {
         use: {
           loader: "html-loader",
           options: {
-            attrs: [":data-lazy", ":src"]
+            attrs: [":data-lazy", ":src", ":href"]
           }
         }
       },
@@ -75,7 +75,7 @@ module.exports = {
       { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file-loader' }, */
 
       {
-        test: /\.(svg|png|jpeg|jpg|gif|webp)$/,
+        test: /\.(svg|png|jpeg|jpg|ico|webp)$/,
         use: {
           loader: "file-loader",
           options: {

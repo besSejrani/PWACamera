@@ -27,7 +27,7 @@ module.exports = {
         use: {
           loader: "html-loader",
           options: {
-            attrs: [":data-lazy", ":src"]
+            attrs: [":data-lazy", ":src", ":href"]
           }
         }
       },
@@ -68,7 +68,7 @@ module.exports = {
       },
 
       {
-        test: /\.(svg|png|jpe?g|webp|gif)$/,
+        test: /\.(svg|png|jpe?g|webp|ico)$/,
         use: ["file-loader"]
       }
     ]
