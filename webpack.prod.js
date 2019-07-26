@@ -35,10 +35,17 @@ module.exports = {
           }
         }
       },
+
       {
         test: /\.css$/,
         use: [miniCssExtractPlugin.loader, "css-loader"]
       },
+
+      {
+        test: /\.scss$/,
+        use: [miniCssExtractPlugin.loader, "css-loader", "sass-loader"]
+      },
+
       {
         test: /\.js$/,
         exclude: /node_modules/,
