@@ -1,8 +1,13 @@
+.progessiveImage{
+  filter: blur(10px);
+  opacity: 0.8
+}
+
 picture img {
   height: 600px;
   background: center/cover;
   width: 100%;
-  filter: brightness(0.7);
+  filter: brightness(0.9)
 }
 
 #slider {
@@ -68,9 +73,7 @@ picture img {
   justify-content: space-between;
 }
 
-.progessiveImage{
-  filter: blur(12px)
-}
+
 
 .card .card-image img {
   padding: 30px;
