@@ -80,6 +80,10 @@ picture img {
   justify-content: space-between;
 }
 
+.progessiveImage{
+  filter: blur(12px)
+}
+
 .card .card-image img {
   padding: 30px;
   transition: 0.5s;
