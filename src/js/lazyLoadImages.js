@@ -28,7 +28,7 @@ const header = document.getElementById("homeSlider");
 const nav = document.getElementById("nav");
 
 const slideObserverOptions = {
-  rootMargin: "-125px 0px 0px 0px"
+  rootMargin: "-150px 0px 0px 0px"
 };
 
 const slideObserver = new IntersectionObserver((entries, slideObserver) => {
