@@ -34,15 +34,9 @@ const slideObserverOptions = {
 const slideObserver = new IntersectionObserver((entries, slideObserver) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      nav.classList.remove("navbar.fixed");
-      nav.classList.remove("nav");
       nav.classList.remove("check");
-      console.log("aa");
     } else {
-      nav.classList.add("navbar.fixed");
-      nav.classList.add("nav");
       nav.classList.add("check");
-      console.log("bb");
     }
   });
 }, slideObserverOptions);
