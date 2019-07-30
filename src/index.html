@@ -92,111 +92,117 @@
 
   <body class="grey lighten-4">
     <main>
-      <div class="navbar-fixed">
-        <nav class="blue ">
-          <div class="nav-wrapper container">
-            <a href="#" class="brand-logo center"
+      <header>
+        <div class="navbar-fixed">
+          <nav class="transparent" id='nav'>
+            <div class="nav-wrapper container">
+              <a href="#" class="brand-logo center"
               ><img
-                src="./images/logo.svg"
-                alt="Camera logo"
-                height="55"
-                width="55"
-            /></a>
-            <span class="left white-text text-darken-1">
-              <i
+              src="./images/logo.svg"
+              alt="Camera logo"
+              height="55"
+              width="55"
+              /></a>
+              <span class="left white-text text-darken-1">
+                <i
                 class=" large material-icons sidenav-trigger"
                 data-target="side-menu"
                 >menu</i
-              >
-            </span>
-          </div>
-        </nav>
-      </div>
+                >
+              </span>
+            </div>
+          </nav>
+        </div>
+      </header>
 
+      
+      
       <ul id="side-menu" class="sidenav side-menu">
         <li>
           <a href="/src/index.html" class="waves-effect"
-            ><i class="material-icons">home</i>Home</a
+          ><i class="material-icons">home</i>Home</a
           >
         </li>
         <li>
           <a href="/src/pages/add.html" class="waves-effect"
-            ><i class="material-icons">add</i>Add</a
+          ><i class="material-icons">add</i>Add</a
           >
         </li>
         <li></li>
         <li>
           <a href="/src/pages/contact.html" class="waves-effect">
             <i class="material-icons">mail_outline</i>Contact</a
-          >
-        </li>
-        <div class="divider"></div>
-        <li>
-          <a class="waves-effect waves-light btn blue" id="permission">
-            <i class="material-icons left white-text">notifications</i
-            >Notifications</a
-          >
-        </li>
-        <li>
-          <a>
-            <i class="material-icons ">notifications</i>
-            <div class="switch">
-              <label>
-                Off
-                <input type="checkbox" />
-                <span class="lever "></span>
-                On
-              </label>
-            </div>
-          </a>
-        </li>
-      </ul>
-
-      <div id="slider">
-        <figure id="figure">
-          <picture>
-            <img
-              id="img-two"
-              class="progessiveImage"
-              src="./images/camera/slider/slider1x1387x600xlow.webp"
-              data-lazy="./images/camera/slider/slider1x1387x600.webp"
-              alt="Cameras
-            Slideshow two"
-            />
-          </picture>
-
-          <picture>
-            <img
-              id="img-three"
-              class="progessiveImage"
-              src="./images/camera/slider/slider2x1390x600xlow.webp"
-              data-lazy="./images/camera/slider/slider2x1390x600.webp"
-              alt="Camera Slideshow three"
-            />
-          </picture>
-
-          <picture>
-            <img
-              id="img-one"
-              class="progessiveImage"
-              src="./images/camera/slider/slider3x1377x600xlow.webp"
-              data-lazy="./images/camera/slider/slider3x1377x600.webp"
-              alt="Camera Slideshow one"
-            />
-          </picture>
-
-          <picture>
-            <img
-              id="img-four"
-              class="progessiveImage"
-              src="./images/camera/slider/slider1x1387x600xlow.webp"
-              data-lazy="./images/camera/slider/slider1x1387x600.webp"
-              alt="Camera
-            Slideshow one"
-            />
-          </picture>
-        </figure>
-      </div>
+            >
+          </li>
+          <div class="divider"></div>
+          <li>
+            <a class="waves-effect waves-light btn blue" id="permission">
+              <i class="material-icons left white-text">notifications</i
+                >Notifications</a
+                >
+              </li>
+              <li>
+                <a>
+                  <i class="material-icons ">notifications</i>
+                  <div class="switch">
+                    <label>
+                      Off
+                      <input type="checkbox" />
+                      <span class="lever "></span>
+                      On
+                    </label>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            
+            <section id="homeSlider">
+            <div id="slider">
+                <figure id="figure">
+                  <picture>
+                    <img
+                    id="img-two"
+                    class="progessiveImage"
+                    src="./images/camera/slider/slider1x1387x600xlow.webp"
+                    data-lazy="./images/camera/slider/slider1x1387x600.webp"
+                    alt="Cameras
+                    Slideshow two"
+                    />
+                  </picture>
+                  
+                  <picture>
+                    <img
+                    id="img-three"
+                    class="progessiveImage"
+                    src="./images/camera/slider/slider2x1390x600xlow.webp"
+                    data-lazy="./images/camera/slider/slider2x1390x600.webp"
+                    alt="Camera Slideshow three"
+                    />
+                  </picture>
+                  
+                  <picture>
+                    <img
+                    id="img-one"
+                    class="progessiveImage"
+                    src="./images/camera/slider/slider3x1377x600xlow.webp"
+                    data-lazy="./images/camera/slider/slider3x1377x600.webp"
+                    alt="Camera Slideshow one"
+                    />
+                  </picture>
+                  
+                  <picture>
+                    <img
+                    id="img-four"
+                    class="progessiveImage"
+                    src="./images/camera/slider/slider1x1387x600xlow.webp"
+                    data-lazy="./images/camera/slider/slider1x1387x600.webp"
+                    alt="Camera
+                    Slideshow one"
+                    />
+                  </picture>
+                </figure>
+              </div>
+            </section>
 
       <div class="row container">
         <div class="col s12 ">

@@ -1,13 +1,13 @@
-.progessiveImage{
+.progessiveImage {
   filter: blur(10px);
-  opacity: 0.8
+  opacity: 0.8;
 }
 
 picture img {
   height: 600px;
   background: center/cover;
   width: 100%;
-  filter: brightness(0.9)
+  filter: brightness(0.8);
 }
 
 #slider {
@@ -57,7 +57,6 @@ picture img {
 }
 
 @media (max-width: 520px) {
-
   #slider {
     height: 300px;
   }
@@ -67,13 +66,10 @@ picture img {
   }
 }
 
-
 .flexAction {
   display: flex;
   justify-content: space-between;
 }
-
-
 
 .card .card-image img {
   padding: 30px;

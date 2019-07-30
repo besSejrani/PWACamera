@@ -1,9 +1,9 @@
 const targets = document.querySelectorAll("[data-lazy]");
 
-const lazyLoad = (target) => {
+const lazyLoad = target => {
   const io = new IntersectionObserver((entries, observer) => {
     console.log(entries);
-    entries.forEach((entry) => {
+    entries.forEach(entry => {
       console.log("😍");
 
       if (entry.isIntersecting) {
@@ -22,24 +22,29 @@ const lazyLoad = (target) => {
 
 targets.forEach(lazyLoad);
 
-/* document.addEventListener("DOMContentLoaded", function() {
-  var lazyloadImages;
+// intersecting header
 
-  if ("IntersectionObserver" in window) {
-    lazyloadImages = document.querySelectorAll(".lazy");
-    var imageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          var image = entry.target;
-          image.classList.remove("lazy");
-          imageObserver.unobserve(image);
-        }
-      });
-    });
+const header = document.getElementById("homeSlider");
+const nav = document.getElementById("nav");
 
-    lazyloadImages.forEach(function(image) {
-      imageObserver.observe(image);
-    });
-  }
-});
- */
+const slideObserverOptions = {
+  rootMargin: "-125px 0px 0px 0px"
+};
+
+const slideObserver = new IntersectionObserver((entries, slideObserver) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      nav.classList.remove("navbar.fixed");
+      nav.classList.remove("nav");
+      nav.classList.remove("check");
+      console.log("aa");
+    } else {
+      nav.classList.add("navbar.fixed");
+      nav.classList.add("nav");
+      nav.classList.add("check");
+      console.log("bb");
+    }
+  });
+}, slideObserverOptions);
+
+slideObserver.observe(header);
