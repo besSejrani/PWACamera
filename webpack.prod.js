@@ -7,6 +7,7 @@ const optimizeCss = require("optimize-css-assets-webpack-plugin");
 const terser = require("terser-webpack-plugin");
 const WebpackBar = require("webpackbar");
 const CompressionPlugin = require("compression-webpack-plugin");
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
 
 const PATHS = {
@@ -89,10 +90,38 @@ module.exports = {
     ]
   },
   plugins: [
+    new WebpackBar({}),
     new CompressionPlugin({
       algorithm: "gzip"
     }),
-    new WebpackBar({}),
+    new FaviconsWebpackPlugin({
+      // Your source logo
+      logo: "./src/images/icons/icon-512x512.png",
+      // The prefix for all image files (might be a folder or a name)
+      prefix: "icons-[hash]/",
+      // Emit all stats of the generated icons
+      persistentCache: true,
+      // Inject the html into the html-webpack-plugin
+      inject: true,
+      // favicon background color (see https://github.com/haydenbleasel/favicons#usage)
+      background: "#fff",
+      // favicon app title (see https://github.com/haydenbleasel/favicons#usage)
+      title: "Webpack App",
+
+      // which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
+      icons: {
+        android: true,
+        appleIcon: true,
+        appleStartup: true,
+        coast: true,
+        favicons: true,
+        firefox: true,
+        opengraph: true,
+        twitter: true,
+        yandex: true,
+        windows: true
+      }
+    }),
     new miniCssExtractPlugin({
       filename: "[name].[contenthash].css"
     }),
