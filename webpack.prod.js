@@ -5,6 +5,8 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const optimizeCss = require("optimize-css-assets-webpack-plugin");
 const terser = require("terser-webpack-plugin");
+const WebpackBar = require("webpackbar");
+const CompressionPlugin = require("compression-webpack-plugin");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
 
 const PATHS = {
@@ -87,6 +89,16 @@ module.exports = {
     ]
   },
   plugins: [
+    new CompressionPlugin({
+      filename: "[path].br[query]",
+      algorithm: "brotliCompress",
+      test: /\.(js|css|html|svg)$/,
+      compressionOptions: { level: 11 },
+      threshold: 10240,
+      minRatio: 0.8,
+      deleteOriginalAssets: false
+    }),
+    new WebpackBar({}),
     new miniCssExtractPlugin({
       filename: "[name].[contenthash].css"
     }),
