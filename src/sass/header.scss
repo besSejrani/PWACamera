@@ -4,14 +4,22 @@
   left: -9999px !important;
 }
 
-nav .brand-logo {
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
+nav {
+  box-shadow: 0px 0px 0px 0px white;
 
-nav i.material-icons {
-  font-size: 30px;
+  .brand-logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  i.material-icons {
+    font-size: 30px;
+  }
+
+  .sidenav-trigger {
+    margin: 0px 7px;
+  }
 }
 
 .sidenav li > a.btn {
@@ -41,10 +49,6 @@ li:last-child a:hover {
 
 .navbar-fixed {
   height: 0px;
-}
-
-nav {
-  box-shadow: 0px 0px 0px 0px white;
 }
 
 .check {
