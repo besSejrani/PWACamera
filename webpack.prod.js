@@ -95,20 +95,15 @@ module.exports = {
       algorithm: "gzip"
     }),
     new FaviconsWebpackPlugin({
-      // Your source logo
       logo: "./src/images/icons/icon-512x512.png",
       // The prefix for all image files (might be a folder or a name)
-      prefix: "icons-[hash]/",
+      prefix: "icons/",
       // Emit all stats of the generated icons
       persistentCache: true,
       // Inject the html into the html-webpack-plugin
       inject: true,
-      // favicon background color (see https://github.com/haydenbleasel/favicons#usage)
       background: "#fff",
-      // favicon app title (see https://github.com/haydenbleasel/favicons#usage)
-      title: "Webpack App",
-
-      // which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
+      title: "PWA Camera",
       icons: {
         android: true,
         appleIcon: true,
