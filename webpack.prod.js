@@ -7,7 +7,7 @@ const optimizeCss = require("optimize-css-assets-webpack-plugin");
 const terser = require("terser-webpack-plugin");
 const WebpackBar = require("webpackbar");
 const CompressionPlugin = require("compression-webpack-plugin");
-const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const AppManifestWebpackPlugin = require("app-manifest-webpack-plugin");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
 
 const PATHS = {
@@ -73,10 +73,6 @@ module.exports = {
           }
         ]
       },
-
-      /*  { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url-loader?limit=10000&mimetype=application/font-woff' },
-      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file-loader' }, */
-
       {
         test: /\.(svg|png|jpeg|jpg|ico|webp)$/,
         use: {
@@ -94,33 +90,6 @@ module.exports = {
     new CompressionPlugin({
       algorithm: "gzip"
     }),
-    new FaviconsWebpackPlugin({
-      logo: "./src/images/icons/icon-512x512.png",
-      // The prefix for all image files (might be a folder or a name)
-      prefix: "icons/",
-      // Emit all stats of the generated icons
-      persistentCache: true,
-      // Inject the html into the html-webpack-plugin
-      inject: true,
-      background: "#fff",
-      title: "PWA Camera",
-      icons: {
-        android: true,
-        appleIcon: true,
-        appleStartup: true,
-        coast: true,
-        favicons: false,
-        firefox: true,
-        opengraph: true,
-        twitter: true,
-        yandex: true,
-        windows: true
-      }
-    }),
-    new miniCssExtractPlugin({
-      filename: "[name].[contenthash].css"
-    }),
-    new CleanWebpackPlugin(),
     new htmlWebpackPlugin({
       title: "index",
       filename: "index.html",
@@ -130,7 +99,45 @@ module.exports = {
         collapseWhitespace: true,
         removeComments: true
       }
-    })
+    }),
+    new AppManifestWebpackPlugin({
+      // Your source logo
+      logo: "./src/images/icons/icon-512x512.png",
+      // Output path for icons (icons will be saved to output.path(webpack config) + this key)
+      output: "icons//", // default '/'. Can be absolute or relative
+      // Generate a cache file with control hashes and
+      // don't rebuild the favicons until those hashes change
+      persistentCache: true,
+      // Inject the html into the html-webpack-plugin. Default true
+      inject: true,
+      // favicons configuration object. Support all keys of favicons (see https://github.com/haydenbleasel/favicons)
+      config: {
+        appName: "PWA Camera", // Your application's name. `string`
+        appDescription: "test", // Your application's description. `string`
+        developerName: null, // Your (or your developer's) name. `string`
+        developerURL: null, // Your (or your developer's) URL. `string`
+        background: "#fff", // Background colour for flattened icons. `string`
+        theme_color: "#1e88e5", // Theme color for browser chrome. `string`
+        display: "standalone", // Android display: "browser" or "standalone". `string`
+        orientation: "portrait", // Android orientation: "portrait" or "landscape". `string`
+        start_url: "/?homescreen=1", // Android start application's URL. `string`
+        version: "1.0", // Your application's version number. `number`
+        icons: {
+          android: true, // Create Android homescreen icon. `boolean` or `{ offset, background, shadow }`
+          appleIcon: true, // Create Apple touch icons. `boolean` or `{ offset, background }`
+          appleStartup: true, // Create Apple startup images. `boolean` or `{ offset, background }`
+          coast: { offset: 25 }, // Create Opera Coast icon with offset 25%. `boolean` or `{ offset, background }`
+          favicons: false, // Create regular favicons. `boolean`
+          firefox: true, // Create Firefox OS icons. `boolean` or `{ offset, background }`
+          windows: true, // Create Windows 8 tile icons. `boolean` or `{ background }`
+          yandex: true // Create Yandex browser icon. `boolean` or `{ background }`
+        }
+      }
+    }),
+    new miniCssExtractPlugin({
+      filename: "[name].[contenthash].css"
+    }),
+    new CleanWebpackPlugin()
   ]
 };
 
