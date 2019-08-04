@@ -109,7 +109,7 @@ module.exports = {
         appleIcon: true,
         appleStartup: true,
         coast: true,
-        favicons: true,
+        favicons: false,
         firefox: true,
         opengraph: true,
         twitter: true,
