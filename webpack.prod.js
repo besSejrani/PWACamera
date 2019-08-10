@@ -7,6 +7,7 @@ const optimizeCss = require("optimize-css-assets-webpack-plugin");
 const terser = require("terser-webpack-plugin");
 const WebpackBar = require("webpackbar");
 const AppManifestWebpackPlugin = require("app-manifest-webpack-plugin");
+const PreloadWebpackPlugin = require("preload-webpack-plugin");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
 
 const PATHS = {
@@ -24,7 +25,7 @@ module.exports = {
     publicPath: ""
   },
   optimization: {
-    minimizer: [new optimizeCss(), new terser()]
+    minimizer: [new terser(), new optimizeCss()]
   },
   module: {
     rules: [
@@ -132,6 +133,10 @@ module.exports = {
     }),
     new miniCssExtractPlugin({
       filename: "[name].[contenthash].css"
+    }),
+    new PreloadWebpackPlugin({
+      rel: "preload",
+      as: "script"
     }),
     new CleanWebpackPlugin()
   ]

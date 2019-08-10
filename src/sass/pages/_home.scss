@@ -1,0 +1,144 @@
+.progessiveImage {
+  filter: blur(10px);
+  opacity: 0.8;
+}
+
+picture img {
+  height: 600px;
+  background: center/cover;
+  width: 100%;
+  filter: brightness(0.8);
+}
+
+#slider {
+  overflow: hidden;
+  position: relative;
+}
+
+#slider figure {
+  position: relative;
+  width: 400%;
+  margin: 0;
+  left: 0;
+  animation: 16s slider infinite;
+}
+
+#slider figure source,
+#slider figure img {
+  width: 25%;
+  float: left;
+}
+
+@keyframes slider {
+  0% {
+    left: 0;
+  }
+  25% {
+    left: 0;
+  }
+  30% {
+    left: -100%;
+  }
+  60% {
+    left: -100%;
+  }
+  65% {
+    left: -200%;
+  }
+  90% {
+    left: -200%;
+  }
+  95% {
+    left: -300%;
+  }
+  100% {
+    left: -300%;
+  }
+}
+
+@media (max-width: 520px) {
+  #slider {
+    height: 300px;
+  }
+
+  figure img {
+    height: 300px;
+  }
+}
+
+.flexAction {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card .card-image img {
+  padding: 30px;
+  transition: 0.5s;
+}
+
+.card .card-image img:hover {
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+
+.TabGroup {
+  margin: 50px 0px;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.1);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.1);
+  box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.1);
+}
+
+@media screen and (max-width: 520px) {
+  .row .col.s3 {
+    width: 30%;
+  }
+  .TabGroup {
+    margin: 50px 0px 20px 0px;
+  }
+}
+
+.tabs .tab a:hover {
+  color: #ff9800;
+}
+
+.tabs .tab a {
+  color: #2196f3;
+}
+
+.tabs .tab a:focus,
+.tabs .tab a:focus.active {
+  background: transparent;
+  color: #ff9800;
+}
+
+.tabs .tab a.active {
+  color: #ff9800;
+}
+
+.tabs .indicator {
+  background-color: #ff9800;
+}
+
+.price {
+  font-weight: 500;
+}
+
+.collapsible {
+  box-shadow: 0px 0px 0px 0px rgba(white, 0);
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  border-bottom: 0px;
+  margin: 0rem;
+}
+
+.collapsible-body {
+  padding: 1rem;
+}
+
+.collapsible-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem;
+}
