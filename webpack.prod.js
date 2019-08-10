@@ -1,18 +1,19 @@
 const path = require("path");
 const glob = require("glob");
-const miniCssExtractPlugin = require("mini-css-extract-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const htmlWebpackPlugin = require("html-webpack-plugin");
-const optimizeCss = require("optimize-css-assets-webpack-plugin");
-const terser = require("terser-webpack-plugin");
-const WebpackBar = require("webpackbar");
-const AppManifestWebpackPlugin = require("app-manifest-webpack-plugin");
-const PreloadWebpackPlugin = require("preload-webpack-plugin");
-const PurgecssPlugin = require("purgecss-webpack-plugin");
 
 const PATHS = {
   src: path.join(__dirname, "src")
 };
+
+const WebpackBar = require("webpackbar");
+
+const htmlWebpackPlugin = require("html-webpack-plugin");
+const AppManifestWebpackPlugin = require("app-manifest-webpack-plugin");
+const miniCssExtractPlugin = require("mini-css-extract-plugin");
+const optimizeCss = require("optimize-css-assets-webpack-plugin");
+const terser = require("terser-webpack-plugin");
+const PurgecssPlugin = require("purgecss-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -134,10 +135,7 @@ module.exports = {
     new miniCssExtractPlugin({
       filename: "[name].[contenthash].css"
     }),
-    new PreloadWebpackPlugin({
-      rel: "preload",
-      as: "script"
-    }),
+
     new CleanWebpackPlugin()
   ]
 };
