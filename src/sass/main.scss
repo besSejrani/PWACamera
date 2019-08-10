@@ -1,7 +1,6 @@
-@import "./app/_materialize-icons.scss";
-@import "./core/_variables.scss";
-@import "./layout/_header.scss";
-@import "./pages/_home.scss";
+@import "./core/variables";
+@import "./layout/header";
+@import "./pages/home";
 
 .container {
   width: 80%;
