@@ -140,5 +140,22 @@ picture img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 1rem;
+  padding: 0.7rem;
+}
+
+/*
+|--------------------------------------------------
+| Card
+|--------------------------------------------------
+*/
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row .col.s12 {
+  margin-left: 0;
+  left: 0;
+  right: 0;
 }
