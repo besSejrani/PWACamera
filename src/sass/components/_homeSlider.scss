@@ -1,0 +1,67 @@
+.progessiveImage {
+  filter: blur(10px);
+  opacity: 0.8;
+}
+
+picture img {
+  height: 600px;
+  background: center/cover;
+  width: 100%;
+  filter: brightness(0.8);
+}
+
+#slider {
+  overflow: hidden;
+  position: relative;
+}
+
+#slider figure {
+  position: relative;
+  width: 400%;
+  margin: 0;
+  left: 0;
+  animation: 16s slider infinite;
+}
+
+#slider figure source,
+#slider figure img {
+  width: 25%;
+  float: left;
+}
+
+@keyframes slider {
+  0% {
+    left: 0;
+  }
+  25% {
+    left: 0;
+  }
+  30% {
+    left: -100%;
+  }
+  60% {
+    left: -100%;
+  }
+  65% {
+    left: -200%;
+  }
+  90% {
+    left: -200%;
+  }
+  95% {
+    left: -300%;
+  }
+  100% {
+    left: -300%;
+  }
+}
+
+@media (max-width: 520px) {
+  #slider {
+    height: 300px;
+  }
+
+  figure img {
+    height: 300px;
+  }
+}

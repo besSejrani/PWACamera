@@ -56,12 +56,11 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/env"],
+            presets: [["@babel/preset-env", { modules: false }]],
             plugins: []
           }
         }
       },
-
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: [

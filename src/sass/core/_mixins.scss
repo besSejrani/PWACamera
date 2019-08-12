@@ -1,0 +1,42 @@
+/*
+ |--------------------------------------------------
+ | Media Query Manager
+ |
+ | 0 - 600px:     Phone
+ | 600 - 900px:   Tablet portrait
+ | 900 - 1200px:   Tablet landscape
+ | [1200 - 1800]  is where our normal styles apply
+ | 
+ | 
+ | Infos: Ems values are better then rem or pixel
+ | for media queries !
+ | 
+ | 1em = 16px
+ |--------------------------------------------------
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet-portrait {
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet-landscape {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == large-screen {
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  }
+}

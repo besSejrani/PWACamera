@@ -1,0 +1,35 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+
+  .col.s12 {
+    margin-left: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .card-image img {
+    padding: 30px;
+    transition: 0.5s;
+
+    &:hover {
+      transform: scale(1.05);
+      transition: 0.5s;
+    }
+  }
+}
+
+.card {
+  .card-action {
+    border-top: 1px solid rgba(160, 160, 160, 0.1);
+  }
+}
+
+.cardActions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price {
+  font-weight: 500;
+}

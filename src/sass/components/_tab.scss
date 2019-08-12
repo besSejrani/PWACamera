@@ -1,0 +1,37 @@
+.TabGroup {
+  margin: 50px 0px;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.1);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.1);
+  box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.1);
+}
+
+@media screen and (max-width: 520px) {
+  .row .col.s3 {
+    width: 30%;
+  }
+  .TabGroup {
+    margin: 50px 0px 20px 0px;
+  }
+}
+
+.tabs .tab a:hover {
+  color: #ff9800;
+}
+
+.tabs .tab a {
+  color: #2196f3;
+}
+
+.tabs .tab a:focus,
+.tabs .tab a:focus.active {
+  background: transparent;
+  color: #ff9800;
+}
+
+.tabs .tab a.active {
+  color: #ff9800;
+}
+
+.tabs .indicator {
+  background-color: #ff9800;
+}

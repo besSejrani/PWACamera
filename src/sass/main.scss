@@ -1,11 +1,44 @@
 @import "./core/variables";
+@import "./core/mixins";
 @import "./layout/header";
+
+@import "./components/accordion";
+@import "./components/homeSlider";
+@import "./components/card";
+@import "./components/tab";
+
 @import "./pages/home";
 
 .container {
   width: 80%;
 
-  @media (max-width: 600px) {
+  @include respond(phone) {
     width: 90%;
   }
 }
+
+/* html {
+  //This defines what 1 rem is, by default the browser font-size is 16px, so for 1rem = 10px, we do 10px/16px = 62.5%
+
+  //put always the larger media queries before the smaller one, or it's gonna take the last one
+  font-size: 62.5%;
+
+  @include respond(tablet-landscape) {
+    //width < 1200?
+    font-size: 56.25%; //1rem = 9px, 9/16 = 56.25%
+  }
+
+  @include respond(tablet-portrait) {
+    //width < 900 ?
+    font-size: 50%; //1rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(phone) {
+    //width < 600 ?
+    font-size: 50%; //1rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(large-screen) {
+    font-size: 75%; //1rem = 12px, 12/16 = 75%
+  }
+} */
