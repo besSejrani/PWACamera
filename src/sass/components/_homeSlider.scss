@@ -15,7 +15,7 @@ picture img {
   position: relative;
 }
 
-#slider figure {
+#slider {
   position: relative;
   width: 400%;
   margin: 0;
@@ -23,8 +23,8 @@ picture img {
   animation: 16s slider infinite;
 }
 
-#slider figure source,
-#slider figure img {
+#slider source,
+#slider img {
   width: 25%;
   float: left;
 }
@@ -61,7 +61,7 @@ picture img {
     height: 300px;
   }
 
-  figure img {
+  img {
     height: 300px;
   }
 }
