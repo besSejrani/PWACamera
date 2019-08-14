@@ -1,10 +1,14 @@
+@import "./app/typography";
+
 @import "./core/variables";
 @import "./core/mixins";
+
 @import "./layout/header";
 
 @import "./components/accordion";
 @import "./components/homeSlider";
 @import "./components/card";
+@import "./components/sidenav";
 @import "./components/tab";
 
 @import "./pages/home";
@@ -17,11 +21,32 @@
   }
 }
 
-/* html {
-  //This defines what 1 rem is, by default the browser font-size is 16px, so for 1rem = 10px, we do 10px/16px = 62.5%
+/*
+|-------------------------------------------------------------------------------------
+| HTML rem
+| 
+| 1 rem by default is the browser font-size, 16px = 1rem
+| It's not ideal, so for getting 1 rem = 10px, we divide 10px/16px = 62.5%
+| 62.5% is now applied for the html font and all the children inherit from it.
+| 
+| We do this for responsive text, if the user increase the zoom level or decrease it,
+| his value gonna be adjusted
+| 
+|-------------------------------------------------------------------------------------
+*/
 
-  //put always the larger media queries before the smaller one, or it's gonna take the last one
-  font-size: 62.5%;
+/**
+|-------------------------------------------------------------------------------------
+| Media Queries
+| 
+| Always put the larger media query before the smaller one or the styles are gonna be
+| applied to the same range, and the last media query will be applied
+|
+|-------------------------------------------------------------------------------------
+*/
+
+html {
+  font-size: 62.5%; //1rem = 10px, 10/16px = 62.5%
 
   @include respond(tablet-landscape) {
     //width < 1200?
@@ -41,4 +66,4 @@
   @include respond(large-screen) {
     font-size: 75%; //1rem = 12px, 12/16 = 75%
   }
-} */
+}

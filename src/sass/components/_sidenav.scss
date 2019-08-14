@@ -1,0 +1,15 @@
+@supports (-webkit-backdrop-filter: blur(6px)) or (backdrop-filter: blur(6px)) {
+  .sidenav-overlay {
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+  }
+}
+
+#multiLang {
+  width: 100%;
+  padding: 0.6rem 4.2rem 0.6rem 2.2rem;
+}
+
+.select-wrapper input.select-dropdown {
+  padding: 1rem;
+}

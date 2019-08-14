@@ -35,7 +35,7 @@ module.exports = {
         use: {
           loader: "html-loader",
           options: {
-            attrs: [":data-lazy", ":src", ":href", ":srcset", ":source"]
+            attrs: [":data-lazy", ":src", ":href", ":srcset"]
           }
         }
       },
@@ -56,7 +56,7 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/env"],
+            presets: ["@babel/preset-env"],
             plugins: []
           }
         }
