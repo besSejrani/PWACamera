@@ -5,6 +5,9 @@ const PATHS = {
   src: path.join(__dirname, "src")
 };
 
+const webpack = require("webpack");
+const autoprefixer = require("autoprefixer");
+
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const miniCssExtractPlugin = require("mini-css-extract-plugin");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
@@ -25,9 +28,9 @@ module.exports = {
       {
         test: /\.(html)$/,
         use: {
-          loader: "html-loader",
+          loader: "html-srcsets-loader",
           options: {
-            attrs: [":data-lazy", ":src", ":href", ":srcset"]
+            attrs: [":data-lazy", ":data-src", ":srcset", ":src", ":href"]
           }
         }
       },
@@ -76,6 +79,11 @@ module.exports = {
   plugins: [
     new miniCssExtractPlugin({
       filename: "[name].[contenthash].css"
+    }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        postcss: [autoprefixer()]
+      }
     }),
     new CleanWebpackPlugin(),
     new htmlWebpackPlugin({

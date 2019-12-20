@@ -7,6 +7,9 @@ const PATHS = {
 
 const WebpackBar = require("webpackbar");
 
+const webpack = require("webpack");
+const autoprefixer = require("autoprefixer");
+
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const AppManifestWebpackPlugin = require("app-manifest-webpack-plugin");
 const miniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -33,16 +36,16 @@ module.exports = {
       {
         test: /\.(html)$/,
         use: {
-          loader: "html-loader",
+          loader: "html-srcsets-loader",
           options: {
-            attrs: [":data-lazy", ":src", ":href", ":srcset"]
+            attrs: [":data-lazy", ":data-src", ":srcset", ":src", ":href"]
           }
         }
       },
 
       {
         test: /\.css$/,
-        use: [miniCssExtractPlugin.loader, "css-loader"]
+        use: [miniCssExtractPlugin.loader, "css-loader", "postcss-loader"]
       },
 
       {
@@ -96,6 +99,11 @@ module.exports = {
         removeAttributeQuotes: true,
         collapseWhitespace: true,
         removeComments: true
+      }
+    }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        postcss: [autoprefixer()]
       }
     }),
     new AppManifestWebpackPlugin({

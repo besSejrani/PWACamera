@@ -5,14 +5,14 @@
   padding: 0.6rem 4.2rem 0.6rem 2.2rem;
 }
 
+.autoprefixer-test {
+  user-select: none;
+}
+
 .select-wrapper input.select-dropdown {
   padding: 1rem;
 }
 
 .dropdown-content li > span {
   color: $primaryColor;
-}
-
-.select-wrapper input.select-dropdown {
-  border-bottom: 1px solid $primaryColor;
 }

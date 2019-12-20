@@ -20,20 +20,20 @@
     <main>
       <header>
         <div class="navbar-fixed">
-          <nav class="transparent" id='nav'>
+          <nav class="transparent" id="nav">
             <div class="nav-wrapper container">
               <a href="#" class="brand-logo center"
-              ><img
-              src="./images/logo.svg"
-              alt="Camera logo"
-              height="55"
-              width="55"
+                ><img
+                  src="./images/logo.svg"
+                  alt="Camera logo"
+                  height="55"
+                  width="55"
               /></a>
               <span class="left white-text text-darken-1">
                 <i
-                class=" large material-icons sidenav-trigger"
-                data-target="side-menu"
-                >menu</i
+                  class=" large material-icons sidenav-trigger"
+                  data-target="side-menu"
+                  >menu</i
                 >
               </span>
             </div>
@@ -41,91 +41,109 @@
         </div>
       </header>
 
-      
-      
       <div id="side-menu" class="sidenav side-menu">
         <ul>
-
           <li>
             <a href="/src/index.html" class="waves-effect"
-          ><i class="material-icons">home</i>Home</a
-          >
-        </li>
-        <li>
-          <a href="/src/pages/add.html" class="waves-effect"
-          ><i class="material-icons">add</i>Add</a
-          >
-        </li>
-        <li></li>
-        <li>
-          <a href="/src/pages/contact.html" class="waves-effect">
-            <i class="material-icons">mail_outline</i>Contact</a
+              ><i class="material-icons">home</i>Home</a
+            >
+          </li>
+          <li>
+            <a href="/src/pages/add.html" class="waves-effect"
+              ><i class="material-icons">add</i>Add</a
+            >
+          </li>
+          <li></li>
+          <li>
+            <a href="/src/pages/contact.html" class="waves-effect">
+              <i class="material-icons">mail_outline</i>Contact</a
             >
           </li>
           <div class="divider"></div>
           <li>
             <a class="waves-effect waves-light btn blue" id="permission">
               <i class="material-icons left white-text">notifications</i
-                >Notifications</a
-                >
-              </li>
-            </ul>
+              >Notifications</a
+            >
+          </li>
+        </ul>
 
-            <div id='multiLang' class="input-field col s12">
-              <select class="icon">
-                <option value="" disabled selected>Français</option>
-                <option value="1">Allemand</option>
-                <option value="2">Anglais</option>
-              </select>
-            </div>
+        <div id="multiLang autoprefixer-test" class="input-field col s12">
+          <select class="icon">
+            <option value="" disabled selected>Français</option>
+            <option value="1">Allemand</option>
+            <option value="2">Anglais</option>
+          </select>
+        </div>
+      </div>
 
-           
+      <section id="homeSlider">
+        <div id="slider">
+          <div id="sliderGroup">
+            <picture>
+             
+              <source
+                data-src="./images/camera/slider/slider1x1387x600x.jpg"
+                type="image/jpg"
+              />
 
-            </div>
-            
-            <section id="homeSlider">
-            <div id="slider">
-                <div id='sliderGroup'>
-                  <picture>
-                    <img
-                    class="progessiveImage"
-                    src="./images/camera/slider/slider1x1387x600xlow.webp"
-                    data-lazy="./images/camera/slider/slider1x1387x600.webp"
-                    alt="Cameras
+              <img
+                class="progessiveImage"
+                src="./images/camera/slider/slider1x1387x600xlow.webp"
+                data-lazy="./images/camera/slider/slider1x1387x600.webp"
+                alt="Cameras
                     Slideshow two"
-                    />
-                    </picture>
-                    
-                    <picture>
-                    <img
-                    class="progessiveImage"
-                    src="./images/camera/slider/slider2x1390x600xlow.webp"
-                    data-lazy="./images/camera/slider/slider2x1390x600.webp"
-                    alt="Camera Slideshow three"
-                    />
-                    </picture>
-                    
-                    <picture>
-                      <img
-                      class="progessiveImage"
-                      src="./images/camera/slider/slider3x1377x600xlow.webp"
-                      data-lazy="./images/camera/slider/slider3x1377x600.webp"
-                      alt="Camera Slideshow one"
-                      />
-                      </picture>
-                      
-                      <picture>
-                        <img
-                        class="progessiveImage"
-                        src="./images/camera/slider/slider1x1387x600xlow.webp"
-                        data-lazy="./images/camera/slider/slider1x1387x600.webp"
-                        alt="Camera
+              />
+            </picture>
+
+            <picture>
+
+              <source
+                data-src="./images/camera/slider/slider2x1390x600x.jpg"
+                type="image/jpg"
+              />
+
+              <img
+                class="progessiveImage"
+                src="./images/camera/slider/slider2x1390x600xlow.webp"
+                data-lazy="./images/camera/slider/slider2x1390x600.webp"
+                alt="Camera Slideshow three"
+              />
+            </picture>
+
+            <picture>
+
+              <source
+                data-src="./images/camera/slider/slider3x1377x600x.jpg"
+                type="image/jpg"
+              />
+
+              <img
+                class="progessiveImage"
+                src="./images/camera/slider/slider3x1377x600xlow.webp"
+                data-lazy="./images/camera/slider/slider3x1377x600.webp"
+                alt="Camera Slideshow one"
+              />
+            </picture>
+
+            <picture>
+
+              <source
+              data-src="./images/camera/slider/slider1x1387x600x.jpg"
+              type="image/jpg"
+            />
+
+              <img
+                class="progessiveImage"
+                src="./images/camera/slider/slider1x1387x600xlow.webp"
+                data-lazy="./images/camera/slider/slider1x1387x600.webp"
+                alt="Camera
                         Slideshow one"
-                        />
-                  </picture>
-                </div>
-              </div>
-            </section>
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
 
       <div class="row container">
         <div class="col s12 ">
@@ -157,23 +175,27 @@
                   to use effectively.
                 </p>
               </div>
-              
 
-                <ul class="collapsible">
-                  <li><div class="collapsible-header"><i class="material-icons">keyboard_arrow_down</i>More informations</div>
-                    <div class="collapsible-body">
-                      <div class="collapsible-content">
-                        <i class="material-icons">wifi</i>Wifi
-                      </div>
-                      <div class="collapsible-content">
-                        <i class="material-icons">bluetooth</i>Bluetooth
-                      </div>
-                      <div class="collapsible-content">
-                        <i class="material-icons">airplay</i>Airplay
-                      </div>
-                    </div></li>
-                  </ul>
-              
+              <ul class="collapsible">
+                <li>
+                  <div class="collapsible-header">
+                    <i class="material-icons">keyboard_arrow_down</i>More
+                    informations
+                  </div>
+                  <div class="collapsible-body">
+                    <div class="collapsible-content">
+                      <i class="material-icons">wifi</i>Wifi
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">bluetooth</i>Bluetooth
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">airplay</i>Airplay
+                    </div>
+                  </div>
+                </li>
+              </ul>
+
               <div class="card-action grey lighten-4">
                 <div class="cardActions">
                   <button class="btn waves-effect waves-light blue">
@@ -203,18 +225,23 @@
                 </p>
               </div>
               <ul class="collapsible">
-                <li><div class="collapsible-header"><i class="material-icons">keyboard_arrow_down</i>More informations</div>
+                <li>
+                  <div class="collapsible-header">
+                    <i class="material-icons">keyboard_arrow_down</i>More
+                    informations
+                  </div>
                   <div class="collapsible-body">
-                  <div class="collapsible-content">
-                    <i class="material-icons">wifi</i>Wifi
+                    <div class="collapsible-content">
+                      <i class="material-icons">wifi</i>Wifi
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">bluetooth</i>Bluetooth
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">airplay</i>Airplay
+                    </div>
                   </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">bluetooth</i>Bluetooth
-                  </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">airplay</i>Airplay
-                  </div>
-                  </div></li>
+                </li>
               </ul>
               <div class="card-action grey lighten-4">
                 <div class="cardActions">
@@ -223,7 +250,6 @@
                   </button>
                   <h6 class="blue-text price">99.90 CHF</h6>
                 </div>
-
               </div>
             </div>
           </div>
@@ -246,18 +272,23 @@
                 </p>
               </div>
               <ul class="collapsible">
-                <li><div class="collapsible-header"><i class="material-icons">keyboard_arrow_down</i>More informations</div>
+                <li>
+                  <div class="collapsible-header">
+                    <i class="material-icons">keyboard_arrow_down</i>More
+                    informations
+                  </div>
                   <div class="collapsible-body">
-                  <div class="collapsible-content">
-                    <i class="material-icons">wifi</i>Wifi
+                    <div class="collapsible-content">
+                      <i class="material-icons">wifi</i>Wifi
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">bluetooth</i>Bluetooth
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">airplay</i>Airplay
+                    </div>
                   </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">bluetooth</i>Bluetooth
-                  </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">airplay</i>Airplay
-                  </div>
-                  </div></li>
+                </li>
               </ul>
               <div class="card-action grey lighten-4">
                 <div class="cardActions">
@@ -288,18 +319,23 @@
                 </p>
               </div>
               <ul class="collapsible">
-                <li><div class="collapsible-header"><i class="material-icons">keyboard_arrow_down</i>More informations</div>
+                <li>
+                  <div class="collapsible-header">
+                    <i class="material-icons">keyboard_arrow_down</i>More
+                    informations
+                  </div>
                   <div class="collapsible-body">
-                  <div class="collapsible-content">
-                    <i class="material-icons">wifi</i>Wifi
+                    <div class="collapsible-content">
+                      <i class="material-icons">wifi</i>Wifi
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">bluetooth</i>Bluetooth
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">airplay</i>Airplay
+                    </div>
                   </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">bluetooth</i>Bluetooth
-                  </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">airplay</i>Airplay
-                  </div>
-                  </div></li>
+                </li>
               </ul>
               <div class="card-action grey lighten-4">
                 <div class="cardActions">
@@ -330,18 +366,23 @@
                 </p>
               </div>
               <ul class="collapsible">
-                <li><div class="collapsible-header"><i class="material-icons">keyboard_arrow_down</i>More informations</div>
+                <li>
+                  <div class="collapsible-header">
+                    <i class="material-icons">keyboard_arrow_down</i>More
+                    informations
+                  </div>
                   <div class="collapsible-body">
-                  <div class="collapsible-content">
-                    <i class="material-icons">wifi</i>Wifi
+                    <div class="collapsible-content">
+                      <i class="material-icons">wifi</i>Wifi
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">bluetooth</i>Bluetooth
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">airplay</i>Airplay
+                    </div>
                   </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">bluetooth</i>Bluetooth
-                  </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">airplay</i>Airplay
-                  </div>
-                  </div></li>
+                </li>
               </ul>
               <div class="card-action grey lighten-4">
                 <div class="cardActions">
@@ -375,18 +416,23 @@
                 </p>
               </div>
               <ul class="collapsible">
-                <li><div class="collapsible-header"><i class="material-icons">keyboard_arrow_down</i>More informations</div>
+                <li>
+                  <div class="collapsible-header">
+                    <i class="material-icons">keyboard_arrow_down</i>More
+                    informations
+                  </div>
                   <div class="collapsible-body">
-                  <div class="collapsible-content">
-                    <i class="material-icons">wifi</i>Wifi
+                    <div class="collapsible-content">
+                      <i class="material-icons">wifi</i>Wifi
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">bluetooth</i>Bluetooth
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">airplay</i>Airplay
+                    </div>
                   </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">bluetooth</i>Bluetooth
-                  </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">airplay</i>Airplay
-                  </div>
-                  </div></li>
+                </li>
               </ul>
               <div class="card-action grey lighten-4">
                 <div class="cardActions">
@@ -417,18 +463,23 @@
                 </p>
               </div>
               <ul class="collapsible">
-                <li><div class="collapsible-header"><i class="material-icons">keyboard_arrow_down</i>More informations</div>
+                <li>
+                  <div class="collapsible-header">
+                    <i class="material-icons">keyboard_arrow_down</i>More
+                    informations
+                  </div>
                   <div class="collapsible-body">
-                  <div class="collapsible-content">
-                    <i class="material-icons">wifi</i>Wifi
+                    <div class="collapsible-content">
+                      <i class="material-icons">wifi</i>Wifi
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">bluetooth</i>Bluetooth
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">airplay</i>Airplay
+                    </div>
                   </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">bluetooth</i>Bluetooth
-                  </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">airplay</i>Airplay
-                  </div>
-                  </div></li>
+                </li>
               </ul>
               <div class="card-action grey lighten-4">
                 <div class="cardActions">
@@ -458,18 +509,23 @@
                 </p>
               </div>
               <ul class="collapsible">
-                <li><div class="collapsible-header"><i class="material-icons">keyboard_arrow_down</i>More informations</div>
+                <li>
+                  <div class="collapsible-header">
+                    <i class="material-icons">keyboard_arrow_down</i>More
+                    informations
+                  </div>
                   <div class="collapsible-body">
-                  <div class="collapsible-content">
-                    <i class="material-icons">wifi</i>Wifi
+                    <div class="collapsible-content">
+                      <i class="material-icons">wifi</i>Wifi
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">bluetooth</i>Bluetooth
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">airplay</i>Airplay
+                    </div>
                   </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">bluetooth</i>Bluetooth
-                  </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">airplay</i>Airplay
-                  </div>
-                  </div></li>
+                </li>
               </ul>
               <div class="card-action grey lighten-4">
                 <div class="cardActions">
@@ -499,18 +555,23 @@
                 </p>
               </div>
               <ul class="collapsible">
-                <li><div class="collapsible-header"><i class="material-icons">keyboard_arrow_down</i>More informations</div>
+                <li>
+                  <div class="collapsible-header">
+                    <i class="material-icons">keyboard_arrow_down</i>More
+                    informations
+                  </div>
                   <div class="collapsible-body">
-                  <div class="collapsible-content">
-                    <i class="material-icons">wifi</i>Wifi
+                    <div class="collapsible-content">
+                      <i class="material-icons">wifi</i>Wifi
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">bluetooth</i>Bluetooth
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">airplay</i>Airplay
+                    </div>
                   </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">bluetooth</i>Bluetooth
-                  </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">airplay</i>Airplay
-                  </div>
-                  </div></li>
+                </li>
               </ul>
               <div class="card-action grey lighten-4">
                 <div class="cardActions">
@@ -540,18 +601,23 @@
                 </p>
               </div>
               <ul class="collapsible">
-                <li><div class="collapsible-header"><i class="material-icons">keyboard_arrow_down</i>More informations</div>
+                <li>
+                  <div class="collapsible-header">
+                    <i class="material-icons">keyboard_arrow_down</i>More
+                    informations
+                  </div>
                   <div class="collapsible-body">
-                  <div class="collapsible-content">
-                    <i class="material-icons">wifi</i>Wifi
+                    <div class="collapsible-content">
+                      <i class="material-icons">wifi</i>Wifi
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">bluetooth</i>Bluetooth
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">airplay</i>Airplay
+                    </div>
                   </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">bluetooth</i>Bluetooth
-                  </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">airplay</i>Airplay
-                  </div>
-                  </div></li>
+                </li>
               </ul>
               <div class="card-action grey lighten-4">
                 <div class="cardActions">
@@ -581,18 +647,23 @@
                 </p>
               </div>
               <ul class="collapsible">
-                <li><div class="collapsible-header"><i class="material-icons">keyboard_arrow_down</i>More informations</div>
+                <li>
+                  <div class="collapsible-header">
+                    <i class="material-icons">keyboard_arrow_down</i>More
+                    informations
+                  </div>
                   <div class="collapsible-body">
-                  <div class="collapsible-content">
-                    <i class="material-icons">wifi</i>Wifi
+                    <div class="collapsible-content">
+                      <i class="material-icons">wifi</i>Wifi
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">bluetooth</i>Bluetooth
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">airplay</i>Airplay
+                    </div>
                   </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">bluetooth</i>Bluetooth
-                  </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">airplay</i>Airplay
-                  </div>
-                  </div></li>
+                </li>
               </ul>
               <div class="card-action grey lighten-4">
                 <div class="cardActions">
@@ -622,18 +693,23 @@
                 </p>
               </div>
               <ul class="collapsible">
-                <li><div class="collapsible-header"><i class="material-icons">keyboard_arrow_down</i>More informations</div>
+                <li>
+                  <div class="collapsible-header">
+                    <i class="material-icons">keyboard_arrow_down</i>More
+                    informations
+                  </div>
                   <div class="collapsible-body">
-                  <div class="collapsible-content">
-                    <i class="material-icons">wifi</i>Wifi
+                    <div class="collapsible-content">
+                      <i class="material-icons">wifi</i>Wifi
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">bluetooth</i>Bluetooth
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">airplay</i>Airplay
+                    </div>
                   </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">bluetooth</i>Bluetooth
-                  </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">airplay</i>Airplay
-                  </div>
-                  </div></li>
+                </li>
               </ul>
               <div class="card-action grey lighten-4">
                 <div class="cardActions">
@@ -667,18 +743,23 @@
                 </p>
               </div>
               <ul class="collapsible">
-                <li><div class="collapsible-header"><i class="material-icons">keyboard_arrow_down</i>More informations</div>
+                <li>
+                  <div class="collapsible-header">
+                    <i class="material-icons">keyboard_arrow_down</i>More
+                    informations
+                  </div>
                   <div class="collapsible-body">
-                  <div class="collapsible-content">
-                    <i class="material-icons">wifi</i>Wifi
+                    <div class="collapsible-content">
+                      <i class="material-icons">wifi</i>Wifi
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">bluetooth</i>Bluetooth
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">airplay</i>Airplay
+                    </div>
                   </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">bluetooth</i>Bluetooth
-                  </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">airplay</i>Airplay
-                  </div>
-                  </div></li>
+                </li>
               </ul>
               <div class="card-action grey lighten-4">
                 <div class="cardActions">
@@ -709,18 +790,23 @@
                 </p>
               </div>
               <ul class="collapsible">
-                <li><div class="collapsible-header"><i class="material-icons">keyboard_arrow_down</i>More informations</div>
+                <li>
+                  <div class="collapsible-header">
+                    <i class="material-icons">keyboard_arrow_down</i>More
+                    informations
+                  </div>
                   <div class="collapsible-body">
-                  <div class="collapsible-content">
-                    <i class="material-icons">wifi</i>Wifi
+                    <div class="collapsible-content">
+                      <i class="material-icons">wifi</i>Wifi
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">bluetooth</i>Bluetooth
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">airplay</i>Airplay
+                    </div>
                   </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">bluetooth</i>Bluetooth
-                  </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">airplay</i>Airplay
-                  </div>
-                  </div></li>
+                </li>
               </ul>
               <div class="card-action grey lighten-4">
                 <div class="cardActions">
@@ -751,18 +837,23 @@
                 </p>
               </div>
               <ul class="collapsible">
-                <li><div class="collapsible-header"><i class="material-icons">keyboard_arrow_down</i>More informations</div>
+                <li>
+                  <div class="collapsible-header">
+                    <i class="material-icons">keyboard_arrow_down</i>More
+                    informations
+                  </div>
                   <div class="collapsible-body">
-                  <div class="collapsible-content">
-                    <i class="material-icons">wifi</i>Wifi
+                    <div class="collapsible-content">
+                      <i class="material-icons">wifi</i>Wifi
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">bluetooth</i>Bluetooth
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">airplay</i>Airplay
+                    </div>
                   </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">bluetooth</i>Bluetooth
-                  </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">airplay</i>Airplay
-                  </div>
-                  </div></li>
+                </li>
               </ul>
               <div class="card-action grey lighten-4">
                 <div class="cardActions">
@@ -797,18 +888,23 @@
                 </p>
               </div>
               <ul class="collapsible">
-                <li><div class="collapsible-header"><i class="material-icons">keyboard_arrow_down</i>More informations</div>
+                <li>
+                  <div class="collapsible-header">
+                    <i class="material-icons">keyboard_arrow_down</i>More
+                    informations
+                  </div>
                   <div class="collapsible-body">
-                  <div class="collapsible-content">
-                    <i class="material-icons">wifi</i>Wifi
+                    <div class="collapsible-content">
+                      <i class="material-icons">wifi</i>Wifi
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">bluetooth</i>Bluetooth
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">airplay</i>Airplay
+                    </div>
                   </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">bluetooth</i>Bluetooth
-                  </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">airplay</i>Airplay
-                  </div>
-                  </div></li>
+                </li>
               </ul>
               <div class="card-action grey lighten-4">
                 <div class="cardActions">
@@ -838,18 +934,23 @@
                 </p>
               </div>
               <ul class="collapsible">
-                <li><div class="collapsible-header"><i class="material-icons">keyboard_arrow_down</i>More informations</div>
+                <li>
+                  <div class="collapsible-header">
+                    <i class="material-icons">keyboard_arrow_down</i>More
+                    informations
+                  </div>
                   <div class="collapsible-body">
-                  <div class="collapsible-content">
-                    <i class="material-icons">wifi</i>Wifi
+                    <div class="collapsible-content">
+                      <i class="material-icons">wifi</i>Wifi
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">bluetooth</i>Bluetooth
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">airplay</i>Airplay
+                    </div>
                   </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">bluetooth</i>Bluetooth
-                  </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">airplay</i>Airplay
-                  </div>
-                  </div></li>
+                </li>
               </ul>
               <div class="card-action grey lighten-4">
                 <div class="cardActions">
@@ -879,18 +980,23 @@
                 </p>
               </div>
               <ul class="collapsible">
-                <li><div class="collapsible-header"><i class="material-icons">keyboard_arrow_down</i>More informations</div>
+                <li>
+                  <div class="collapsible-header">
+                    <i class="material-icons">keyboard_arrow_down</i>More
+                    informations
+                  </div>
                   <div class="collapsible-body">
-                  <div class="collapsible-content">
-                    <i class="material-icons">wifi</i>Wifi
+                    <div class="collapsible-content">
+                      <i class="material-icons">wifi</i>Wifi
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">bluetooth</i>Bluetooth
+                    </div>
+                    <div class="collapsible-content">
+                      <i class="material-icons">airplay</i>Airplay
+                    </div>
                   </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">bluetooth</i>Bluetooth
-                  </div>
-                  <div class="collapsible-content">
-                    <i class="material-icons">airplay</i>Airplay
-                  </div>
-                  </div></li>
+                </li>
               </ul>
               <div class="card-action grey lighten-4">
                 <div class="cardActions">
