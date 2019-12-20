@@ -15,9 +15,11 @@ const slideObserver = new IntersectionObserver((entries, slideObserver) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       nav.classList.remove("check");
+      nav.classList.remove("navBoxShadow");
       nav.classList.add("uncheck");
     } else {
       nav.classList.add("check");
+      nav.classList.add("navBoxShadow");
     }
   });
 }, slideObserverOptions);
