@@ -12,9 +12,10 @@ const slideObserverOptions = {
 };
 
 const slideObserver = new IntersectionObserver((entries, slideObserver) => {
-  entries.forEach((entry) => {
+  entries.forEach(entry => {
     if (entry.isIntersecting) {
       nav.classList.remove("check");
+      nav.classList.add("uncheck");
     } else {
       nav.classList.add("check");
     }

@@ -56,3 +56,8 @@ li:last-child a:hover {
   transition: all 0.3s;
   box-shadow: 0px 3px 20px rgba(black, 0.2);
 }
+
+.uncheck {
+  box-shadow: 0px 3px 20px rgba(black, 0);
+  transition: all 0.3s;
+}

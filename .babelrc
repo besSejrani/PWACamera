@@ -1,0 +1,10 @@
+{
+  "plugins": [
+    [
+      "object-to-json-parse",
+      {
+        "minJSONStringSize": 1024
+      }
+    ]
+  ]
+}
