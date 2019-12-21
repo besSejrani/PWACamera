@@ -13,7 +13,6 @@ const lazyLoad = target => {
         const img = entry.target;
         const srcset = img.getAttribute("data-lazy");
         img.setAttribute("srcset", srcset);
-        img.classList.remove("progessiveImage");
         observer.disconnect();
       }
     });

@@ -1,1021 +1,925 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!-- theme color -->
-    <meta name="theme-color" content="#2196f3" />
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/logo.ico" />
 
-    <meta
-      name="description"
-      content="This is a test website for PWA by Besjan Sejrani"
-    />
-    <title>PWA Camera</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!-- theme color -->
+  <meta name="theme-color" content="#2196f3" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/logo.ico" />
 
-  <body class="grey lighten-4">
-    <main>
-      <header>
-        <div class="navbar-fixed">
-          <nav class="transparent" id="nav">
-            <div class="nav-wrapper container">
-              <a href="#" class="brand-logo center"
-                ><img
-                  src="./images/logo.svg"
-                  alt="Camera logo"
-                  height="55"
-                  width="55"
-              /></a>
-              <span class="left white-text text-darken-1">
-                <i
-                  class=" large material-icons sidenav-trigger"
-                  data-target="side-menu"
-                  >menu</i
-                >
-              </span>
-            </div>
-          </nav>
+  <meta name="description" content="This is a test website for PWA by Besjan Sejrani" />
+  <title>PWA Camera</title>
+</head>
+
+<body class="grey lighten-4">
+  <main>
+    <header>
+      <div class="navbar-fixed">
+        <nav class="transparent" id="nav">
+          <div class="nav-wrapper container">
+            <a href="#" class="brand-logo center"><img src="./images/logo.svg" alt="Camera logo" height="55"
+                width="55" /></a>
+            <span class="left white-text text-darken-1">
+              <i class=" large material-icons sidenav-trigger" data-target="side-menu">menu</i>
+            </span>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div id="side-menu" class="sidenav side-menu">
+      <ul>
+        <li>
+          <a href="/src/index.html" class="waves-effect"><i class="material-icons">home</i>Home</a>
+        </li>
+        <li>
+          <a href="/src/pages/add.html" class="waves-effect"><i class="material-icons">add</i>Add</a>
+        </li>
+        <li></li>
+        <li>
+          <a href="/src/pages/contact.html" class="waves-effect">
+            <i class="material-icons">mail_outline</i>Contact</a>
+        </li>
+        <div class="divider"></div>
+        <li>
+          <a class="waves-effect waves-light btn blue" id="permission">
+            <i class="material-icons left white-text">notifications</i>Notifications</a>
+        </li>
+      </ul>
+
+      <div id="multiLang autoprefixer-test" class="input-field col s12">
+        <select class="icon">
+          <option value="" disabled selected>Français</option>
+          <option value="1">Allemand</option>
+          <option value="2">Anglais</option>
+        </select>
+      </div>
+    </div>
+
+    <section id="homeSlider">
+      <div id="slider">
+        <div id="sliderGroup">
+          <picture>
+            <source srcset="./images/camera/slider/slider1x1387x600xlow.webp"
+              data-lazy="./images/camera/slider/slider1x1387x600.webp" type="image/webp" />
+
+            <img src="./images/camera/slider/slider1x1387x600.jpg" alt="Cameras
+                    Slideshow two" />
+          </picture>
+
+          <picture>
+            <source srcset="./images/camera/slider/slider2x1390x600xlow.webp"
+              data-lazy="./images/camera/slider/slider2x1390x600.webp" type="image/webp" />
+
+            <img src="./images/camera/slider/slider2x1390x600.jpg" alt="Camera Slideshow three" />
+          </picture>
+
+          <picture>
+            <source srcset="./images/camera/slider/slider3x1377x600xlow.webp"
+              data-lazy="./images/camera/slider/slider3x1377x600.webp" type="image/webp" />
+
+            <img src="./images/camera/slider/slider3x1377x600.jpg" alt="Camera Slideshow one" />
+          </picture>
+
+          <picture>
+            <source srcset="./images/camera/slider/slider1x1387x600xlow.webp"
+              data-lazy="./images/camera/slider/slider1x1387x600.webp" type="image/webp" />
+
+            <img src="./images/camera/slider/slider1x1387x600.jpg" alt="Camera
+                        Slideshow one" />
+          </picture>
         </div>
-      </header>
+      </div>
+    </section>
 
-      <div id="side-menu" class="sidenav side-menu">
-        <ul>
-          <li>
-            <a href="/src/index.html" class="waves-effect"
-              ><i class="material-icons">home</i>Home</a
-            >
-          </li>
-          <li>
-            <a href="/src/pages/add.html" class="waves-effect"
-              ><i class="material-icons">add</i>Add</a
-            >
-          </li>
-          <li></li>
-          <li>
-            <a href="/src/pages/contact.html" class="waves-effect">
-              <i class="material-icons">mail_outline</i>Contact</a
-            >
-          </li>
-          <div class="divider"></div>
-          <li>
-            <a class="waves-effect waves-light btn blue" id="permission">
-              <i class="material-icons left white-text">notifications</i
-              >Notifications</a
-            >
-          </li>
+    <div class="row container">
+      <div class="col s12 ">
+        <ul class="tabs TabGroup">
+          <li class="tab col s3"><a href="#tab1">Cameras</a></li>
+          <li class="tab col s3"><a href="#tab2">Objectifs</a></li>
+          <li class="tab col s3"><a href="#tab3">SDCards</a></li>
+          <li class="tab col s3"><a href="#tab4">Trepieds</a></li>
         </ul>
-
-        <div id="multiLang autoprefixer-test" class="input-field col s12">
-          <select class="icon">
-            <option value="" disabled selected>Français</option>
-            <option value="1">Allemand</option>
-            <option value="2">Anglais</option>
-          </select>
-        </div>
       </div>
+    </div>
 
-      <section id="homeSlider">
-        <div id="slider">
-          <div id="sliderGroup">
-            <picture>
-              <source
-                class="progessiveImage"
-                srcset="./images/camera/slider/slider1x1387x600xlow.webp"
-                data-lazy="./images/camera/slider/slider1x1387x600.webp"
-                type="image/webp"
-              />
-
-              <img
-                src="./images/camera/slider/slider1x1387x600.jpg"
-                alt="Cameras
-                    Slideshow two"
-              />
-            </picture>
-
-            <picture>
-              <source
-                class="progessiveImage"
-                srcset="./images/camera/slider/slider2x1390x600xlow.webp"
-                data-lazy="./images/camera/slider/slider2x1390x600.webp"
-                type="image/webp"
-              />
-
-              <img
-                src="./images/camera/slider/slider2x1390x600.jpg"
-                alt="Camera Slideshow three"
-              />
-            </picture>
-
-            <picture>
-              <source
-                class="progessiveImage"
-                srcset="./images/camera/slider/slider3x1377x600xlow.webp"
-                data-lazy="./images/camera/slider/slider3x1377x600.webp"
-                type="image/webp"
-              />
-
-              <img
-                src="./images/camera/slider/slider3x1377x600.jpg"
-                alt="Camera Slideshow one"
-              />
-            </picture>
-
-            <picture>
-              <source
-                class="progessiveImage"
-                srcset="./images/camera/slider/slider1x1387x600xlow.webp"
-                data-lazy="./images/camera/slider/slider1x1387x600.webp"
-                type="image/webp"
-              />
-
-              <img
-                src="./images/camera/slider/slider1x1387x600.jpg"
-                alt="Camera
-                        Slideshow one"
-              />
-            </picture>
-          </div>
-        </div>
-      </section>
-
+    <div id="tab1">
       <div class="row container">
-        <div class="col s12 ">
-          <ul class="tabs TabGroup">
-            <li class="tab col s3"><a href="#tab1">Cameras</a></li>
-            <li class="tab col s3"><a href="#tab2">Objectifs</a></li>
-            <li class="tab col s3"><a href="#tab3">SDCards</a></li>
-            <li class="tab col s3"><a href="#tab4">Trepieds</a></li>
-          </ul>
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+
+              <picture>
+
+                <source srcset="./images/camera/webp/camera1xlow.webp" data-lazy="./images/camera/webp/camera1.webp"
+                  type="image/webp" />
+
+                <img src="./images/camera/webp/camera1.png" />
+              </picture>
+
+            </div>
+            <div class="card-content">
+              <h5 class="blue-text">Camera One</h5>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup
+                to use effectively.
+              </p>
+            </div>
+
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">keyboard_arrow_down</i>More
+                  informations
+                </div>
+                <div class="collapsible-body">
+                  <div class="collapsible-content">
+                    <i class="material-icons">wifi</i>Wifi
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">bluetooth</i>Bluetooth
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">airplay</i>Airplay
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <div class="card-action grey lighten-4">
+              <div class="cardActions">
+                <button class="btn waves-effect waves-light blue">
+                  <i class="material-icons">shopping_cart</i>
+                </button>
+                <h6 class="blue-text price">99.90 CHF</h6>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div id="tab1">
-        <div class="row container">
-          <div class="col s12 m6 l4">
-            <div class="card">
-              <div class="card-image">
-                <img
-                  class="progessiveImage"
-                  src="./images/camera/webp/camera1xlow.webp"
-                  data-lazy="./images/camera/webp/camera1.webp"
-                />
-              </div>
-              <div class="card-content">
-                <h5 class="blue-text">Camera One</h5>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup
-                  to use effectively.
-                </p>
-              </div>
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
 
-              <ul class="collapsible">
-                <li>
-                  <div class="collapsible-header">
-                    <i class="material-icons">keyboard_arrow_down</i>More
-                    informations
-                  </div>
-                  <div class="collapsible-body">
-                    <div class="collapsible-content">
-                      <i class="material-icons">wifi</i>Wifi
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">bluetooth</i>Bluetooth
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">airplay</i>Airplay
-                    </div>
-                  </div>
-                </li>
-              </ul>
+              <picture>
 
-              <div class="card-action grey lighten-4">
-                <div class="cardActions">
-                  <button class="btn waves-effect waves-light blue">
-                    <i class="material-icons">shopping_cart</i>
-                  </button>
-                  <h6 class="blue-text price">99.90 CHF</h6>
+                <source srcset="./images/camera/webp/camera2xlow.webp" data-lazy="./images/camera/webp/camera2.webp"
+                  type="image/webp" />
+
+                <img src="./images/camera/webp/camera2.png" />
+              </picture>
+
+            </div>
+            <div class="card-content">
+              <h5 class="blue-text">Camera Two</h5>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup
+                to use effectively.
+              </p>
+            </div>
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">keyboard_arrow_down</i>More
+                  informations
                 </div>
+                <div class="collapsible-body">
+                  <div class="collapsible-content">
+                    <i class="material-icons">wifi</i>Wifi
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">bluetooth</i>Bluetooth
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">airplay</i>Airplay
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="card-action grey lighten-4">
+              <div class="cardActions">
+                <button class="btn waves-effect waves-light blue">
+                  <i class="material-icons">shopping_cart</i>
+                </button>
+                <h6 class="blue-text price">99.90 CHF</h6>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="col s12 m6 l4">
-            <div class="card">
-              <div class="card-image">
-                <img
-                  class="progessiveImage"
-                  src="./images/camera/webp/camera2xlow.webp"
-                  data-lazy="./images/camera/webp/camera2.webp"
-                />
-              </div>
-              <div class="card-content">
-                <h5 class="blue-text">Camera Two</h5>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup
-                  to use effectively.
-                </p>
-              </div>
-              <ul class="collapsible">
-                <li>
-                  <div class="collapsible-header">
-                    <i class="material-icons">keyboard_arrow_down</i>More
-                    informations
-                  </div>
-                  <div class="collapsible-body">
-                    <div class="collapsible-content">
-                      <i class="material-icons">wifi</i>Wifi
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">bluetooth</i>Bluetooth
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">airplay</i>Airplay
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <div class="card-action grey lighten-4">
-                <div class="cardActions">
-                  <button class="btn waves-effect waves-light blue">
-                    <i class="material-icons">shopping_cart</i>
-                  </button>
-                  <h6 class="blue-text price">99.90 CHF</h6>
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+
+
+
+              <picture>
+                <source srcset="./images/camera/webp/camera3xlow.webp" data-lazy="./images/camera/webp/camera3.webp"
+                  type="image/webp" />
+
+                <img src="./images/camera/webp/camera3.png" />
+              </picture>
+
+            </div>
+            <div class="card-content">
+              <h5 class="blue-text">Camera Three</h5>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup
+                to use effectively.
+              </p>
+            </div>
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">keyboard_arrow_down</i>More
+                  informations
                 </div>
+                <div class="collapsible-body">
+                  <div class="collapsible-content">
+                    <i class="material-icons">wifi</i>Wifi
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">bluetooth</i>Bluetooth
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">airplay</i>Airplay
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="card-action grey lighten-4">
+              <div class="cardActions">
+                <button class="btn waves-effect waves-light blue">
+                  <i class="material-icons">shopping_cart</i>
+                </button>
+                <h6 class="blue-text price">99.90 CHF</h6>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="col s12 m6 l4">
-            <div class="card">
-              <div class="card-image">
-                <img
-                  class="progessiveImage"
-                  src="./images/camera/webp/camera3xlow.webp"
-                  data-lazy="./images/camera/webp/camera3.webp"
-                />
-              </div>
-              <div class="card-content">
-                <h5 class="blue-text">Camera Three</h5>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup
-                  to use effectively.
-                </p>
-              </div>
-              <ul class="collapsible">
-                <li>
-                  <div class="collapsible-header">
-                    <i class="material-icons">keyboard_arrow_down</i>More
-                    informations
-                  </div>
-                  <div class="collapsible-body">
-                    <div class="collapsible-content">
-                      <i class="material-icons">wifi</i>Wifi
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">bluetooth</i>Bluetooth
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">airplay</i>Airplay
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <div class="card-action grey lighten-4">
-                <div class="cardActions">
-                  <button class="btn waves-effect waves-light blue">
-                    <i class="material-icons">shopping_cart</i>
-                  </button>
-                  <h6 class="blue-text price">99.90 CHF</h6>
+        <div class="col s12 m6 l4 ">
+          <div class="card">
+            <div class="card-image">
+              <img src="./images/camera/webp/camera4xlow.webp" data-lazy="./images/camera/webp/camera4.webp" />
+            </div>
+            <div class="card-content">
+              <h5 class="blue-text">Camera Four</h5>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup
+                to use effectively.
+              </p>
+            </div>
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">keyboard_arrow_down</i>More
+                  informations
                 </div>
+                <div class="collapsible-body">
+                  <div class="collapsible-content">
+                    <i class="material-icons">wifi</i>Wifi
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">bluetooth</i>Bluetooth
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">airplay</i>Airplay
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="card-action grey lighten-4">
+              <div class="cardActions">
+                <button class="btn waves-effect waves-light blue">
+                  <i class="material-icons">shopping_cart</i>
+                </button>
+                <h6 class="blue-text price">99.90 CHF</h6>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="col s12 m6 l4 ">
-            <div class="card">
-              <div class="card-image">
-                <img
-                  class="progessiveImage"
-                  src="./images/camera/webp/camera4xlow.webp"
-                  data-lazy="./images/camera/webp/camera4.webp"
-                />
-              </div>
-              <div class="card-content">
-                <h5 class="blue-text">Camera Four</h5>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup
-                  to use effectively.
-                </p>
-              </div>
-              <ul class="collapsible">
-                <li>
-                  <div class="collapsible-header">
-                    <i class="material-icons">keyboard_arrow_down</i>More
-                    informations
-                  </div>
-                  <div class="collapsible-body">
-                    <div class="collapsible-content">
-                      <i class="material-icons">wifi</i>Wifi
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">bluetooth</i>Bluetooth
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">airplay</i>Airplay
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <div class="card-action grey lighten-4">
-                <div class="cardActions">
-                  <button class="btn waves-effect waves-light blue">
-                    <i class="material-icons">shopping_cart</i>
-                  </button>
-                  <h6 class="blue-text price">99.90 CHF</h6>
-                </div>
-              </div>
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="./images/camera/webp/camera5xlow.webp" data-lazy="./images/camera/webp/camera5.webp" />
             </div>
-          </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card">
-              <div class="card-image">
-                <img
-                  class="progessiveImage"
-                  src="./images/camera/webp/camera5xlow.webp"
-                  data-lazy="./images/camera/webp/camera5.webp"
-                />
-              </div>
-              <div class="card-content">
-                <h5 class="blue-text">Camera Five</h5>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup
-                  to use effectively.
-                </p>
-              </div>
-              <ul class="collapsible">
-                <li>
-                  <div class="collapsible-header">
-                    <i class="material-icons">keyboard_arrow_down</i>More
-                    informations
-                  </div>
-                  <div class="collapsible-body">
-                    <div class="collapsible-content">
-                      <i class="material-icons">wifi</i>Wifi
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">bluetooth</i>Bluetooth
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">airplay</i>Airplay
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <div class="card-action grey lighten-4">
-                <div class="cardActions">
-                  <button class="btn waves-effect waves-light blue">
-                    <i class="material-icons">shopping_cart</i>
-                  </button>
-                  <h6 class="blue-text price">99.90 CHF</h6>
+            <div class="card-content">
+              <h5 class="blue-text">Camera Five</h5>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup
+                to use effectively.
+              </p>
+            </div>
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">keyboard_arrow_down</i>More
+                  informations
                 </div>
+                <div class="collapsible-body">
+                  <div class="collapsible-content">
+                    <i class="material-icons">wifi</i>Wifi
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">bluetooth</i>Bluetooth
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">airplay</i>Airplay
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="card-action grey lighten-4">
+              <div class="cardActions">
+                <button class="btn waves-effect waves-light blue">
+                  <i class="material-icons">shopping_cart</i>
+                </button>
+                <h6 class="blue-text price">99.90 CHF</h6>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div id="tab2">
-        <div class="row container">
-          <div class="col s12 m6 l4">
-            <div class="card">
-              <div class="card-image">
-                <img
-                  class="progessiveImage"
-                  src="./images/camera/webp/objectif1xlow.webp"
-                  data-lazy="./images/camera/webp/objectif1.webp"
-                />
-              </div>
-              <div class="card-content">
-                <h5 class="blue-text">Objectif One</h5>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup
-                  to use effectively.
-                </p>
-              </div>
-              <ul class="collapsible">
-                <li>
-                  <div class="collapsible-header">
-                    <i class="material-icons">keyboard_arrow_down</i>More
-                    informations
-                  </div>
-                  <div class="collapsible-body">
-                    <div class="collapsible-content">
-                      <i class="material-icons">wifi</i>Wifi
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">bluetooth</i>Bluetooth
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">airplay</i>Airplay
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <div class="card-action grey lighten-4">
-                <div class="cardActions">
-                  <button class="btn waves-effect waves-light blue">
-                    <i class="material-icons">shopping_cart</i>
-                  </button>
-                  <h6 class="blue-text price">59.90 CHF</h6>
+    </div>
+    <div id="tab2">
+      <div class="row container">
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="./images/camera/webp/objectif1xlow.webp" data-lazy="./images/camera/webp/objectif1.webp" />
+            </div>
+            <div class="card-content">
+              <h5 class="blue-text">Objectif One</h5>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup
+                to use effectively.
+              </p>
+            </div>
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">keyboard_arrow_down</i>More
+                  informations
                 </div>
+                <div class="collapsible-body">
+                  <div class="collapsible-content">
+                    <i class="material-icons">wifi</i>Wifi
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">bluetooth</i>Bluetooth
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">airplay</i>Airplay
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="card-action grey lighten-4">
+              <div class="cardActions">
+                <button class="btn waves-effect waves-light blue">
+                  <i class="material-icons">shopping_cart</i>
+                </button>
+                <h6 class="blue-text price">59.90 CHF</h6>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="col s12 m6 l4">
-            <div class="card">
-              <div class="card-image">
-                <img
-                  class="progessiveImage"
-                  src="./images/camera/webp/objectif2xlow.webp"
-                  data-lazy="./images/camera/webp/objectif2.webp"
-                />
-              </div>
-              <div class="card-content">
-                <h5 class="blue-text">Objectif Two</h5>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup
-                  to use effectively.
-                </p>
-              </div>
-              <ul class="collapsible">
-                <li>
-                  <div class="collapsible-header">
-                    <i class="material-icons">keyboard_arrow_down</i>More
-                    informations
-                  </div>
-                  <div class="collapsible-body">
-                    <div class="collapsible-content">
-                      <i class="material-icons">wifi</i>Wifi
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">bluetooth</i>Bluetooth
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">airplay</i>Airplay
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <div class="card-action grey lighten-4">
-                <div class="cardActions">
-                  <button class="btn waves-effect waves-light blue">
-                    <i class="material-icons">shopping_cart</i>
-                  </button>
-                  <h6 class="blue-text price">59.90 CHF</h6>
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="./images/camera/webp/objectif2xlow.webp" data-lazy="./images/camera/webp/objectif2.webp" />
+            </div>
+            <div class="card-content">
+              <h5 class="blue-text">Objectif Two</h5>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup
+                to use effectively.
+              </p>
+            </div>
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">keyboard_arrow_down</i>More
+                  informations
                 </div>
+                <div class="collapsible-body">
+                  <div class="collapsible-content">
+                    <i class="material-icons">wifi</i>Wifi
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">bluetooth</i>Bluetooth
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">airplay</i>Airplay
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="card-action grey lighten-4">
+              <div class="cardActions">
+                <button class="btn waves-effect waves-light blue">
+                  <i class="material-icons">shopping_cart</i>
+                </button>
+                <h6 class="blue-text price">59.90 CHF</h6>
               </div>
             </div>
           </div>
-          <div class="col s12 m6 l4">
-            <div class="card">
-              <div class="card-image">
-                <img
-                  class="progessiveImage"
-                  src="./images/camera/webp/objectif3xlow.webp"
-                  data-lazy="./images/camera/webp/objectif3.webp"
-                />
-              </div>
-              <div class="card-content">
-                <h5 class="blue-text">Objectif Three</h5>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup
-                  to use effectively.
-                </p>
-              </div>
-              <ul class="collapsible">
-                <li>
-                  <div class="collapsible-header">
-                    <i class="material-icons">keyboard_arrow_down</i>More
-                    informations
-                  </div>
-                  <div class="collapsible-body">
-                    <div class="collapsible-content">
-                      <i class="material-icons">wifi</i>Wifi
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">bluetooth</i>Bluetooth
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">airplay</i>Airplay
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <div class="card-action grey lighten-4">
-                <div class="cardActions">
-                  <button class="btn waves-effect waves-light blue">
-                    <i class="material-icons">shopping_cart</i>
-                  </button>
-                  <h6 class="blue-text price">59.90 CHF</h6>
+        </div>
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="./images/camera/webp/objectif3xlow.webp" data-lazy="./images/camera/webp/objectif3.webp" />
+            </div>
+            <div class="card-content">
+              <h5 class="blue-text">Objectif Three</h5>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup
+                to use effectively.
+              </p>
+            </div>
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">keyboard_arrow_down</i>More
+                  informations
                 </div>
+                <div class="collapsible-body">
+                  <div class="collapsible-content">
+                    <i class="material-icons">wifi</i>Wifi
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">bluetooth</i>Bluetooth
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">airplay</i>Airplay
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="card-action grey lighten-4">
+              <div class="cardActions">
+                <button class="btn waves-effect waves-light blue">
+                  <i class="material-icons">shopping_cart</i>
+                </button>
+                <h6 class="blue-text price">59.90 CHF</h6>
               </div>
             </div>
           </div>
-          <div class="col s12 m6 l4">
-            <div class="card">
-              <div class="card-image">
-                <img
-                  class="progessiveImage"
-                  src="./images/camera/webp/objectif4xlow.webp"
-                  data-lazy="./images/camera/webp/objectif4.webp"
-                />
-              </div>
-              <div class="card-content">
-                <h5 class="blue-text">Objectif Four</h5>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup
-                  to use effectively.
-                </p>
-              </div>
-              <ul class="collapsible">
-                <li>
-                  <div class="collapsible-header">
-                    <i class="material-icons">keyboard_arrow_down</i>More
-                    informations
-                  </div>
-                  <div class="collapsible-body">
-                    <div class="collapsible-content">
-                      <i class="material-icons">wifi</i>Wifi
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">bluetooth</i>Bluetooth
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">airplay</i>Airplay
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <div class="card-action grey lighten-4">
-                <div class="cardActions">
-                  <button class="btn waves-effect waves-light blue">
-                    <i class="material-icons">shopping_cart</i>
-                  </button>
-                  <h6 class="blue-text price">59.90 CHF</h6>
+        </div>
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="./images/camera/webp/objectif4xlow.webp" data-lazy="./images/camera/webp/objectif4.webp" />
+            </div>
+            <div class="card-content">
+              <h5 class="blue-text">Objectif Four</h5>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup
+                to use effectively.
+              </p>
+            </div>
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">keyboard_arrow_down</i>More
+                  informations
                 </div>
+                <div class="collapsible-body">
+                  <div class="collapsible-content">
+                    <i class="material-icons">wifi</i>Wifi
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">bluetooth</i>Bluetooth
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">airplay</i>Airplay
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="card-action grey lighten-4">
+              <div class="cardActions">
+                <button class="btn waves-effect waves-light blue">
+                  <i class="material-icons">shopping_cart</i>
+                </button>
+                <h6 class="blue-text price">59.90 CHF</h6>
               </div>
             </div>
           </div>
-          <div class="col s12 m6 l4">
-            <div class="card">
-              <div class="card-image">
-                <img
-                  class="progessiveImage"
-                  src="./images/camera/webp/objectif5xlow.webp"
-                  data-lazy="./images/camera/webp/objectif5.webp"
-                />
-              </div>
-              <div class="card-content">
-                <h5 class="blue-text">Objectif Five</h5>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup
-                  to use effectively.
-                </p>
-              </div>
-              <ul class="collapsible">
-                <li>
-                  <div class="collapsible-header">
-                    <i class="material-icons">keyboard_arrow_down</i>More
-                    informations
-                  </div>
-                  <div class="collapsible-body">
-                    <div class="collapsible-content">
-                      <i class="material-icons">wifi</i>Wifi
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">bluetooth</i>Bluetooth
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">airplay</i>Airplay
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <div class="card-action grey lighten-4">
-                <div class="cardActions">
-                  <button class="btn waves-effect waves-light blue">
-                    <i class="material-icons">shopping_cart</i>
-                  </button>
-                  <h6 class="blue-text price">59.90 CHF</h6>
+        </div>
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="./images/camera/webp/objectif5xlow.webp" data-lazy="./images/camera/webp/objectif5.webp" />
+            </div>
+            <div class="card-content">
+              <h5 class="blue-text">Objectif Five</h5>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup
+                to use effectively.
+              </p>
+            </div>
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">keyboard_arrow_down</i>More
+                  informations
                 </div>
+                <div class="collapsible-body">
+                  <div class="collapsible-content">
+                    <i class="material-icons">wifi</i>Wifi
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">bluetooth</i>Bluetooth
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">airplay</i>Airplay
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="card-action grey lighten-4">
+              <div class="cardActions">
+                <button class="btn waves-effect waves-light blue">
+                  <i class="material-icons">shopping_cart</i>
+                </button>
+                <h6 class="blue-text price">59.90 CHF</h6>
               </div>
             </div>
           </div>
-          <div class="col s12 m6 l4">
-            <div class="card">
-              <div class="card-image">
-                <img
-                  class="progessiveImage"
-                  src="./images/camera/webp/objectif6xlow.webp"
-                  data-lazy="./images/camera/webp/objectif6.webp"
-                />
-              </div>
-              <div class="card-content">
-                <h5 class="blue-text">Objectif Six</h5>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup
-                  to use effectively.
-                </p>
-              </div>
-              <ul class="collapsible">
-                <li>
-                  <div class="collapsible-header">
-                    <i class="material-icons">keyboard_arrow_down</i>More
-                    informations
-                  </div>
-                  <div class="collapsible-body">
-                    <div class="collapsible-content">
-                      <i class="material-icons">wifi</i>Wifi
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">bluetooth</i>Bluetooth
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">airplay</i>Airplay
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <div class="card-action grey lighten-4">
-                <div class="cardActions">
-                  <button class="btn waves-effect waves-light blue">
-                    <i class="material-icons">shopping_cart</i>
-                  </button>
-                  <h6 class="blue-text price">59.90 CHF</h6>
+        </div>
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="./images/camera/webp/objectif6xlow.webp" data-lazy="./images/camera/webp/objectif6.webp" />
+            </div>
+            <div class="card-content">
+              <h5 class="blue-text">Objectif Six</h5>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup
+                to use effectively.
+              </p>
+            </div>
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">keyboard_arrow_down</i>More
+                  informations
                 </div>
+                <div class="collapsible-body">
+                  <div class="collapsible-content">
+                    <i class="material-icons">wifi</i>Wifi
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">bluetooth</i>Bluetooth
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">airplay</i>Airplay
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="card-action grey lighten-4">
+              <div class="cardActions">
+                <button class="btn waves-effect waves-light blue">
+                  <i class="material-icons">shopping_cart</i>
+                </button>
+                <h6 class="blue-text price">59.90 CHF</h6>
               </div>
             </div>
           </div>
-          <div class="col s12 m6 l4">
-            <div class="card">
-              <div class="card-image">
-                <img
-                  class="progessiveImage"
-                  src="./images/camera/webp/objectif7xlow.webp"
-                  data-lazy="./images/camera/webp/objectif7.webp"
-                />
-              </div>
-              <div class="card-content">
-                <h5 class="blue-text">Objectif Seven</h5>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup
-                  to use effectively.
-                </p>
-              </div>
-              <ul class="collapsible">
-                <li>
-                  <div class="collapsible-header">
-                    <i class="material-icons">keyboard_arrow_down</i>More
-                    informations
-                  </div>
-                  <div class="collapsible-body">
-                    <div class="collapsible-content">
-                      <i class="material-icons">wifi</i>Wifi
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">bluetooth</i>Bluetooth
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">airplay</i>Airplay
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <div class="card-action grey lighten-4">
-                <div class="cardActions">
-                  <button class="btn waves-effect waves-light blue">
-                    <i class="material-icons">shopping_cart</i>
-                  </button>
-                  <h6 class="blue-text price">59.90 CHF</h6>
+        </div>
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="./images/camera/webp/objectif7xlow.webp" data-lazy="./images/camera/webp/objectif7.webp" />
+            </div>
+            <div class="card-content">
+              <h5 class="blue-text">Objectif Seven</h5>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup
+                to use effectively.
+              </p>
+            </div>
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">keyboard_arrow_down</i>More
+                  informations
                 </div>
+                <div class="collapsible-body">
+                  <div class="collapsible-content">
+                    <i class="material-icons">wifi</i>Wifi
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">bluetooth</i>Bluetooth
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">airplay</i>Airplay
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="card-action grey lighten-4">
+              <div class="cardActions">
+                <button class="btn waves-effect waves-light blue">
+                  <i class="material-icons">shopping_cart</i>
+                </button>
+                <h6 class="blue-text price">59.90 CHF</h6>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div id="tab3">
-        <div class="row container">
-          <div class="col s12 m6 l4">
-            <div class="card">
-              <div class="card-image">
-                <img
-                  class="progessiveImage"
-                  src="./images/camera/webp/sdCard1xlow.webp"
-                  data-lazy="./images/camera/webp/sdCard1.webp"
-                />
-              </div>
-              <div class="card-content">
-                <h5 class="blue-text">SDCard One</h5>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup
-                  to use effectively.
-                </p>
-              </div>
-              <ul class="collapsible">
-                <li>
-                  <div class="collapsible-header">
-                    <i class="material-icons">keyboard_arrow_down</i>More
-                    informations
-                  </div>
-                  <div class="collapsible-body">
-                    <div class="collapsible-content">
-                      <i class="material-icons">wifi</i>Wifi
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">bluetooth</i>Bluetooth
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">airplay</i>Airplay
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <div class="card-action grey lighten-4">
-                <div class="cardActions">
-                  <button class="btn waves-effect waves-light blue">
-                    <i class="material-icons">shopping_cart</i>
-                  </button>
-                  <h6 class="blue-text price">39.90 CHF</h6>
+    </div>
+    <div id="tab3">
+      <div class="row container">
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="./images/camera/webp/sdCard1xlow.webp" data-lazy="./images/camera/webp/sdCard1.webp" />
+            </div>
+            <div class="card-content">
+              <h5 class="blue-text">SDCard One</h5>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup
+                to use effectively.
+              </p>
+            </div>
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">keyboard_arrow_down</i>More
+                  informations
                 </div>
+                <div class="collapsible-body">
+                  <div class="collapsible-content">
+                    <i class="material-icons">wifi</i>Wifi
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">bluetooth</i>Bluetooth
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">airplay</i>Airplay
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="card-action grey lighten-4">
+              <div class="cardActions">
+                <button class="btn waves-effect waves-light blue">
+                  <i class="material-icons">shopping_cart</i>
+                </button>
+                <h6 class="blue-text price">39.90 CHF</h6>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="col s12 m6 l4">
-            <div class="card">
-              <div class="card-image">
-                <img
-                  class="progessiveImage"
-                  src="./images/camera/webp/sdCard2xlow.webp"
-                  data-lazy="./images/camera/webp/sdCard2.webp"
-                />
-              </div>
-              <div class="card-content">
-                <h5 class="blue-text">SDCard Two</h5>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup
-                  to use effectively.
-                </p>
-              </div>
-              <ul class="collapsible">
-                <li>
-                  <div class="collapsible-header">
-                    <i class="material-icons">keyboard_arrow_down</i>More
-                    informations
-                  </div>
-                  <div class="collapsible-body">
-                    <div class="collapsible-content">
-                      <i class="material-icons">wifi</i>Wifi
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">bluetooth</i>Bluetooth
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">airplay</i>Airplay
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <div class="card-action grey lighten-4">
-                <div class="cardActions">
-                  <button class="btn waves-effect waves-light blue">
-                    <i class="material-icons">shopping_cart</i>
-                  </button>
-                  <h6 class="blue-text price">39.90 CHF</h6>
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="./images/camera/webp/sdCard2xlow.webp" data-lazy="./images/camera/webp/sdCard2.webp" />
+            </div>
+            <div class="card-content">
+              <h5 class="blue-text">SDCard Two</h5>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup
+                to use effectively.
+              </p>
+            </div>
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">keyboard_arrow_down</i>More
+                  informations
                 </div>
+                <div class="collapsible-body">
+                  <div class="collapsible-content">
+                    <i class="material-icons">wifi</i>Wifi
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">bluetooth</i>Bluetooth
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">airplay</i>Airplay
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="card-action grey lighten-4">
+              <div class="cardActions">
+                <button class="btn waves-effect waves-light blue">
+                  <i class="material-icons">shopping_cart</i>
+                </button>
+                <h6 class="blue-text price">39.90 CHF</h6>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="col s12 m6 l4">
-            <div class="card">
-              <div class="card-image">
-                <img
-                  class="progessiveImage"
-                  src="./images/camera/webp/sdCard3xlow.webp"
-                  data-lazy="./images/camera/webp/sdCard3.webp"
-                />
-              </div>
-              <div class="card-content">
-                <h5 class="blue-text">SDCard Three</h5>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup
-                  to use effectively.
-                </p>
-              </div>
-              <ul class="collapsible">
-                <li>
-                  <div class="collapsible-header">
-                    <i class="material-icons">keyboard_arrow_down</i>More
-                    informations
-                  </div>
-                  <div class="collapsible-body">
-                    <div class="collapsible-content">
-                      <i class="material-icons">wifi</i>Wifi
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">bluetooth</i>Bluetooth
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">airplay</i>Airplay
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <div class="card-action grey lighten-4">
-                <div class="cardActions">
-                  <button class="btn waves-effect waves-light blue">
-                    <i class="material-icons">shopping_cart</i>
-                  </button>
-                  <h6 class="blue-text price">39.90 CHF</h6>
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="./images/camera/webp/sdCard3xlow.webp" data-lazy="./images/camera/webp/sdCard3.webp" />
+            </div>
+            <div class="card-content">
+              <h5 class="blue-text">SDCard Three</h5>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup
+                to use effectively.
+              </p>
+            </div>
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">keyboard_arrow_down</i>More
+                  informations
                 </div>
+                <div class="collapsible-body">
+                  <div class="collapsible-content">
+                    <i class="material-icons">wifi</i>Wifi
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">bluetooth</i>Bluetooth
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">airplay</i>Airplay
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="card-action grey lighten-4">
+              <div class="cardActions">
+                <button class="btn waves-effect waves-light blue">
+                  <i class="material-icons">shopping_cart</i>
+                </button>
+                <h6 class="blue-text price">39.90 CHF</h6>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div id="tab4">
-        <div class="row container">
-          <div class="col s12 m6 l4">
-            <div class="card">
-              <div class="card-image">
-                <img
-                  class="progessiveImage"
-                  src="./images/camera/webp/trepied1xlow.webp"
-                  data-lazy="./images/camera/webp/trepied1.webp"
-                />
-              </div>
-              <div class="card-content">
-                <h5 class="blue-text">Trepied One</h5>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup
-                  to use effectively.
-                </p>
-              </div>
-              <ul class="collapsible">
-                <li>
-                  <div class="collapsible-header">
-                    <i class="material-icons">keyboard_arrow_down</i>More
-                    informations
-                  </div>
-                  <div class="collapsible-body">
-                    <div class="collapsible-content">
-                      <i class="material-icons">wifi</i>Wifi
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">bluetooth</i>Bluetooth
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">airplay</i>Airplay
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <div class="card-action grey lighten-4">
-                <div class="cardActions">
-                  <button class="btn waves-effect waves-light blue">
-                    <i class="material-icons">shopping_cart</i>
-                  </button>
-                  <h6 class="blue-text price">149.90 CHF</h6>
+    <div id="tab4">
+      <div class="row container">
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="./images/camera/webp/trepied1xlow.webp" data-lazy="./images/camera/webp/trepied1.webp" />
+            </div>
+            <div class="card-content">
+              <h5 class="blue-text">Trepied One</h5>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup
+                to use effectively.
+              </p>
+            </div>
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">keyboard_arrow_down</i>More
+                  informations
                 </div>
+                <div class="collapsible-body">
+                  <div class="collapsible-content">
+                    <i class="material-icons">wifi</i>Wifi
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">bluetooth</i>Bluetooth
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">airplay</i>Airplay
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="card-action grey lighten-4">
+              <div class="cardActions">
+                <button class="btn waves-effect waves-light blue">
+                  <i class="material-icons">shopping_cart</i>
+                </button>
+                <h6 class="blue-text price">149.90 CHF</h6>
               </div>
             </div>
           </div>
-          <div class="col s12 m6 l4">
-            <div class="card">
-              <div class="card-image">
-                <img
-                  class="progessiveImage"
-                  src="./images/camera/webp/trepied2xlow.webp"
-                  data-lazy="./images/camera/webp/trepied2.webp"
-                />
-              </div>
-              <div class="card-content">
-                <h5 class="blue-text">Trepied Two</h5>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup
-                  to use effectively.
-                </p>
-              </div>
-              <ul class="collapsible">
-                <li>
-                  <div class="collapsible-header">
-                    <i class="material-icons">keyboard_arrow_down</i>More
-                    informations
-                  </div>
-                  <div class="collapsible-body">
-                    <div class="collapsible-content">
-                      <i class="material-icons">wifi</i>Wifi
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">bluetooth</i>Bluetooth
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">airplay</i>Airplay
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <div class="card-action grey lighten-4">
-                <div class="cardActions">
-                  <button class="btn waves-effect waves-light blue">
-                    <i class="material-icons">shopping_cart</i>
-                  </button>
-                  <h6 class="blue-text price">149.90 CHF</h6>
+        </div>
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="./images/camera/webp/trepied2xlow.webp" data-lazy="./images/camera/webp/trepied2.webp" />
+            </div>
+            <div class="card-content">
+              <h5 class="blue-text">Trepied Two</h5>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup
+                to use effectively.
+              </p>
+            </div>
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">keyboard_arrow_down</i>More
+                  informations
                 </div>
+                <div class="collapsible-body">
+                  <div class="collapsible-content">
+                    <i class="material-icons">wifi</i>Wifi
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">bluetooth</i>Bluetooth
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">airplay</i>Airplay
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="card-action grey lighten-4">
+              <div class="cardActions">
+                <button class="btn waves-effect waves-light blue">
+                  <i class="material-icons">shopping_cart</i>
+                </button>
+                <h6 class="blue-text price">149.90 CHF</h6>
               </div>
             </div>
           </div>
-          <div class="col s12 m6 l4">
-            <div class="card">
-              <div class="card-image">
-                <img
-                  class="progessiveImage"
-                  src="./images/camera/webp/trepied3xlow.webp"
-                  data-lazy="./images/camera/webp/trepied3.webp"
-                />
-              </div>
-              <div class="card-content">
-                <h5 class="blue-text">Trepied Three</h5>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup
-                  to use effectively.
-                </p>
-              </div>
-              <ul class="collapsible">
-                <li>
-                  <div class="collapsible-header">
-                    <i class="material-icons">keyboard_arrow_down</i>More
-                    informations
-                  </div>
-                  <div class="collapsible-body">
-                    <div class="collapsible-content">
-                      <i class="material-icons">wifi</i>Wifi
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">bluetooth</i>Bluetooth
-                    </div>
-                    <div class="collapsible-content">
-                      <i class="material-icons">airplay</i>Airplay
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <div class="card-action grey lighten-4">
-                <div class="cardActions">
-                  <button class="btn waves-effect waves-light blue">
-                    <i class="material-icons">shopping_cart</i>
-                  </button>
-                  <h6 class="blue-text price">149.90 CHF</h6>
+        </div>
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="./images/camera/webp/trepied3xlow.webp" data-lazy="./images/camera/webp/trepied3.webp" />
+            </div>
+            <div class="card-content">
+              <h5 class="blue-text">Trepied Three</h5>
+              <p>
+                I am a very simple card. I am good at containing small bits of
+                information. I am convenient because I require little markup
+                to use effectively.
+              </p>
+            </div>
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header">
+                  <i class="material-icons">keyboard_arrow_down</i>More
+                  informations
                 </div>
+                <div class="collapsible-body">
+                  <div class="collapsible-content">
+                    <i class="material-icons">wifi</i>Wifi
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">bluetooth</i>Bluetooth
+                  </div>
+                  <div class="collapsible-content">
+                    <i class="material-icons">airplay</i>Airplay
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="card-action grey lighten-4">
+              <div class="cardActions">
+                <button class="btn waves-effect waves-light blue">
+                  <i class="material-icons">shopping_cart</i>
+                </button>
+                <h6 class="blue-text price">149.90 CHF</h6>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="fixed-action-btn">
-        <a
-          href="#"
-          id="fab"
-          class="btn-floating btn-large waves-effect waves-light blue hide"
-          ><i class="material-icons">add</i></a
-        >
-      </div>
-    </main>
-    swswsw
-  </body>
+    <div class="fixed-action-btn">
+      <a href="#" id="fab" class="btn-floating btn-large waves-effect waves-light blue hide"><i
+          class="material-icons">add</i></a>
+    </div>
+  </main>
+  swswsw
+</body>
+
 </html>
