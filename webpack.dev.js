@@ -11,7 +11,9 @@ const autoprefixer = require("autoprefixer");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const miniCssExtractPlugin = require("mini-css-extract-plugin");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const {
+  CleanWebpackPlugin
+} = require("clean-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -24,8 +26,7 @@ module.exports = {
     publicPath: ""
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.(html)$/,
         use: {
           loader: "html-loader-srcset",
@@ -37,12 +38,12 @@ module.exports = {
 
       {
         test: /\.css$/,
-        use: [miniCssExtractPlugin.loader, "css-loader"]
+        use: [miniCssExtractPlugin.loader, "css-loader", "postcss-loader"]
       },
 
       {
         test: /\.scss$/,
-        use: [miniCssExtractPlugin.loader, "css-loader", "sass-loader"]
+        use: [miniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader", ]
       },
 
       {
@@ -59,15 +60,13 @@ module.exports = {
 
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              outputPath: "fonts"
-            }
+        use: [{
+          loader: "file-loader",
+          options: {
+            name: "[name].[ext]",
+            outputPath: "fonts"
           }
-        ]
+        }]
       },
 
       {
@@ -82,7 +81,9 @@ module.exports = {
     }),
     new webpack.LoaderOptionsPlugin({
       options: {
-        postcss: [autoprefixer()]
+        postcss: [
+          autoprefixer()
+        ]
       }
     }),
     new CleanWebpackPlugin(),

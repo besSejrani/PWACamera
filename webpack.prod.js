@@ -16,7 +16,9 @@ const miniCssExtractPlugin = require("mini-css-extract-plugin");
 const optimizeCss = require("optimize-css-assets-webpack-plugin");
 const terser = require("terser-webpack-plugin");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const {
+  CleanWebpackPlugin
+} = require("clean-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -32,8 +34,7 @@ module.exports = {
     minimizer: [new terser(), new optimizeCss()]
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.(html)$/,
         use: {
           loader: "html-loader-srcset",
@@ -50,7 +51,7 @@ module.exports = {
 
       {
         test: /\.scss$/,
-        use: [miniCssExtractPlugin.loader, "css-loader", "sass-loader"]
+        use: [miniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"]
       },
 
       {
@@ -67,15 +68,13 @@ module.exports = {
 
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              outputPath: "fonts"
-            }
+        use: [{
+          loader: "file-loader",
+          options: {
+            name: "[name].[ext]",
+            outputPath: "fonts"
           }
-        ]
+        }]
       },
       {
         test: /\.(svg|png|jpeg|jpg|ico|webp)$/,
@@ -132,7 +131,9 @@ module.exports = {
           android: true, // Create Android homescreen icon. `boolean` or `{ offset, background, shadow }`
           appleIcon: true, // Create Apple touch icons. `boolean` or `{ offset, background }`
           appleStartup: true, // Create Apple startup images. `boolean` or `{ offset, background }`
-          coast: { offset: 25 }, // Create Opera Coast icon with offset 25%. `boolean` or `{ offset, background }`
+          coast: {
+            offset: 25
+          }, // Create Opera Coast icon with offset 25%. `boolean` or `{ offset, background }`
           favicons: false, // Create regular favicons. `boolean`
           firefox: true, // Create Firefox OS icons. `boolean` or `{ offset, background }`
           windows: true, // Create Windows 8 tile icons. `boolean` or `{ background }`
