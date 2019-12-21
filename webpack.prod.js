@@ -38,7 +38,7 @@ module.exports = {
         use: {
           loader: "html-srcsets-loader",
           options: {
-            attrs: [":data-lazy", ":data-src", ":srcset", ":src", ":href"]
+            attrs: [":data-lazy", ":srcset", ":source", ":src", ":href"]
           }
         }
       },
