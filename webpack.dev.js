@@ -28,9 +28,10 @@ module.exports = {
       {
         test: /\.(html)$/,
         use: {
-          loader: "html-srcsets-loader",
+          //loader: "html-srcsets-loader",
+          loader: "html-loader-srcset",
           options: {
-            attrs: [":data-lazy", ":data-src", ":srcset", ":src", ":href"]
+            attrs: [":data-lazy", ":srcset", ":src", ":href"]
           }
         }
       },
