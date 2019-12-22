@@ -1,58 +1,61 @@
-const path = require("path");
-const glob = require("glob");
+const path = require('path');
+const glob = require('glob');
 
 const PATHS = {
-  src: path.join(__dirname, "src")
+  src: path.join(__dirname, 'src')
 };
 
-const webpack = require("webpack");
-const autoprefixer = require("autoprefixer");
+const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
 
-const htmlWebpackPlugin = require("html-webpack-plugin");
-const miniCssExtractPlugin = require("mini-css-extract-plugin");
-const PurgecssPlugin = require("purgecss-webpack-plugin");
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+//const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
+
+const htmlWebpackPlugin = require('html-webpack-plugin');
+const miniCssExtractPlugin = require('mini-css-extract-plugin');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
 const {
   CleanWebpackPlugin
-} = require("clean-webpack-plugin");
+} = require('clean-webpack-plugin');
 
 module.exports = {
-  mode: "development",
+  mode: 'development',
   entry: {
-    index: "./src/index.js"
+    index: './src/index.js'
   },
   output: {
-    filename: "[name].[contenthash].js",
-    path: path.resolve(__dirname, "build"),
-    publicPath: ""
+    filename: '[name].[contenthash].js',
+    path: path.resolve(__dirname, 'build'),
+    publicPath: ''
   },
   module: {
     rules: [{
         test: /\.(html)$/,
         use: {
-          loader: "html-loader-srcset",
+          loader: 'html-loader-srcset',
           options: {
-            attrs: [":data-lazy", ":srcset", ":source", ":src", ":href"]
+            attrs: [':data-lazy', ':srcset', ':source', ':src', ':href']
           }
         }
       },
 
       {
         test: /\.css$/,
-        use: [miniCssExtractPlugin.loader, "css-loader", "postcss-loader"]
+        use: [miniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
       },
 
       {
         test: /\.scss$/,
-        use: [miniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader", ]
+        use: [miniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
       },
 
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            presets: ["@babel/preset-env"],
+            presets: ['@babel/preset-env'],
             plugins: []
           }
         }
@@ -61,37 +64,46 @@ module.exports = {
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
         use: [{
-          loader: "file-loader",
+          loader: 'file-loader',
           options: {
-            name: "[name].[ext]",
-            outputPath: "fonts"
+            name: '[name].[ext]',
+            outputPath: 'fonts'
           }
         }]
       },
-
       {
-        test: /\.(svg|png|jpe?g|webp|ico)$/,
-        use: ["file-loader"]
-      }
+        test: /\.(png|jpe?g|webp|ico)$/,
+        use: ['file-loader']
+      },
+      {
+        test: /\.svg$/i,
+        use: {
+          loader: 'svg-sprite-loader',
+          options: {
+            publicPath: ''
+          }
+        }
+      },
     ]
   },
   plugins: [
     new miniCssExtractPlugin({
-      filename: "[name].[contenthash].css"
+      filename: '[name].[contenthash].css'
     }),
     new webpack.LoaderOptionsPlugin({
       options: {
-        postcss: [
-          autoprefixer()
-        ]
+        postcss: [autoprefixer()]
       }
     }),
+    //new spriteLoder(),
+    //new SVGSpritemapPlugin(),
     new CleanWebpackPlugin(),
     new htmlWebpackPlugin({
-      title: "index",
-      filename: "index.html",
-      template: "./src/index.html"
-    })
+      title: 'index',
+      filename: 'index.html',
+      template: './src/index.html'
+    }),
+    new SpriteLoaderPlugin()
   ]
 };
 

@@ -77,7 +77,7 @@ module.exports = {
         }]
       },
       {
-        test: /\.(svg|png|jpeg|jpg|ico|webp)$/,
+        test: /\.(png|jpeg|jpg|ico|webp)$/,
         use: {
           loader: "file-loader",
           options: {
@@ -85,21 +85,30 @@ module.exports = {
             outputPath: "img"
           }
         }
+      },
+      {
+        test: /\.svg$/i,
+        include: /.*_sprite\.svg/,
+        use: [{
+            loader: 'svg-sprite-loader',
+            options: {
+              publicPath: '',
+            }
+          },
+          {
+            loader: 'svgo-loader',
+            options: {
+              plugins: [{
+                cleanupIDs: false
+              }, ]
+            }
+          }
+        ],
       }
     ]
   },
   plugins: [
     new WebpackBar({}),
-    new htmlWebpackPlugin({
-      title: "index",
-      filename: "index.html",
-      template: "./src/index.html",
-      minify: {
-        removeAttributeQuotes: true,
-        collapseWhitespace: true,
-        removeComments: true
-      }
-    }),
     new webpack.LoaderOptionsPlugin({
       options: {
         postcss: [autoprefixer()]
@@ -145,7 +154,18 @@ module.exports = {
       filename: "[name].[contenthash].css"
     }),
 
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new htmlWebpackPlugin({
+      title: "index",
+      filename: "index.html",
+      template: "./src/index.html",
+      minify: {
+        removeAttributeQuotes: true,
+        collapseWhitespace: true,
+        removeComments: true
+      }
+    }),
+    new SpriteLoaderPlugin()
   ]
 };
 
