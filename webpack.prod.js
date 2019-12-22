@@ -90,7 +90,6 @@ module.exports = {
       },
       {
         test: /\.svg$/i,
-        include: /.*_sprite\.svg/,
         use: [{
             loader: 'svg-sprite-loader',
             options: {
