@@ -10,6 +10,8 @@ const WebpackBar = require("webpackbar");
 const webpack = require("webpack");
 const autoprefixer = require("autoprefixer");
 
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const AppManifestWebpackPlugin = require("app-manifest-webpack-plugin");
 const miniCssExtractPlugin = require("mini-css-extract-plugin");
