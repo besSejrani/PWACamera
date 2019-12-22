@@ -111,6 +111,16 @@ module.exports = {
   },
   plugins: [
     new WebpackBar({}),
+    new htmlWebpackPlugin({
+      title: "index",
+      filename: "index.html",
+      template: "./src/index.html",
+      minify: {
+        removeAttributeQuotes: true,
+        collapseWhitespace: true,
+        removeComments: true
+      }
+    }),
     new webpack.LoaderOptionsPlugin({
       options: {
         postcss: [autoprefixer()]
@@ -157,16 +167,7 @@ module.exports = {
     }),
 
     new CleanWebpackPlugin(),
-    new htmlWebpackPlugin({
-      title: "index",
-      filename: "index.html",
-      template: "./src/index.html",
-      minify: {
-        removeAttributeQuotes: true,
-        collapseWhitespace: true,
-        removeComments: true
-      }
-    }),
+
     new SpriteLoaderPlugin()
   ]
 };
