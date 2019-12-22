@@ -8,8 +8,8 @@ const PATHS = {
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 
-const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
-//const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
+const SpriteLoaderPlugin = require("svg-sprite-loader/plugin");
+const svgo = require("svgo-loader")
 
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const miniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -71,19 +71,20 @@ module.exports = {
           }
         }]
       },
+
       {
         test: /\.(png|jpe?g|webp|ico)$/,
         use: ['file-loader']
       },
+
       {
-        test: /\.svg$/i,
-        use: {
-          loader: 'svg-sprite-loader',
-          options: {
-            publicPath: ''
-          }
-        }
-      },
+        test: /\.svg$/,
+        use: [{
+            loader: 'svg-sprite-loader',
+          },
+          'svgo-loader',
+        ],
+      }
     ]
   },
   plugins: [
@@ -95,8 +96,6 @@ module.exports = {
         postcss: [autoprefixer()]
       }
     }),
-    //new spriteLoder(),
-    //new SVGSpritemapPlugin(),
     new CleanWebpackPlugin(),
     new htmlWebpackPlugin({
       title: 'index',

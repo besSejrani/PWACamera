@@ -89,21 +89,11 @@ module.exports = {
         }
       },
       {
-        test: /\.svg$/i,
+        test: /\.svg$/,
         use: [{
             loader: 'svg-sprite-loader',
-            options: {
-              publicPath: '',
-            }
           },
-          {
-            loader: 'svgo-loader',
-            options: {
-              plugins: [{
-                cleanupIDs: false
-              }, ]
-            }
-          }
+          'svgo-loader',
         ],
       }
     ]
