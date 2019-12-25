@@ -10,7 +10,7 @@ const WebpackBar = require("webpackbar");
 const webpack = require("webpack");
 const autoprefixer = require("autoprefixer");
 
-const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+const SpriteLoaderPlugin = require("svg-sprite-loader/plugin");
 
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const AppManifestWebpackPlugin = require("app-manifest-webpack-plugin");
@@ -18,9 +18,7 @@ const miniCssExtractPlugin = require("mini-css-extract-plugin");
 const optimizeCss = require("optimize-css-assets-webpack-plugin");
 const terser = require("terser-webpack-plugin");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
-const {
-  CleanWebpackPlugin
-} = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -36,7 +34,8 @@ module.exports = {
     minimizer: [new terser(), new optimizeCss()]
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.(html)$/,
         use: {
           loader: "html-loader-srcset",
@@ -53,7 +52,12 @@ module.exports = {
 
       {
         test: /\.scss$/,
-        use: [miniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"]
+        use: [
+          miniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+          "sass-loader"
+        ]
       },
 
       {
@@ -70,16 +74,18 @@ module.exports = {
 
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [{
-          loader: "file-loader",
-          options: {
-            name: "[name].[ext]",
-            outputPath: "fonts"
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "fonts"
+            }
           }
-        }]
+        ]
       },
       {
-        test: /\.(png|jpeg|jpg|ico|webp)$/,
+        test: /\.(png|jpe?g|ico|webp)$/,
         use: {
           loader: "file-loader",
           options: {
@@ -90,15 +96,19 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        use: [{
-            loader: 'svg-sprite-loader',
-          },
-          'svgo-loader',
-        ],
+        use: [
+          {
+            loader: "svg-sprite-loader",
+            options: {
+              publicPath: ""
+            }
+          }
+        ]
       }
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new WebpackBar({}),
     new htmlWebpackPlugin({
       title: "index",
@@ -110,6 +120,7 @@ module.exports = {
         removeComments: true
       }
     }),
+    new SpriteLoaderPlugin(),
     new webpack.LoaderOptionsPlugin({
       options: {
         postcss: [autoprefixer()]
@@ -153,11 +164,7 @@ module.exports = {
     }),
     new miniCssExtractPlugin({
       filename: "[name].[contenthash].css"
-    }),
-
-    new CleanWebpackPlugin(),
-
-    new SpriteLoaderPlugin()
+    })
   ]
 };
 

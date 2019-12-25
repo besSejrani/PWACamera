@@ -1,61 +1,74 @@
-const path = require('path');
-const glob = require('glob');
+const path = require("path");
+const glob = require("glob");
 
 const PATHS = {
-  src: path.join(__dirname, 'src')
+  src: path.join(__dirname, "src")
 };
 
-const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
+const webpack = require("webpack");
+const autoprefixer = require("autoprefixer");
 
 const SpriteLoaderPlugin = require("svg-sprite-loader/plugin");
-const svgo = require("svgo-loader")
+const svgo = require("svgo-loader");
 
-const htmlWebpackPlugin = require('html-webpack-plugin');
-const miniCssExtractPlugin = require('mini-css-extract-plugin');
-const PurgecssPlugin = require('purgecss-webpack-plugin');
-const {
-  CleanWebpackPlugin
-} = require('clean-webpack-plugin');
+const htmlWebpackPlugin = require("html-webpack-plugin");
+const miniCssExtractPlugin = require("mini-css-extract-plugin");
+const PurgecssPlugin = require("purgecss-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  mode: 'development',
+  mode: "development",
   entry: {
-    index: './src/index.js'
+    index: "./src/index.js"
   },
   output: {
-    filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, 'build'),
-    publicPath: ''
+    filename: "[name].[hash].js",
+    path: path.resolve(__dirname, "build"),
+    publicPath: ""
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.(html)$/,
         use: {
-          loader: 'html-loader-srcset',
+          loader: "html-loader-srcset",
           options: {
-            attrs: [':data-lazy', ':srcset', ':source', ':src', ':href']
+            attrs: [
+              ":data-lazy",
+              ":srcset",
+              ":source",
+              ":src",
+              ":href",
+              ":use",
+              ":svg",
+              ":xlink:href"
+            ]
           }
         }
       },
 
       {
         test: /\.css$/,
-        use: [miniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
+        use: [miniCssExtractPlugin.loader, "css-loader", "postcss-loader"]
       },
 
       {
         test: /\.scss$/,
-        use: [miniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
+        use: [
+          miniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+          "sass-loader"
+        ]
       },
 
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env'],
+            presets: ["@babel/preset-env"],
             plugins: []
           }
         }
@@ -63,44 +76,44 @@ module.exports = {
 
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'fonts'
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "fonts"
+            }
           }
-        }]
+        ]
       },
 
       {
         test: /\.(png|jpe?g|webp|ico)$/,
-        use: ['file-loader']
+        use: ["file-loader"]
       },
 
       {
         test: /\.svg$/,
-        use: [{
-            loader: 'svg-sprite-loader',
-          },
-          'svgo-loader',
-        ],
+        use: ["svg-sprite-loader"]
       }
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new miniCssExtractPlugin({
-      filename: '[name].[contenthash].css'
+      filename: "[name].[contenthash].css"
     }),
+
     new webpack.LoaderOptionsPlugin({
       options: {
         postcss: [autoprefixer()]
       }
     }),
-    new CleanWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     new htmlWebpackPlugin({
-      title: 'index',
-      filename: 'index.html',
-      template: './src/index.html'
+      title: "index",
+      filename: "index.html",
+      template: "./src/index.html"
     }),
     new SpriteLoaderPlugin()
   ]

@@ -1,5 +1,4 @@
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<defs>
 <symbol id="icon-airplay" viewBox="0 0 24 24">
 <title>airplay</title>
 <path d="M21 3q0.797 0 1.406 0.609t0.609 1.406v12q0 0.797-0.609 1.383t-1.406 0.586h-3.984v-1.969h3.984v-12h-18v12h3.984v1.969h-3.984q-0.797 0-1.406-0.586t-0.609-1.383v-12q0-0.797 0.609-1.406t1.406-0.609h18zM6 21.984l6-6 6 6h-12z"></path>
@@ -24,5 +23,4 @@
 <title>wifi</title>
 <path d="M5.016 12.984q2.906-2.859 7.008-2.859t6.961 2.859l-1.969 2.016q-0.844-0.844-2.32-1.453t-2.695-0.609-2.695 0.609-2.32 1.453zM9 17.016q1.266-1.266 3-1.266t3 1.266l-3 3zM0.984 9q4.594-4.547 11.039-4.547t10.992 4.547l-2.016 2.016q-3.75-3.703-9-3.703t-9 3.703z"></path>
 </symbol>
-</defs>
 </svg>
