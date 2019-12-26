@@ -107,7 +107,7 @@ module.exports = {
         postcss: [autoprefixer()]
       }
     }),
-    new AppManifestWebpackPlugin({
+    /* new AppManifestWebpackPlugin({
       // Your source logo
       logo: "./src/images/icons/icon-512x512.png",
       // Output path for icons (icons will be saved to output.path(webpack config) + this key)
@@ -142,10 +142,19 @@ module.exports = {
           yandex: true // Create Yandex browser icon. `boolean` or `{ background }`
         }
       }
-    }),
+    }), */
     new miniCssExtractPlugin({
       filename: "[name].[contenthash].css"
     }),
+
+    /**
+    |--------------------------------------------------
+    | DEV
+    | 
+    | Create english content
+    |--------------------------------------------------
+    */
+
     new htmlWebpackPlugin({
       title: "index",
       filename: "index.html",

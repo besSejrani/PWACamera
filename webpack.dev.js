@@ -101,10 +101,9 @@ module.exports = {
 
     /**
     |--------------------------------------------------
-    |
-    | FOR DEV
+    | DEV
     | 
-    | Create the pages in english
+    | Create english content
     |--------------------------------------------------
     */
 
