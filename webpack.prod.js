@@ -30,7 +30,7 @@ module.exports = {
   output: {
     filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "build"),
-    publicPath: ""
+    publicPath: "/"
   },
   optimization: {
     minimizer: [new terser(), new optimizeCss()]
@@ -101,36 +101,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new WebpackBar({}),
-    new htmlWebpackPlugin({
-      title: "index",
-      filename: "index.html",
-      template: "./src/pages/en/index.html",
-      chunks: ["indexEn"]
-    }),
-    new htmlWebpackPlugin({
-      title: "about",
-      filename: "en/about/",
-      template: "./src/pages/en/about.html",
-      chunks: ["aboutEn"]
-    }),
-    new htmlWebpackPlugin({
-      title: "about",
-      filename: "en/products/",
-      template: "./src/pages/en/products.html",
-      chunks: ["productsEn"]
-    }),
-    new htmlWebpackPlugin({
-      title: "about",
-      filename: "en/contact/",
-      template: "./src/pages/en/contact.html",
-      chunks: ["contactEn"]
-    }),
-    new htmlWebpackPlugin({
-      title: "about",
-      filename: "en/error/",
-      template: "./src/pages/en/error.html",
-      chunks: ["errorEn"]
-    }),
+
     new webpack.LoaderOptionsPlugin({
       options: {
         postcss: [autoprefixer()]
@@ -174,6 +145,36 @@ module.exports = {
     }),
     new miniCssExtractPlugin({
       filename: "[name].[contenthash].css"
+    }),
+    new htmlWebpackPlugin({
+      title: "index",
+      filename: "index.html",
+      template: "./src/pages/en/index.html",
+      chunks: ["indexEn"]
+    }),
+    new htmlWebpackPlugin({
+      title: "about",
+      filename: "en/about/",
+      template: "./src/pages/en/about.html",
+      chunks: ["aboutEn"]
+    }),
+    new htmlWebpackPlugin({
+      title: "about",
+      filename: "en/products/",
+      template: "./src/pages/en/products.html",
+      chunks: ["productsEn"]
+    }),
+    new htmlWebpackPlugin({
+      title: "about",
+      filename: "en/contact/",
+      template: "./src/pages/en/contact.html",
+      chunks: ["contactEn"]
+    }),
+    new htmlWebpackPlugin({
+      title: "about",
+      filename: "en/error/",
+      template: "./src/pages/en/error.html",
+      chunks: ["errorEn"]
     })
   ]
 };
