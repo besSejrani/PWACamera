@@ -163,25 +163,25 @@ module.exports = {
     }),
     new htmlWebpackPlugin({
       title: "about",
-      filename: "/en/about",
+      filename: "about.html",
       template: "./src/pages/en/about.html",
       chunks: ["aboutEn"]
     }),
     new htmlWebpackPlugin({
       title: "products",
-      filename: "/en/products",
+      filename: "products.html",
       template: "./src/pages/en/products.html",
       chunks: ["productsEn"]
     }),
     new htmlWebpackPlugin({
       title: "contact",
-      filename: "/en/contact",
+      filename: "contact.html",
       template: "./src/pages/en/contact.html",
       chunks: ["contactEn"]
     }),
     new htmlWebpackPlugin({
       title: "error",
-      filename: "/en/error",
+      filename: "error.html",
       template: "./src/pages/en/error.html",
       chunks: ["errorEn"]
     })
