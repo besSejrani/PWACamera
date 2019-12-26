@@ -149,7 +149,7 @@ module.exports = {
 
     /**
     |--------------------------------------------------
-    | DEV
+    | PRODUCTION
     | 
     | Create english content
     |--------------------------------------------------
@@ -163,25 +163,25 @@ module.exports = {
     }),
     new htmlWebpackPlugin({
       title: "about",
-      filename: "en/about/",
+      filename: "/en/about",
       template: "./src/pages/en/about.html",
       chunks: ["aboutEn"]
     }),
     new htmlWebpackPlugin({
-      title: "about",
-      filename: "en/products/",
+      title: "products",
+      filename: "/en/products",
       template: "./src/pages/en/products.html",
       chunks: ["productsEn"]
     }),
     new htmlWebpackPlugin({
-      title: "about",
-      filename: "en/contact/",
+      title: "contact",
+      filename: "/en/contact",
       template: "./src/pages/en/contact.html",
       chunks: ["contactEn"]
     }),
     new htmlWebpackPlugin({
-      title: "about",
-      filename: "en/error/",
+      title: "error",
+      filename: "/en/error",
       template: "./src/pages/en/error.html",
       chunks: ["errorEn"]
     })
