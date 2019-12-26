@@ -1,11 +1,11 @@
 const products = [
   {
     id: 1,
-    image: require("../images/camera/webp/camera1.webp"),
+    image: require("../../images/camera/webp/camera1.webp"),
     alt: "camera one webp",
-    lazyImage: require("../images/camera/webp/camera1xlow.webp"),
+    lazyImage: require("../../images/camera/webp/camera1xlow.webp"),
     lazyAlt: "camera one lazy webp",
-    fallbackImage: require("../images/camera/webp/camera1.png"),
+    fallbackImage: require("../../images/camera/webp/camera1.png"),
     fallbackAlt: "camera one fallback png",
     title: "Camera One",
     description:
@@ -30,11 +30,11 @@ const products = [
   },
   {
     id: 2,
-    image: require("../images/camera/webp/camera2.webp"),
+    image: require("../../images/camera/webp/camera2.webp"),
     alt: "camera two webp",
-    lazyImage: require("../images/camera/webp/camera2xlow.webp"),
+    lazyImage: require("../../images/camera/webp/camera2xlow.webp"),
     lazyAlt: "camera two lazy webp",
-    fallbackImage: require("../images/camera/webp/camera2.png"),
+    fallbackImage: require("../../images/camera/webp/camera2.png"),
     fallbackAlt: "camera two fallback png",
     title: "Camera Two",
     description:
@@ -59,11 +59,11 @@ const products = [
   },
   {
     id: 3,
-    image: require("../images/camera/webp/camera3.webp"),
+    image: require("../../images/camera/webp/camera3.webp"),
     alt: "camera three webp",
-    lazyImage: require("../images/camera/webp/camera3xlow.webp"),
+    lazyImage: require("../../images/camera/webp/camera3xlow.webp"),
     lazyAlt: "camera three lazy webp",
-    fallbackImage: require("../images/camera/webp/camera3.png"),
+    fallbackImage: require("../../images/camera/webp/camera3.png"),
     fallbackAlt: "camera three fallback png",
     title: "Camera Three",
     description:
@@ -88,11 +88,11 @@ const products = [
   },
   {
     id: 4,
-    image: require("../images/camera/webp/camera4.webp"),
+    image: require("../../images/camera/webp/camera4.webp"),
     alt: "camera four webp",
-    lazyImage: require("../images/camera/webp/camera4xlow.webp"),
+    lazyImage: require("../../images/camera/webp/camera4xlow.webp"),
     lazyAlt: "camera Four lazy webp",
-    fallbackImage: require("../images/camera/webp/camera4.png"),
+    fallbackImage: require("../../images/camera/webp/camera4.png"),
     fallbackAlt: "camera Four fallback png",
     title: "Camera Four",
     description:
@@ -117,11 +117,11 @@ const products = [
   },
   {
     id: 5,
-    image: require("../images/camera/webp/camera5.webp"),
+    image: require("../../images/camera/webp/camera5.webp"),
     alt: "camera five webp",
-    lazyImage: require("../images/camera/webp/camera5xlow.webp"),
+    lazyImage: require("../../images/camera/webp/camera5xlow.webp"),
     lazyAlt: "camera five lazy webp",
-    fallbackImage: require("../images/camera/webp/camera5.png"),
+    fallbackImage: require("../../images/camera/webp/camera5.png"),
     fallbackAlt: "camera five fallback png",
     title: "Camera Five",
     description:

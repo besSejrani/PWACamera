@@ -1,11 +1,11 @@
 const products = [
   {
     id: 1,
-    image: require("../images/camera/webp/objectif1.webp"),
+    image: require("../../images/camera/webp/objectif1.webp"),
     alt: "objectif one webp",
-    lazyImage: require("../images/camera/webp/objectif1xlow.webp"),
+    lazyImage: require("../../images/camera/webp/objectif1xlow.webp"),
     lazyAlt: "objectif one lazy webp",
-    fallbackImage: require("../images/camera/webp/objectif1.png"),
+    fallbackImage: require("../../images/camera/webp/objectif1.png"),
     fallbackAlt: "objectif one fallback png",
     title: "objectif One",
     description:
@@ -30,11 +30,11 @@ const products = [
   },
   {
     id: 2,
-    image: require("../images/camera/webp/objectif2.webp"),
+    image: require("../../images/camera/webp/objectif2.webp"),
     alt: "objectif two webp",
-    lazyImage: require("../images/camera/webp/objectif2xlow.webp"),
+    lazyImage: require("../../images/camera/webp/objectif2xlow.webp"),
     lazyAlt: "objectif two lazy webp",
-    fallbackImage: require("../images/camera/webp/objectif2.png"),
+    fallbackImage: require("../../images/camera/webp/objectif2.png"),
     fallbackAlt: "objectif two fallback png",
     title: "objectif Two",
     description:
@@ -59,11 +59,11 @@ const products = [
   },
   {
     id: 3,
-    image: require("../images/camera/webp/objectif3.webp"),
+    image: require("../../images/camera/webp/objectif3.webp"),
     alt: "objectif three webp",
-    lazyImage: require("../images/camera/webp/objectif3xlow.webp"),
+    lazyImage: require("../../images/camera/webp/objectif3xlow.webp"),
     lazyAlt: "objectif three lazy webp",
-    fallbackImage: require("../images/camera/webp/objectif3.png"),
+    fallbackImage: require("../../images/camera/webp/objectif3.png"),
     fallbackAlt: "objectif three fallback png",
     title: "objectif Three",
     description:
@@ -88,11 +88,11 @@ const products = [
   },
   {
     id: 4,
-    image: require("../images/camera/webp/objectif4.webp"),
+    image: require("../../images/camera/webp/objectif4.webp"),
     alt: "objectif four webp",
-    lazyImage: require("../images/camera/webp/objectif4xlow.webp"),
+    lazyImage: require("../../images/camera/webp/objectif4xlow.webp"),
     lazyAlt: "objectif Four lazy webp",
-    fallbackImage: require("../images/camera/webp/objectif4.png"),
+    fallbackImage: require("../../images/camera/webp/objectif4.png"),
     fallbackAlt: "objectif Four fallback png",
     title: "objectif Four",
     description:
@@ -117,11 +117,11 @@ const products = [
   },
   {
     id: 5,
-    image: require("../images/camera/webp/objectif5.webp"),
+    image: require("../../images/camera/webp/objectif5.webp"),
     alt: "objectif five webp",
-    lazyImage: require("../images/camera/webp/objectif5xlow.webp"),
+    lazyImage: require("../../images/camera/webp/objectif5xlow.webp"),
     lazyAlt: "objectif five lazy webp",
-    fallbackImage: require("../images/camera/webp/objectif5.png"),
+    fallbackImage: require("../../images/camera/webp/objectif5.png"),
     fallbackAlt: "objectif five fallback png",
     title: "objectif Five",
     description:
@@ -146,11 +146,11 @@ const products = [
   },
   {
     id: 5,
-    image: require("../images/camera/webp/objectif6.webp"),
+    image: require("../../images/camera/webp/objectif6.webp"),
     alt: "objectif six webp",
-    lazyImage: require("../images/camera/webp/objectif6xlow.webp"),
+    lazyImage: require("../../images/camera/webp/objectif6xlow.webp"),
     lazyAlt: "objectif six lazy webp",
-    fallbackImage: require("../images/camera/webp/objectif6.png"),
+    fallbackImage: require("../../images/camera/webp/objectif6.png"),
     fallbackAlt: "objectif six fallback png",
     title: "objectif six",
     description:
@@ -175,11 +175,11 @@ const products = [
   },
   {
     id: 5,
-    image: require("../images/camera/webp/objectif7.webp"),
+    image: require("../../images/camera/webp/objectif7.webp"),
     alt: "objectif seven webp",
-    lazyImage: require("../images/camera/webp/objectif7xlow.webp"),
+    lazyImage: require("../../images/camera/webp/objectif7xlow.webp"),
     lazyAlt: "objectif seven lazy webp",
-    fallbackImage: require("../images/camera/webp/objectif7.png"),
+    fallbackImage: require("../../images/camera/webp/objectif7.png"),
     fallbackAlt: "objectif seven fallback png",
     title: "objectif seven",
     description:

@@ -1,6 +1,12 @@
+/**
+|--------------------------------------------------
+| Not used now
+|--------------------------------------------------
+*/
+
 if ("serviceWorker" in navigator && "SyncManager" in window) {
   navigator.serviceWorker.ready(
-    then((sw) => {
+    then(sw => {
       const post = {
         id: new Date().toISOString(),
         title: "input",

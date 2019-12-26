@@ -8,9 +8,6 @@ const PATHS = {
 const webpack = require("webpack");
 const autoprefixer = require("autoprefixer");
 
-const SpriteLoaderPlugin = require("svg-sprite-loader/plugin");
-const svgo = require("svgo-loader");
-
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const miniCssExtractPlugin = require("mini-css-extract-plugin");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
@@ -19,12 +16,16 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    index: "./src/index.js"
+    indexEn: "./src/js/en/index.js",
+    aboutEn: "./src/js/en/about.js",
+    productsEn: "./src/js/en/products.js",
+    contactEn: "./src/js/en/contact.js",
+    errorEn: "./src/js/en/error.js"
   },
   output: {
     filename: "[name].[hash].js",
     path: path.resolve(__dirname, "build"),
-    publicPath: ""
+    publicPath: "/"
   },
   module: {
     rules: [
@@ -33,16 +34,8 @@ module.exports = {
         use: {
           loader: "html-loader-srcset",
           options: {
-            attrs: [
-              ":data-lazy",
-              ":srcset",
-              ":source",
-              ":src",
-              ":href",
-              ":use",
-              ":svg",
-              ":xlink:href"
-            ]
+            attrs: [":data-lazy", ":srcset", ":source", ":src", ":href"],
+            removeComments: true
           }
         }
       },
@@ -88,13 +81,8 @@ module.exports = {
       },
 
       {
-        test: /\.(png|jpe?g|webp|ico)$/,
+        test: /\.(svg|png|jpe?g|webp|ico)$/,
         use: ["file-loader"]
-      },
-
-      {
-        test: /\.svg$/,
-        use: ["svg-sprite-loader"]
       }
     ]
   },
@@ -110,12 +98,43 @@ module.exports = {
       }
     }),
     new webpack.HotModuleReplacementPlugin(),
+
+    /**
+    |--------------------------------------------------
+    | Create the pages in english
+    |--------------------------------------------------
+    */
+
     new htmlWebpackPlugin({
       title: "index",
       filename: "index.html",
-      template: "./src/index.html"
+      template: "./src/pages/en/index.html",
+      chunks: ["indexEn"]
     }),
-    new SpriteLoaderPlugin()
+    new htmlWebpackPlugin({
+      title: "about",
+      filename: "en/about/",
+      template: "./src/pages/en/about.html",
+      chunks: ["aboutEn"]
+    }),
+    new htmlWebpackPlugin({
+      title: "about",
+      filename: "en/products/",
+      template: "./src/pages/en/products.html",
+      chunks: ["productsEn"]
+    }),
+    new htmlWebpackPlugin({
+      title: "about",
+      filename: "en/contact/",
+      template: "./src/pages/en/contact.html",
+      chunks: ["contactEn"]
+    }),
+    new htmlWebpackPlugin({
+      title: "about",
+      filename: "en/error/",
+      template: "./src/pages/en/error.html",
+      chunks: ["errorEn"]
+    })
   ]
 };
 
