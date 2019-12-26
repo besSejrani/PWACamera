@@ -21,7 +21,11 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
   mode: "production",
   entry: {
-    index: "./src/index.js"
+    indexEn: "./src/js/en/index.js",
+    aboutEn: "./src/js/en/about.js",
+    productsEn: "./src/js/en/products.js",
+    contactEn: "./src/js/en/contact.js",
+    errorEn: "./src/js/en/error.js"
   },
   output: {
     filename: "[name].[contenthash].js",
@@ -100,12 +104,32 @@ module.exports = {
     new htmlWebpackPlugin({
       title: "index",
       filename: "index.html",
-      template: "./src/index.html",
-      minify: {
-        removeAttributeQuotes: true,
-        collapseWhitespace: true,
-        removeComments: true
-      }
+      template: "./src/pages/en/index.html",
+      chunks: ["indexEn"]
+    }),
+    new htmlWebpackPlugin({
+      title: "about",
+      filename: "en/about/",
+      template: "./src/pages/en/about.html",
+      chunks: ["aboutEn"]
+    }),
+    new htmlWebpackPlugin({
+      title: "about",
+      filename: "en/products/",
+      template: "./src/pages/en/products.html",
+      chunks: ["productsEn"]
+    }),
+    new htmlWebpackPlugin({
+      title: "about",
+      filename: "en/contact/",
+      template: "./src/pages/en/contact.html",
+      chunks: ["contactEn"]
+    }),
+    new htmlWebpackPlugin({
+      title: "about",
+      filename: "en/error/",
+      template: "./src/pages/en/error.html",
+      chunks: ["errorEn"]
     }),
     new webpack.LoaderOptionsPlugin({
       options: {
