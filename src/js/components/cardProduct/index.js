@@ -1,8 +1,8 @@
-import camera from "../data/fr/camera.js";
-import objectif from "../data/fr/objectif.js";
-import sdcard from "../data/fr/sdcard.js";
-import trepied from "../data/fr/trepied.js";
-import createCard from "./components/card";
+import camera from "../../../data/en/camera";
+import objectif from "../../../data/en/objectif";
+import sdcard from "../../../data/en/sdcard";
+import trepied from "../../../data/en/trepied";
+import createCard from "./card.js";
 
 /**
 |--------------------------------------------------
@@ -13,10 +13,10 @@ import createCard from "./components/card";
 |
 | DATA :
 |
-| 1. camera.json
-| 2. objectif.json
-| 3. sdcard.json
-| 4. trepied.json
+| 1. camera.js
+| 2. objectif.js
+| 3. sdcard.js
+| 4. trepied.js
 |--------------------------------------------------
 */
 

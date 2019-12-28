@@ -1,25 +1,20 @@
 /**
 |--------------------------------------------------
-| Index.js
+| EXPLANATION :
 |
 | Entrypoint for webpack, takes in consideration
-| all the files listed
+| all the files listed in
 |--------------------------------------------------
 */
 
-// JS files
-import "../products";
+// JS
+import "../components/cardProduct/index";
 import "../utils/intserectingObserver";
 import "../utils/lazyImages";
+import "../utils/materialize";
 
 // Materialize
-import "materialize-css/dist/js/materialize.min.js";
 import "../utils/materialize";
 
 // PWA
-import "../pwa/app";
-
-// CSS
-import "materialize-css/sass/materialize.scss";
-import "../../sass/app/_materialize-icons.scss";
-import "../../sass/main.scss";
+//import "../pwa/app";

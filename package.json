@@ -10,7 +10,7 @@
     "build": "webpack --config webpack.prod.js"
   },
   "dependencies": {
-    "materialize-css": "^1.0.0"
+    "materialize-css": "^1.0.0-rc.2"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

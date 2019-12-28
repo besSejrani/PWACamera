@@ -10,8 +10,7 @@
 @import "./components/card";
 @import "./components/sidenav";
 @import "./components/tab";
-
-@import "./pages/home";
+@import "../js/components/googleMaps/googleMaps";
 
 .container {
   width: 80%;
@@ -20,7 +19,6 @@
     width: 90%;
   }
 }
-
 
 /*
 |-------------------------------------------------------------------------------------

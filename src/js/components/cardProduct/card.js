@@ -12,10 +12,10 @@ const createCard = (
   entryPoint
 ) => {
   /**
-     |--------------------------------------------------
-     | COLLAPSIBLE
-     |--------------------------------------------------
-     */
+  |--------------------------------------------------
+  | COLLAPSIBLE
+  |--------------------------------------------------
+  */
 
   // collapsible-body
 
@@ -91,10 +91,10 @@ const createCard = (
   collapsible.classList.add("collapsible");
   collapsible.appendChild(collapsibleLi);
   /**
-   |--------------------------------------------------
-   | CARD-ACTIONS
-   |--------------------------------------------------
-   */
+  |--------------------------------------------------
+  | CARD-ACTIONS
+  |--------------------------------------------------
+  */
 
   const price = document.createElement("h6");
   price.classList.add("blue-text", "price");
@@ -118,10 +118,10 @@ const createCard = (
   cardAction.appendChild(cardActions);
 
   /**
-   |--------------------------------------------------
-   | CARD-CONTENT
-   |--------------------------------------------------
-   */
+  |--------------------------------------------------
+  | CARD-CONTENT
+  |--------------------------------------------------
+  */
 
   const description = document.createElement("p");
   description.textContent = descriptionProduct;
@@ -136,19 +136,19 @@ const createCard = (
   cardContent.appendChild(description);
 
   /**
-   |--------------------------------------------------
-   | CARD-IMAGE
-   |
-   | IMPORTANT INFORMATION:
-   |
-   | html-webpack-plugin parses the src attributes
-   | and replaces it with the "require" statement.
-   |
-   | When using javascript for accessing the DOM
-   | and manipulating it, specify the "require"
-   | before ressources.
-   |--------------------------------------------------
-   */
+  |--------------------------------------------------
+  | CARD-IMAGE
+  |
+  | IMPORTANT INFORMATION:
+  |
+  | html-webpack-plugin parses the src attributes
+  | and replaces it with the "require" statement.
+  |
+  | When using javascript for accessing the DOM
+  | and manipulating it, specify the "require"
+  | before ressources.
+  |--------------------------------------------------
+  */
 
   const cardPictureImage = document.createElement("img");
   cardPictureImage.setAttribute("src", fallbackImage);
@@ -167,10 +167,10 @@ const createCard = (
   cardImage.appendChild(cardPicture);
 
   /**
-    |--------------------------------------------------
-    | CARD
-    |--------------------------------------------------
-    */
+  |--------------------------------------------------
+  | CARD
+  |--------------------------------------------------
+  */
 
   const cardCamera = document.createElement("div");
   cardCamera.classList.add("card");
@@ -184,10 +184,10 @@ const createCard = (
   productCamera.appendChild(cardCamera);
 
   /**
-    |--------------------------------------------------
-    | ENTRYPOINT
-    |--------------------------------------------------
-     */
+  |--------------------------------------------------
+  | ENTRYPOINT
+  |--------------------------------------------------
+   */
   const rowCamera = document.getElementById(entryPoint);
   rowCamera.appendChild(productCamera);
 };
