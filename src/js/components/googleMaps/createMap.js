@@ -35,6 +35,7 @@ const initMap = (
     zoom,
     mapTypeId,
     streetViewControl: false,
+    disableDefaultUI: true,
     styles
   });
 
@@ -56,7 +57,7 @@ const initMap = (
   | Pass addition options to the map
   |--------------------------------------------------
   */
-  map.setOptions({ draggable });
+  map.setOptions({ draggable, zoomControl: true });
 };
 
 export default initMap;

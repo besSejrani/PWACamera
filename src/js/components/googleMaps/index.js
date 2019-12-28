@@ -4,7 +4,7 @@ import dataAbout from "../../../data/carts/aboutCart";
 
 /**
 |--------------------------------------------------
-| Explanation :
+| EXPLANATION :
 |
 | Load the data and pass all the values to the
 | initMap(), it create the corresponding map with
