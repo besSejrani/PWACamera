@@ -32,14 +32,6 @@ const cart = [
           },
           content: "bla",
           icon: require("../../images/logo.svg")
-        },
-        {
-          coords: {
-            lat: 46.442529,
-            lng: 6.889117
-          },
-          content: "here",
-          icon: require("../../images/logo.svg")
         }
       ]
     }

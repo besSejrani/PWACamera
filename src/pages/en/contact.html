@@ -90,6 +90,95 @@
     <main>
       <div id="map"></div>
     </main>
+
+    <h1>Contact Us</h1>
+
+    <div class="contactForm">
+      <div class="row container">
+        <form class="col s12" method="POST" data-netlify="true">
+          <div class="row">
+            <div class="input-field col s6">
+              <input
+                name="firstName"
+                id="first_name"
+                type="text"
+                class="validate"
+              />
+              <label for="first_name">First Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input
+                name="lastName"
+                id="last_name"
+                type="text"
+                class="validate"
+              />
+              <label for="last_name">Last Name</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s6">
+              <input name="adresse" id="adresse" type="text" class="validate" />
+              <label for="adresse">Adresse</label>
+            </div>
+            <div class="input-field col s3">
+              <input name="city" id="city" type="text" class="validate" />
+              <label for="city">City</label>
+            </div>
+            <div class="input-field col s3">
+              <input name="zipCode" id="zipcode" type="text" class="validate" />
+              <label for="zipcode">Zip Code</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s6">
+              <input
+                name="phoneNumber"
+                id="phoneNumber"
+                type="tel"
+                class="validate"
+              />
+              <label for="phoneNumber">Phone Number</label>
+            </div>
+            <div class="input-field col s6">
+              <input name="email" id="email" type="email" class="validate" />
+              <label for="email">Email</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <input name="product" id="product" type="text" class="validate" />
+              <label for="product">Product</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea
+                name="informations"
+                id="informations"
+                class="materialize-textarea"
+              ></textarea>
+              <label for="informations">Informations</label>
+            </div>
+          </div>
+
+          <div class="input-field col s12">
+            <div data-netlify-recaptcha="true"></div>
+          </div>
+
+          <button
+            class="right btn waves-effect waves-light blue white-text"
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
   </body>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7fo-Oh6u9wvgtHBL3rhmEl0ol1GpKkJ8&callback=init"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7fo-Oh6u9wvgtHBL3rhmEl0ol1GpKkJ8&callback=initContact"></script>
 </html>
