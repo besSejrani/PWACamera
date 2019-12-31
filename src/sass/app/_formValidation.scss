@@ -1,0 +1,35 @@
+input.yes,
+textarea.yes,
+input.yes:focus,
+textarea.yes:focus {
+  border-bottom: 1px solid rgb(29, 216, 79) !important;
+  box-shadow: 0 1px 0 0 rgb(29, 216, 79) !important;
+  font-size: 1.6rem;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  font-size: 1.6rem;
+  outline: 0;
+}
+
+input.no,
+textarea.no {
+  border-bottom: 1px solid red !important;
+  box-shadow: 0 1px 0 0 red !important;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  font-size: 1.6rem;
+  outline: 0;
+}
+
+input + p,
+textarea + p {
+  opacity: 0;
+  color: red !important;
+}
+
+input.no + p,
+textarea.no + p {
+  opacity: 1;
+}

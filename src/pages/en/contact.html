@@ -95,79 +95,109 @@
 
     <div class="contactForm">
       <div class="row container">
-        <form class="col s12" method="POST">
+        <form
+          class="col s12"
+          id="myForm"
+          method="POST"
+          netlify-honeypot="bot-field"
+          netlify
+        >
+          <p style="display:none;">
+            <label>Don’t fill this out: <input name="bot-field"/></label>
+          </p>
+
           <div class="row">
             <div class="input-field col s12 m6 l6">
+              <label for="firstName">First Name</label>
               <input
-                name="firstName"
-                id="first_name"
+                class="orderInput"
+                name="prénom"
+                id="firstName"
                 type="text"
-                class="validate"
               />
-              <label for="first_name">First Name</label>
+              <p>First Name is required and must be valid.</p>
             </div>
             <div class="input-field col s12 m6 l6">
-              <input
-                name="lastName"
-                id="last_name"
-                type="text"
-                class="validate"
-              />
-              <label for="last_name">Last Name</label>
+              <label for="lastName">Last Name</label>
+              <input class="orderInput" name="nom" id="lastName" type="text" />
+              <p>Last Name is required and must be valid.</p>
             </div>
           </div>
 
           <div class="row">
             <div class="input-field col s12 m6 l6">
-              <input name="adresse" id="adresse" type="text" class="validate" />
-              <label for="adresse">Adresse</label>
+              <label for="address">Address</label>
+              <input
+                class="orderInput"
+                name="adresse"
+                id="address"
+                type="text"
+              />
+              <p>Address is required and must be valid.</p>
             </div>
-            <div class="input-field col s6 m3 l3">
-              <input name="city" id="city" type="text" class="validate" />
+            <div class="input-field col s7 m3 l3">
               <label for="city">City</label>
+              <input class="orderInput" name="ville" id="city" type="text" />
+              <p>City is required and must be valid.</p>
             </div>
-            <div class="input-field col s6 m3 l3">
+            <div class="input-field col s5 m3 l3">
+              <label for="zipCode">Zip Code</label>
               <input
-                name="zipCode"
-                id="zipcode"
+                class="orderInput"
+                name="codePostale"
+                id="zipCode"
                 type="number"
-                class="validate"
               />
-              <label for="zipcode">Zip Code</label>
+              <p>Zip Code is required and must be valid.</p>
             </div>
-          </div>
 
-          <div class="row">
-            <div class="input-field col s6 m6 l6">
+            <div class="input-field col s7 m6 l6">
+              <label for="email">Email</label>
+              <input class="orderInput" name="email" id="email" type="email" />
+              <p>
+                Email is required and must be a valid, e.g. me@mydomain.com.
+              </p>
+            </div>
+            <div class="input-field col s5 m6 l6">
+              <label for="phoneNumber">Phone Number</label>
               <input
-                name="phoneNumber"
+                class="orderInput"
+                name="téléphone"
                 id="phoneNumber"
                 type="tel"
-                class="validate"
               />
-              <label for="phoneNumber">Phone Number</label>
-            </div>
-            <div class="input-field col s6 m6 l6">
-              <input name="email" id="email" type="email" class="validate" />
-              <label for="email">Email</label>
+              <p>
+                Phone Number is required and must be a valid CH number, e.g
+                0799999999.
+              </p>
             </div>
           </div>
 
           <div class="row">
             <div class="input-field col s12">
-              <input name="product" id="product" type="text" class="validate" />
               <label for="product">Product</label>
+              <input
+                name="produit"
+                id="product"
+                type="text"
+                class="orderInput"
+              />
+              <p>
+                Product is required
+              </p>
             </div>
-          </div>
 
-          <div class="row">
             <div class="input-field col s12">
+              <label for="informations">Informations</label>
               <textarea
                 name="informations"
                 id="informations"
-                class="materialize-textarea"
+                class="materialize-textarea orderInput"
               ></textarea>
-              <label for="informations">Informations</label>
+              <p>
+                Only alphanumeric characters are allowed as well as frequent
+                characters.
+              </p>
             </div>
           </div>
 

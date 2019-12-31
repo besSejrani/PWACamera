@@ -9,6 +9,8 @@
 
 // JS
 import "../components/googleMaps/index";
+import "../utils/formValidation/regexFormOrder";
+//import "../utils/sendEmail";
 
 // Materialize
 import "../utils/materialize";

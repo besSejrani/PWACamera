@@ -5,8 +5,9 @@
   padding: 0.6rem 4.2rem 0.6rem 2.2rem;
 }
 
-.select-wrapper input.select-dropdown {
-  padding: 1rem;
+// Specify the margin around the select for multiple languages
+.select-wrapper {
+  margin: 2.9rem;
 }
 
 .dropdown-content li > span {
