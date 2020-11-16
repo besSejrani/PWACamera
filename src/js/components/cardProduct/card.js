@@ -70,7 +70,7 @@ const createCard = (
   // collapsible-header
 
   const textInfos = document.createElement("h6");
-  textInfos.textContent = "More Infos";
+  textInfos.textContent = `More Infos`;
 
   const iconInfos = document.createElement("i");
   iconInfos.classList.add("material-icons");

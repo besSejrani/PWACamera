@@ -17,4 +17,4 @@ import "../utils/materialize";
 import "../utils/materialize";
 
 // PWA
-//import "../pwa/app";
+import "../pwa/app";
