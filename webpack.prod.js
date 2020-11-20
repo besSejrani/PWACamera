@@ -85,7 +85,7 @@ module.exports = {
     errorEn: "./src/js/en/error.js",
   },
   output: {
-    filename: "[name].[contenthash].js",
+    filename: "[name].[hash].js",
     path: path.resolve(__dirname, "build"),
     publicPath: "/",
   },
@@ -149,7 +149,7 @@ module.exports = {
         use: {
           loader: "file-loader",
           options: {
-            name: "[name].[fullhash][ext]",
+            name: "[name].[hash].[ext]",
             outputPath: "img",
           },
         },
@@ -181,7 +181,7 @@ module.exports = {
       ],
     }),
     new miniCssExtractPlugin({
-      filename: "[name].[hash].css",
+      filename: "[name].[hash]..css",
     }),
 
     /**
