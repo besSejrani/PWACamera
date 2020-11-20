@@ -149,7 +149,7 @@ module.exports = {
         use: {
           loader: "file-loader",
           options: {
-            name: "[name].[hashcontent][ext]",
+            name: "[name].[hash][ext]",
             outputPath: "img",
           },
         },
