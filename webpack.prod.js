@@ -11,13 +11,67 @@ const webpack = require("webpack");
 const autoprefixer = require("autoprefixer");
 
 const htmlWebpackPlugin = require("html-webpack-plugin");
-const AppManifestWebpackPlugin = require("app-manifest-webpack-plugin");
 const miniCssExtractPlugin = require("mini-css-extract-plugin");
 const optimizeCss = require("optimize-css-assets-webpack-plugin");
 const terser = require("terser-webpack-plugin");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
+const AppManifestWebpackPlugin = require('webpack-manifest-plugin');
+const manifestConfig = {
+  // Your source logo
+  logo: "./src/images/icons/icon-512x512.png",
+  // Output path for icons (icons will be saved to output.path(webpack config) + this key)
+  output: "icons//", // default '/'. Can be absolute or relative
+  // Generate a cache file with control hashes and
+  // don't rebuild the favicons until those hashes change
+  persistentCache: true,
+  // Inject the html into the html-webpack-plugin. Default true
+  inject: true,
+  // favicons configuration object. Support all keys of favicons (see https://github.com/haydenbleasel/favicons)
+  config: {
+    // Your application's name. `string`
+    appName: "PWA Camera",
+    // Your application's description. `string`
+    appDescription: "test",
+    // Your (or your developer's) name. `string`
+    developerName: null,
+    // Your (or your developer's) URL. `string`
+    developerURL: null,
+    // Background colour for flattened icons. `string`
+    background: "#fff",
+    // Theme color for browser chrome. `string`
+    theme_color: "#1e88e5",
+    // Android display: "browser" or "standalone". `string`
+    display: "standalone",
+    // Android orientation: "portrait" or "landscape". `string`
+    orientation: "portrait",
+    // Android start application's URL. `string`
+    start_url: "/?homescreen=1",
+    // Your application's version number. `number`
+    version: "1.0",
+    icons: {
+      // Create Android homescreen icon. `boolean` or `{ offset, background, shadow }`
+      android: true,
+      // Create Apple touch icons. `boolean` or `{ offset, background }`
+      appleIcon: true,
+      // Create Apple startup images. `boolean` or `{ offset, background }`
+      appleStartup: true,
+      coast: {
+        // Create Opera Coast icon with offset 25%. `boolean` or `{ offset, background }`
+        offset: 25
+      },
+      // Create regular favicons. `boolean`
+      favicons: false,
+      // Create Firefox OS icons. `boolean` or `{ offset, background }`
+      firefox: true,
+      // Create Windows 8 tile icons. `boolean` or `{ background }`
+      windows: true,
+      // Create Yandex browser icon. `boolean` or `{ background }`
+      yandex: true
+    }
+  }
+}
 const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
@@ -47,6 +101,12 @@ module.exports = {
             attrs: [":data-lazy", ":srcset", ":source", ":src", ":href"]
           }
         }
+      },
+
+      {
+        test: /\.json$/,
+        use: ['json-loader'],
+        type: 'javascript/auto'
       },
 
       {
@@ -109,42 +169,7 @@ module.exports = {
         postcss: [autoprefixer()]
       }
     }),
-    /* new AppManifestWebpackPlugin({
-      // Your source logo
-      logo: "./src/images/icons/icon-512x512.png",
-      // Output path for icons (icons will be saved to output.path(webpack config) + this key)
-      output: "icons//", // default '/'. Can be absolute or relative
-      // Generate a cache file with control hashes and
-      // don't rebuild the favicons until those hashes change
-      persistentCache: true,
-      // Inject the html into the html-webpack-plugin. Default true
-      inject: true,
-      // favicons configuration object. Support all keys of favicons (see https://github.com/haydenbleasel/favicons)
-      config: {
-        appName: "PWA Camera", // Your application's name. `string`
-        appDescription: "test", // Your application's description. `string`
-        developerName: null, // Your (or your developer's) name. `string`
-        developerURL: null, // Your (or your developer's) URL. `string`
-        background: "#fff", // Background colour for flattened icons. `string`
-        theme_color: "#1e88e5", // Theme color for browser chrome. `string`
-        display: "standalone", // Android display: "browser" or "standalone". `string`
-        orientation: "portrait", // Android orientation: "portrait" or "landscape". `string`
-        start_url: "/?homescreen=1", // Android start application's URL. `string`
-        version: "1.0", // Your application's version number. `number`
-        icons: {
-          android: true, // Create Android homescreen icon. `boolean` or `{ offset, background, shadow }`
-          appleIcon: true, // Create Apple touch icons. `boolean` or `{ offset, background }`
-          appleStartup: true, // Create Apple startup images. `boolean` or `{ offset, background }`
-          coast: {
-            offset: 25
-          }, // Create Opera Coast icon with offset 25%. `boolean` or `{ offset, background }`
-          favicons: false, // Create regular favicons. `boolean`
-          firefox: true, // Create Firefox OS icons. `boolean` or `{ offset, background }`
-          windows: true, // Create Windows 8 tile icons. `boolean` or `{ background }`
-          yandex: true // Create Yandex browser icon. `boolean` or `{ background }`
-        }
-      }
-    }), */
+    new AppManifestWebpackPlugin(manifestConfig),
     new miniCssExtractPlugin({
       filename: "[name].[contenthash].css"
     }),

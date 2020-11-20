@@ -10,5 +10,3 @@
 // Materialize
 import "../utils/materialize";
 
-// PWA
-//import "../pwa/app";

@@ -16,6 +16,7 @@ const createCard = (
   | COLLAPSIBLE
   |--------------------------------------------------
   */
+  console.log(image, lazyImage)
 
   // collapsible-body
 

@@ -24,11 +24,13 @@ module.exports = {
     contactEn: "./src/js/en/contact.js",
     errorEn: "./src/js/en/error.js"
   },
+
   output: {
     filename: "[name].[hash].js",
     path: path.resolve(__dirname, "build"),
     publicPath: "/"
   },
+
   module: {
     rules: [
       {
@@ -40,6 +42,12 @@ module.exports = {
             removeComments: true
           }
         }
+      },
+
+      {
+        test: /\.json$/,
+        use: ['json-loader'],
+        type: 'javascript/auto'
       },
 
       {
@@ -76,7 +84,8 @@ module.exports = {
             loader: "file-loader",
             options: {
               name: "[name].[ext]",
-              outputPath: "fonts"
+              outputPath: "fonts",
+              esModule: false,
             }
           }
         ]
@@ -85,7 +94,7 @@ module.exports = {
       {
         test: /\.(svg|png|jpe?g|webp|ico)$/,
         use: ["file-loader"]
-      }
+      },
     ]
   },
   plugins: [
