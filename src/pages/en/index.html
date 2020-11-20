@@ -1,136 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#2196f3" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../images/logo.ico" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta name="theme-color" content="#2196f3" />
-  <link rel="manifest" href="/manifest.json" />
-  <link rel="icon" type="image/png" sizes="32x32" href="../../images/logo.ico" />
+    <meta name="description" content="This is a test website for PWA by Besjan Sejrani" />
+    <title>Home | PWA Camera</title>
+  </head>
 
-  <meta name="description" content="This is a test website for PWA by Besjan Sejrani" />
-  <title>Home | PWA Camera</title>
-</head>
+  <body class="grey lighten-4">
+    <main>
+      <header>
+        <div class="navbar-fixed">
+          <nav class="transparent" id="nav">
+            <div class="nav-wrapper container">
+              <a href="/" class="brand-logo center"><img src="../../images/logo.svg" alt="Camera logo" height="55" width="55" /></a>
 
-<body class="grey lighten-4">
-  <main>
-    <header>
-      <div class="navbar-fixed">
-        <nav class="transparent" id="nav">
-          <div class="nav-wrapper container">
-            <a href="/" class="brand-logo center"><img src="../../images/logo.svg" alt="Camera logo" height="55"
-                width="55" /></a>
+              <span class="left white-text text-darken-1">
+                <i class="large material-icons sidenav-trigger" data-target="side-menu">menu</i>
+              </span>
+            </div>
+          </nav>
+        </div>
+      </header>
 
-            <span class="left white-text text-darken-1">
-              <i class=" large material-icons sidenav-trigger" data-target="side-menu">menu</i>
-            </span>
-          </div>
-        </nav>
-      </div>
-    </header>
+      <div id="side-menu" class="sidenav side-menu">
+        <ul>
+          <li>
+            <a href="/" class="waves-effect"><i class="material-icons">home</i>Home</a>
+          </li>
+          <li>
+            <a href="/en/about" class="waves-effect"><i class="material-icons">business</i>About</a>
+          </li>
+          <li>
+            <a href="/en/products" class="waves-effect"><i class="material-icons">camera</i>Products</a>
+          </li>
+          <li></li>
+          <li>
+            <a href="/en/contact" class="waves-effect"> <i class="material-icons">mail_outline</i>Contact</a>
+          </li>
+          <div class="divider"></div>
 
-    <div id="side-menu" class="sidenav side-menu">
-      <ul>
-        <li>
-          <a href="/" class="waves-effect"><i class="material-icons">home</i>Home</a>
-        </li>
-        <li>
-          <a href="/en/about" class="waves-effect"><i class="material-icons">business</i>About</a>
-        </li>
-        <li>
-          <a href="/en/products" class="waves-effect"><i class="material-icons">camera</i>Products</a>
-        </li>
-        <li></li>
-        <li>
-          <a href="/en/contact" class="waves-effect">
-            <i class="material-icons">mail_outline</i>Contact</a>
-        </li>
-        <div class="divider"></div>
+          <li>
+            <a class="waves-effect waves-light btn blue" id="permission">
+              <i class="material-icons left white-text">notifications</i>Notifications</a
+            >
+          </li>
+        </ul>
 
-        <li>
-          <a class="waves-effect waves-light btn blue" id="permission">
-            <i class="material-icons left white-text">notifications</i>Notifications</a>
-        </li>
-      </ul>
-
-      <div id="multiLang autoprefixer-test" class="input-field col s12">
-        <select class="icon">
-          <option value="" disabled selected>English</option>
-          <option value="1">French</option>
-          <option value="2">German</option>
-        </select>
-      </div>
-    </div>
-
-    <section id="homeSlider">
-      <div id="slider">
-        <div id="sliderGroup">
-          <picture>
-            <source srcset="../../images/camera/slider/slider1x1387x600xlow.webp"
-              data-lazy="../../images/camera/slider/slider1x1387x600.webp" type="image/webp" />
-
-            <img src="../../images/camera/slider/slider1x1387x600.jpg" alt="Cameras
-                    Slideshow two" />
-          </picture>
-
-          <picture>
-            <source srcset="../../images/camera/slider/slider2x1390x600xlow.webp"
-              data-lazy="../../images/camera/slider/slider2x1390x600.webp" type="image/webp" />
-
-            <img src="../../images/camera/slider/slider2x1390x600.jpg" alt="Camera Slideshow three" />
-          </picture>
-
-          <picture>
-            <source srcset="../../images/camera/slider/slider3x1377x600xlow.webp"
-              data-lazy="../../images/camera/slider/slider3x1377x600.webp" type="image/webp" />
-
-            <img src="../../images/camera/slider/slider3x1377x600.jpg" alt="Camera Slideshow one" />
-          </picture>
-
-          <picture>
-            <source srcset="../../images/camera/slider/slider1x1387x600xlow.webp"
-              data-lazy="../../images/camera/slider/slider1x1387x600.webp" type="image/webp" />
-
-            <img src="../../images/camera/slider/slider1x1387x600.jpg" alt="Camera Slideshow one" />
-          </picture>
+        <div id="multiLang autoprefixer-test" class="input-field col s12">
+          <select class="icon">
+            <option value="" disabled selected>English</option>
+            <option value="1">French</option>
+            <option value="2">German</option>
+          </select>
         </div>
       </div>
-    </section>
 
-    <div class="row container">
-      <div class="col s12 ">
-        <ul class="tabs TabGroup">
-          <li class="tab col s3"><a href="#tab1">Cameras</a></li>
-          <li class="tab col s3"><a href="#tab2">Objectifs</a></li>
-          <li class="tab col s3"><a href="#tab3">SDCards</a></li>
-          <li class="tab col s3"><a href="#tab4">Trepieds</a></li>
-        </ul>
+      <section id="homeSlider">
+        <div id="slider">
+          <div id="sliderGroup">
+            <picture>
+              <source
+                srcset="../../images/camera/slider/slider1x1387x600xlow.webp"
+                data-lazy="../../images/camera/slider/slider1x1387x600.webp"
+                type="image/webp"
+              />
+
+              <img
+                src="../../images/camera/slider/slider1x1387x600.jpg"
+                alt="Cameras
+                    Slideshow two"
+              />
+            </picture>
+
+            <picture>
+              <source
+                srcset="../../images/camera/slider/slider2x1390x600xlow.webp"
+                data-lazy="../../images/camera/slider/slider2x1390x600.webp"
+                type="image/webp"
+              />
+
+              <img src="../../images/camera/slider/slider2x1390x600.jpg" alt="Camera Slideshow three" />
+            </picture>
+
+            <picture>
+              <source
+                srcset="../../images/camera/slider/slider3x1377x600xlow.webp"
+                data-lazy="../../images/camera/slider/slider3x1377x600.webp"
+                type="image/webp"
+              />
+
+              <img src="../../images/camera/slider/slider3x1377x600.jpg" alt="Camera Slideshow one" />
+            </picture>
+
+            <picture>
+              <source
+                srcset="../../images/camera/slider/slider1x1387x600xlow.webp"
+                data-lazy="../../images/camera/slider/slider1x1387x600.webp"
+                type="image/webp"
+              />
+
+              <img src="../../images/camera/slider/slider1x1387x600.jpg" alt="Camera Slideshow one" />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <div class="row container">
+        <div class="col s12">
+          <ul class="tabs TabGroup">
+            <li class="tab col s3"><a href="#tab1">Cameras</a></li>
+            <li class="tab col s3"><a href="#tab2">Objectifs</a></li>
+            <li class="tab col s3"><a href="#tab3">SDCards</a></li>
+            <li class="tab col s3"><a href="#tab4">Trepieds</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
 
-    <div id="tab1">
-      <div class="row container" id="camera"></div>
-    </div>
+      <div id="tab1">
+        <div class="row container" id="camera"></div>
+      </div>
 
-    <div id="tab2">
-      <div class="row container" id="objectif"></div>
-    </div>
+      <div id="tab2">
+        <div class="row container" id="objectif"></div>
+      </div>
 
-    <div id="tab3">
-      <div class="row container" id="sdCard"></div>
-    </div>
+      <div id="tab3">
+        <div class="row container" id="sdCard"></div>
+      </div>
 
-    <div id="tab4">
-      <div class="row container" id="trepied"></div>
-    </div>
+      <div id="tab4">
+        <div class="row container" id="trepied"></div>
+      </div>
 
-    <div class="fixed-action-btn">
-      <a href="#" id="fab" class="btn-floating btn-large waves-effect waves-light blue hide"><i
-          class="material-icons">add</i></a>
-    </div>
-
-  </main>
-</body>
-
+      <div class="fixed-action-btn">
+        <a href="#" id="fab" class="btn-floating btn-large waves-effect waves-light blue hide"><i class="material-icons">add</i></a>
+      </div>
+    </main>
+  </body>
 </html>

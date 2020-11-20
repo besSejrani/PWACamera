@@ -6,8 +6,8 @@
   "author": "Bes <sejrani.besjan@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack serve --progress --color --mode development --config webpack.dev.js --port 8000 --open chrome",
-    "build": "webpack --config webpack.prod.js"
+    "start": "webpack serve --progress --color --mode development --config webpack.dev.js --port 8081",
+    "build": "webpack --config webpack.prod.js && cp manifest.json build/"
   },
   "dependencies": {
     "materialize-css": "^1.0.0-rc.2"

@@ -2,7 +2,7 @@ const path = require("path");
 const glob = require("glob");
 
 const PATHS = {
-  src: path.join(__dirname, "src")
+  src: path.join(__dirname, "src"),
 };
 
 const WebpackBar = require("webpackbar");
@@ -17,7 +17,7 @@ const terser = require("terser-webpack-plugin");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-const AppManifestWebpackPlugin = require('webpack-manifest-plugin');
+const AppManifestWebpackPlugin = require("webpack-manifest-plugin");
 const manifestConfig = {
   // Your source logo
   logo: "./src/images/icons/icon-512x512.png",
@@ -59,7 +59,7 @@ const manifestConfig = {
       appleStartup: true,
       coast: {
         // Create Opera Coast icon with offset 25%. `boolean` or `{ offset, background }`
-        offset: 25
+        offset: 25,
       },
       // Create regular favicons. `boolean`
       favicons: false,
@@ -68,11 +68,11 @@ const manifestConfig = {
       // Create Windows 8 tile icons. `boolean` or `{ background }`
       windows: true,
       // Create Yandex browser icon. `boolean` or `{ background }`
-      yandex: true
-    }
-  }
-}
-const WorkboxPlugin = require('workbox-webpack-plugin');
+      yandex: true,
+    },
+  },
+};
+const WorkboxPlugin = require("workbox-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -81,15 +81,15 @@ module.exports = {
     aboutEn: "./src/js/en/about.js",
     productsEn: "./src/js/en/products.js",
     contactEn: "./src/js/en/contact.js",
-    errorEn: "./src/js/en/error.js"
+    errorEn: "./src/js/en/error.js",
   },
   output: {
     filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "build"),
-    publicPath: "/"
+    publicPath: "/",
   },
   optimization: {
-    minimizer: [new terser(), new optimizeCss()]
+    minimizer: [new terser(), new optimizeCss()],
   },
   module: {
     rules: [
@@ -98,30 +98,25 @@ module.exports = {
         use: {
           loader: "html-loader-srcset",
           options: {
-            attrs: [":data-lazy", ":srcset", ":source", ":src", ":href"]
-          }
-        }
+            attrs: [":data-lazy", ":srcset", ":source", ":src", ":href"],
+          },
+        },
       },
 
       {
         test: /\.json$/,
-        use: ['json-loader'],
-        type: 'javascript/auto'
+        use: ["json-loader"],
+        type: "javascript/auto",
       },
 
       {
         test: /\.css$/,
-        use: [miniCssExtractPlugin.loader, "css-loader", "postcss-loader"]
+        use: [miniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       },
 
       {
         test: /\.scss$/,
-        use: [
-          miniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
-          "sass-loader"
-        ]
+        use: [miniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
       },
 
       {
@@ -131,9 +126,9 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-env"],
-            plugins: []
-          }
-        }
+            plugins: [],
+          },
+        },
       },
 
       {
@@ -143,10 +138,10 @@ module.exports = {
             loader: "file-loader",
             options: {
               name: "[name].[ext]",
-              outputPath: "fonts"
-            }
-          }
-        ]
+              outputPath: "fonts",
+            },
+          },
+        ],
       },
       {
         test: /\.(svg|png|jpe?g|ico|webp)$/,
@@ -154,11 +149,11 @@ module.exports = {
           loader: "file-loader",
           options: {
             name: "[name].[hash].[ext]",
-            outputPath: "img"
-          }
-        }
-      }
-    ]
+            outputPath: "img",
+          },
+        },
+      },
+    ],
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -166,12 +161,12 @@ module.exports = {
 
     new webpack.LoaderOptionsPlugin({
       options: {
-        postcss: [autoprefixer()]
-      }
+        postcss: [autoprefixer()],
+      },
     }),
-    new AppManifestWebpackPlugin(manifestConfig),
+    //new AppManifestWebpackPlugin(manifestConfig),
     new miniCssExtractPlugin({
-      filename: "[name].[contenthash].css"
+      filename: "[name].[contenthash].css",
     }),
 
     /**
@@ -186,38 +181,39 @@ module.exports = {
       title: "index",
       filename: "index.html",
       template: "./src/pages/en/index.html",
-      chunks: ["indexEn"]
+      chunks: ["indexEn"],
     }),
     new htmlWebpackPlugin({
       title: "about",
       filename: "en/about.html",
       template: "./src/pages/en/about.html",
-      chunks: ["aboutEn"]
+      chunks: ["aboutEn"],
     }),
     new htmlWebpackPlugin({
       title: "products",
       filename: "en/products.html",
       template: "./src/pages/en/products.html",
-      chunks: ["productsEn"]
+      chunks: ["productsEn"],
     }),
     new htmlWebpackPlugin({
       title: "contact",
       filename: "en/contact.html",
       template: "./src/pages/en/contact.html",
-      chunks: ["contactEn"]
+      chunks: ["contactEn"],
     }),
     new htmlWebpackPlugin({
       title: "error",
       filename: "en/error.html",
       template: "./src/pages/en/error.html",
-      chunks: ["errorEn"]
-    }), new WorkboxPlugin.GenerateSW({
+      chunks: ["errorEn"],
+    }),
+    new WorkboxPlugin.GenerateSW({
       // these options encourage the ServiceWorkers to get in there fast
       // and not allow any straggling "old" SWs to hang around
       clientsClaim: true,
       skipWaiting: true,
     }),
-  ]
+  ],
 };
 
 //new PurgecssPlugin({
