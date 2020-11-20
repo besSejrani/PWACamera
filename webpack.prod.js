@@ -17,7 +17,8 @@ const terser = require("terser-webpack-plugin");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-const AppManifestWebpackPlugin = require("webpack-manifest-plugin");
+const WebpackPwaManifest = require("webpack-pwa-manifest");
+
 const manifestConfig = {
   // Your source logo
   logo: "./src/images/icons/icon-512x512.png",
@@ -148,7 +149,7 @@ module.exports = {
         use: {
           loader: "file-loader",
           options: {
-            name: "[name].[ext]",
+            name: "[name].[hashcontent][ext]",
             outputPath: "img",
           },
         },
@@ -164,9 +165,23 @@ module.exports = {
         postcss: [autoprefixer()],
       },
     }),
-    //new AppManifestWebpackPlugin(manifestConfig),
+    new WebpackPwaManifest({
+      name: "My Progressive Web App",
+      short_name: "MyPWA",
+      description: "My awesome Progressive Web App!",
+      background_color: "#ffffff",
+      //can be null, use-credentials or anonymous
+      crossorigin: "use-credentials",
+      icons: [
+        {
+          src: path.resolve("src/images/icons/icon-512x512.png"),
+          // multiple sizes
+          sizes: [96, 128, 192, 256, 384, 512],
+        },
+      ],
+    }),
     new miniCssExtractPlugin({
-      filename: "[name].[contenthash].css",
+      filename: "[name].[hash].css",
     }),
 
     /**
