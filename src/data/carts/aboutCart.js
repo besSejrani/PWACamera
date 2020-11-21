@@ -19,7 +19,7 @@ const cart = [
       zoom: 15.5,
       mapCoords: {
         lat: 46.442344,
-        lng: 6.895436
+        lng: 6.895436,
       },
       mapType: "terrain",
       draggable: false,
@@ -28,14 +28,14 @@ const cart = [
         {
           coords: {
             lat: 46.445192,
-            lng: 6.898999
+            lng: 6.898999,
           },
           content: "bla",
-          icon: require("../../images/logo.svg")
-        }
-      ]
-    }
-  }
+          icon: require("../../images/logo.svg"),
+        },
+      ],
+    },
+  },
 ];
 
 export default cart;

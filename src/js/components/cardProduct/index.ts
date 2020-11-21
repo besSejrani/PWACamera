@@ -2,7 +2,7 @@ import camera from "../../../data/en/camera";
 import objectif from "../../../data/en/objectif";
 import sdcard from "../../../data/en/sdcard";
 import trepied from "../../../data/en/trepied";
-import createCard from "./card.js";
+import createCard from "./card";
 
 /**
 |--------------------------------------------------
@@ -28,17 +28,8 @@ import createCard from "./card.js";
 |--------------------------------------------------
 */
 
-camera.slice(0, 6).map(item => {
-  return createCard(
-    item.title,
-    item.description,
-    item.image,
-    item.lazyImage,
-    item.fallbackImage,
-    item.price,
-    item.buyIcon,
-    item.section
-  );
+camera.slice(0, 6).map((item) => {
+  return createCard(item.title, item.description, item.image, item.lazyImage, item.fallbackImage, item.price, item.buyIcon, item.section);
 });
 
 /**
@@ -49,17 +40,8 @@ camera.slice(0, 6).map(item => {
 |--------------------------------------------------
 */
 
-objectif.slice(0, 6).map(item => {
-  return createCard(
-    item.title,
-    item.description,
-    item.image,
-    item.lazyImage,
-    item.fallbackImage,
-    item.price,
-    item.buyIcon,
-    item.section
-  );
+objectif.slice(0, 6).map((item) => {
+  return createCard(item.title, item.description, item.image, item.lazyImage, item.fallbackImage, item.price, item.buyIcon, item.section);
 });
 
 /**
@@ -70,17 +52,8 @@ objectif.slice(0, 6).map(item => {
 |--------------------------------------------------
 */
 
-sdcard.slice(0, 6).map(item => {
-  return createCard(
-    item.title,
-    item.description,
-    item.image,
-    item.lazyImage,
-    item.fallbackImage,
-    item.price,
-    item.buyIcon,
-    item.section
-  );
+sdcard.slice(0, 6).map((item) => {
+  return createCard(item.title, item.description, item.image, item.lazyImage, item.fallbackImage, item.price, item.buyIcon, item.section);
 });
 
 /**
@@ -91,15 +64,6 @@ sdcard.slice(0, 6).map(item => {
 |--------------------------------------------------
 */
 
-trepied.slice(0, 6).map(item => {
-  return createCard(
-    item.title,
-    item.description,
-    item.image,
-    item.lazyImage,
-    item.fallbackImage,
-    item.price,
-    item.buyIcon,
-    item.section
-  );
+trepied.slice(0, 6).map((item) => {
+  return createCard(item.title, item.description, item.image, item.lazyImage, item.fallbackImage, item.price, item.buyIcon, item.section);
 });

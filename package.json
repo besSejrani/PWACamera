@@ -6,7 +6,7 @@
   "author": "Bes <sejrani.besjan@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack serve --progress --color --mode development --config webpack.dev.js --port 8081",
+    "start": "webpack serve --progress --https --mode development --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
   "dependencies": {
@@ -15,6 +15,7 @@
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
+    "@babel/preset-typescript": "^7.12.7",
     "autoprefixer": "^9.0.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-object-to-json-parse": "^0.2.1",
@@ -32,11 +33,14 @@
     "node-sass": "^5.0.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^4.0.4",
+    "prettier": "2.2.0",
     "progress-bar-webpack-plugin": "^2.1.0",
     "purgecss-webpack-plugin": "^3.0.0",
     "sass-loader": "^10.1.0",
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^5.0.3",
+    "ts-loader": "^8.0.11",
+    "typescript": "^4.1.2",
     "webpack": "^5.1.3",
     "webpack-cli": "^4.2.0",
     "webpack-dev-server": "^3.11.0",

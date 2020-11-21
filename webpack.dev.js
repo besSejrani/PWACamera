@@ -18,17 +18,32 @@ const WorkboxPlugin = require('workbox-webpack-plugin');
 module.exports = {
   mode: "development",
   entry: {
-    indexEn: "./src/js/en/index.js",
-    aboutEn: "./src/js/en/about.js",
-    productsEn: "./src/js/en/products.js",
-    contactEn: "./src/js/en/contact.js",
-    errorEn: "./src/js/en/error.js"
+    indexEn: "./src/js/en/index.ts",
+    aboutEn: "./src/js/en/about.ts",
+    productsEn: "./src/js/en/products.ts",
+    contactEn: "./src/js/en/contact.ts",
+    errorEn: "./src/js/en/error.ts",
   },
 
   output: {
     filename: "[name].[hash].js",
     path: path.resolve(__dirname, "build"),
-    publicPath: "/"
+    publicPath: "/",
+  },
+
+  devServer: {
+    open: true,
+    compress: true,
+    port: 8080,
+    https:true,
+    http2:true,
+    hot: true,
+    contentBase: path.join(__dirname, 'src'),
+    contentBasePublicPath: '/src',
+  },
+
+  resolve: {
+    extensions: ['.js', '.ts', '.json'],
   },
 
   module: {
@@ -39,30 +54,31 @@ module.exports = {
           loader: "html-loader-srcset",
           options: {
             attrs: [":data-lazy", ":srcset", ":source", ":src", ":href"],
-            removeComments: true
-          }
-        }
+            removeComments: true,
+          },
+        },
+      },
+
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
       },
 
       {
         test: /\.json$/,
-        use: ['json-loader'],
-        type: 'javascript/auto'
+        use: ["json-loader"],
+        type: "javascript/auto",
       },
 
       {
         test: /\.css$/,
-        use: [miniCssExtractPlugin.loader, "css-loader", "postcss-loader"]
+        use: [miniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       },
 
       {
         test: /\.scss$/,
-        use: [
-          miniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
-          "sass-loader"
-        ]
+        use: [miniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"],
       },
 
       {
@@ -71,10 +87,10 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env"],
-            plugins: []
-          }
-        }
+            presets: ["@babel/preset-env", "@babel/preset-typescript"],
+            plugins: [],
+          },
+        },
       },
 
       {
@@ -86,27 +102,27 @@ module.exports = {
               name: "[name].[ext]",
               outputPath: "fonts",
               esModule: false,
-            }
-          }
-        ]
+            },
+          },
+        ],
       },
 
       {
         test: /\.(svg|png|jpe?g|webp|ico)$/,
-        use: ["file-loader"]
+        use: ["file-loader"],
       },
-    ]
+    ],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new miniCssExtractPlugin({
-      filename: "[name].[contenthash].css"
+      filename: "[name].[contenthash].css",
     }),
 
     new webpack.LoaderOptionsPlugin({
       options: {
-        postcss: [autoprefixer()]
-      }
+        postcss: [autoprefixer()],
+      },
     }),
     new webpack.HotModuleReplacementPlugin(),
 
@@ -122,38 +138,39 @@ module.exports = {
       title: "index",
       filename: "index.html",
       template: "./src/pages/en/index.html",
-      chunks: ["indexEn"]
+      chunks: ["indexEn"],
     }),
     new htmlWebpackPlugin({
       title: "about",
       filename: "en/about/",
       template: "./src/pages/en/about.html",
-      chunks: ["aboutEn"]
+      chunks: ["aboutEn"],
     }),
     new htmlWebpackPlugin({
       title: "about",
       filename: "en/products/",
       template: "./src/pages/en/products.html",
-      chunks: ["productsEn"]
+      chunks: ["productsEn"],
     }),
     new htmlWebpackPlugin({
       title: "about",
       filename: "en/contact/",
       template: "./src/pages/en/contact.html",
-      chunks: ["contactEn"]
+      chunks: ["contactEn"],
     }),
     new htmlWebpackPlugin({
       title: "about",
       filename: "en/error/",
       template: "./src/pages/en/error.html",
-      chunks: ["errorEn"]
-    }), new WorkboxPlugin.GenerateSW({
+      chunks: ["errorEn"],
+    }),
+    new WorkboxPlugin.GenerateSW({
       // these options encourage the ServiceWorkers to get in there fast
       // and not allow any straggling "old" SWs to hang around
       clientsClaim: true,
       skipWaiting: true,
     }),
-  ]
+  ],
 };
 
 //new PurgecssPlugin({

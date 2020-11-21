@@ -6,9 +6,9 @@
 
 const targets = document.querySelectorAll("[data-lazy]");
 
-const lazyLoad = target => {
+const lazyLoad = (target) => {
   const io = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const img = entry.target;
         const srcset = img.getAttribute("data-lazy");

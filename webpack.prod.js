@@ -78,20 +78,26 @@ const WorkboxPlugin = require("workbox-webpack-plugin");
 module.exports = {
   mode: "production",
   entry: {
-    indexEn: "./src/js/en/index.js",
-    aboutEn: "./src/js/en/about.js",
-    productsEn: "./src/js/en/products.js",
-    contactEn: "./src/js/en/contact.js",
-    errorEn: "./src/js/en/error.js",
+    indexEn: "./src/js/en/index.ts",
+    aboutEn: "./src/js/en/about.ts",
+    productsEn: "./src/js/en/products.ts",
+    contactEn: "./src/js/en/contact.ts",
+    errorEn: "./src/js/en/error.ts",
   },
   output: {
     filename: "[name].[hash].js",
     path: path.resolve(__dirname, "build"),
     publicPath: "/",
   },
+
+  resolve: {
+    extensions: ['.js', '.ts', '.json'],
+  },
+
   optimization: {
     minimizer: [new terser(), new optimizeCss()],
   },
+  
   module: {
     rules: [
       {
@@ -102,6 +108,12 @@ module.exports = {
             attrs: [":data-lazy", ":srcset", ":source", ":src", ":href"],
           },
         },
+      },
+
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
       },
 
       {

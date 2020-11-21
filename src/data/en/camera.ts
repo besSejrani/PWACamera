@@ -13,20 +13,20 @@ const products = [
     infos: [
       {
         icon: "wifi",
-        description: "wifi"
+        description: "wifi",
       },
       {
         icon: "bluetooth",
-        description: "bluetooth"
+        description: "bluetooth",
       },
       {
         icon: "airplay",
-        description: "airplay"
-      }
+        description: "airplay",
+      },
     ],
     price: "1",
     buyIcon: "shopping_cart",
-    section: "camera"
+    section: "camera",
   },
   {
     id: 2,
@@ -42,20 +42,20 @@ const products = [
     infos: [
       {
         icon: "wifi",
-        description: "wifi"
+        description: "wifi",
       },
       {
         icon: "bluetooth",
-        description: "bluetooth"
+        description: "bluetooth",
       },
       {
         icon: "airplay",
-        description: "airplay"
-      }
+        description: "airplay",
+      },
     ],
     price: "2",
     buyIcon: "shopping_cart",
-    section: "camera"
+    section: "camera",
   },
   {
     id: 3,
@@ -71,20 +71,20 @@ const products = [
     infos: [
       {
         icon: "wifi",
-        description: "wifi"
+        description: "wifi",
       },
       {
         icon: "bluetooth",
-        description: "bluetooth"
+        description: "bluetooth",
       },
       {
         icon: "airplay",
-        description: "airplay"
-      }
+        description: "airplay",
+      },
     ],
     price: "3",
     buyIcon: "shopping_cart",
-    section: "camera"
+    section: "camera",
   },
   {
     id: 4,
@@ -100,20 +100,20 @@ const products = [
     infos: [
       {
         icon: "wifi",
-        description: "wifi"
+        description: "wifi",
       },
       {
         icon: "bluetooth",
-        description: "bluetooth"
+        description: "bluetooth",
       },
       {
         icon: "airplay",
-        description: "airplay"
-      }
+        description: "airplay",
+      },
     ],
     price: "4",
     buyIcon: "shopping_cart",
-    section: "camera"
+    section: "camera",
   },
   {
     id: 5,
@@ -129,21 +129,21 @@ const products = [
     infos: [
       {
         icon: "wifi",
-        description: "wifi"
+        description: "wifi",
       },
       {
         icon: "bluetooth",
-        description: "bluetooth"
+        description: "bluetooth",
       },
       {
         icon: "airplay",
-        description: "airplay"
-      }
+        description: "airplay",
+      },
     ],
     price: "5",
     buyIcon: "shopping_cart",
-    section: "camera"
-  }
+    section: "camera",
+  },
 ];
 
 export default products;

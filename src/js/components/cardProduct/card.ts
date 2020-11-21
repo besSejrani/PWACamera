@@ -1,22 +1,13 @@
 /**
  * Create a create component
  */
-const createCard = (
-  titleProduct,
-  descriptionProduct,
-  image,
-  lazyImage,
-  fallbackImage,
-  priceProduct,
-  buyIcon,
-  entryPoint
-) => {
+const createCard = (titleProduct, descriptionProduct, image, lazyImage, fallbackImage, priceProduct, buyIcon, entryPoint) => {
   /**
   |--------------------------------------------------
   | COLLAPSIBLE
   |--------------------------------------------------
   */
-  console.log(image, lazyImage)
+  console.log(image, lazyImage);
 
   // collapsible-body
 

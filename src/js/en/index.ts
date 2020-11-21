@@ -8,7 +8,7 @@
 */
 
 // JS
-import "../components/cardProduct/index";
+import "../components/cardProduct/index.ts";
 import "../utils/intserectingObserver";
 import "../utils/lazyImages";
 import "../utils/materialize";
