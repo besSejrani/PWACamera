@@ -4,6 +4,17 @@
   left: -9999px !important;
 }
 
+
+.hidden {
+  visibility: hidden;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+#nav {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 4px;
+}
+
 nav {
   box-shadow: 0px 0px 0px 0px white;
 

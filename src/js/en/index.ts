@@ -8,8 +8,8 @@
 */
 
 // JS
-import "../components/cardProduct/index.ts";
-import "../utils/intserectingObserver";
+import "../components/cardProduct/index";
+import "../utils/scrollShowUp";
 import "../utils/lazyImages";
 import "../utils/materialize";
 
