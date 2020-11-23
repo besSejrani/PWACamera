@@ -34,9 +34,9 @@ module.exports = {
   devServer: {
     open: true,
     compress: true,
-    port: 8080,
-    https:true,
-    http2:true,
+    port: 8090,
+    https: true,
+    http2: true,
     hot: true,
     contentBase: path.join(__dirname, 'src'),
     contentBasePublicPath: '/src',

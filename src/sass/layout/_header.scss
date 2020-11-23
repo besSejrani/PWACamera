@@ -15,6 +15,11 @@
   box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 4px;
 }
 
+.myNav {
+  display: flex;
+  justify-content: space-between;
+}
+
 nav {
   box-shadow: 0px 0px 0px 0px white;
 
@@ -35,6 +40,25 @@ nav {
 
 .sidenav li > a.btn {
   margin: 20px;
+}
+
+.sidenav li > div.switch > i {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+.switch label .lever {
+  width: 40px;
+  height: 16px;
+}
+
+.sidenav li > div.switch {
+  margin: 20px;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .btn i {
